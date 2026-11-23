@@ -78,8 +78,10 @@ function renderTvBar(s) {
   $('.tvmode[data-mode="beer"]').disabled = !current(s);
 }
 
+let scrolledTo = null; // ølet me sist scrolla fram i lista
 function renderLineup(s) {
   const ol = $("#lineup");
+  const keep = ol.scrollTop;
   ol.innerHTML = s.beers
     .map((b, i) => {
       const a = beerAverage(b);
@@ -103,8 +105,19 @@ function renderLineup(s) {
       </li>`;
     })
     .join("");
+  keepLineupScroll(s, keep);
 }
 const givenCount = (b) => Object.keys(b.scores ?? {}).length;
+
+/** Behald scrollposisjonen i lista – men vis ølet som er i gang når det blir byta. */
+function keepLineupScroll(s, keep) {
+  const ol = $("#lineup");
+  ol.scrollTop = keep;
+  if (s.currentBeerId && s.currentBeerId !== scrolledTo) {
+    scrolledTo = s.currentBeerId;
+    ol.querySelector("li.current")?.scrollIntoView({ block: "nearest", behavior: "smooth" });
+  }
+}
 
 let scoreFormKey = "";
 function renderCurrent(s) {

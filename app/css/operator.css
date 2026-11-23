@@ -133,6 +133,16 @@ input:focus, select:focus { outline: 2px solid var(--accent); outline-offset: 0;
 }
 .panel-head { display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.7rem; }
 
+/* Øl-liste: eige scrollfelt, så karakterar og hendingar alltid er synlege same kor lang lista er */
+#lineup-panel {
+  position: sticky; top: 3.6rem;
+  max-height: calc(100vh - 140px); /* plass til toppfeltet og storskjermraden */
+  display: flex; flex-direction: column;
+}
+#lineup-panel .lineup { flex: 1; min-height: 0; overflow-y: auto; margin: 0 -0.4rem; padding: 0 0.4rem; overscroll-behavior: contain; }
+#lineup-panel .add-beer { flex: none; }
+@media (max-width: 1100px) { #lineup-panel { position: static; max-height: none; } }
+
 /* Øl-liste */
 .lineup { list-style: none; margin: 0; padding: 0; display: grid; gap: 0.35rem; }
 .beer {
