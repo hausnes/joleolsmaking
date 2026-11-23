@@ -151,6 +151,49 @@ function trendSvg(s) {
     </svg><div class="trend-times">${labels}</div><p class="verdict">${verdict}</p>`;
 }
 
+const TOP_N = 8;
+const BOTTOM_N = 3;
+
+function rankRow(r, pos, total) {
+  const medal = pos === 1 ? "🥇" : pos === 2 ? "🥈" : pos === 3 ? "🥉" : pos === total && total > 3 ? "🪣" : pos;
+  return `<li class="${pos === 1 ? "first" : ""}">
+    <span class="pos">${medal}</span>
+    ${bottle(r.beer, "mini")}
+    <span class="nm">${esc(r.beer.name)}</span>
+    <span class="tm">${clock(r.beer.startedAt)}</span>
+    <span class="bar"><i style="width:${(r.average / 5) * 100}%;background:${scoreColor(r.average)}"></i></span>
+    <b>${fmt(r.average)}</b>
+  </li>`;
+}
+
+/** Topp 8 – og når lista er lang: dei 3 dårlegaste under ein strek. */
+function toplist(rank) {
+  const total = rank.length;
+  if (total <= TOP_N + BOTTOM_N) return `<ol class="toplist ${total > TOP_N ? "compact" : ""}">${rank.map((r, i) => rankRow(r, i + 1, total)).join("")}</ol>`;
+  const hidden = total - TOP_N - BOTTOM_N;
+  return `<ol class="toplist compact">${rank.slice(0, TOP_N).map((r, i) => rankRow(r, i + 1, total)).join("")}</ol>
+    <p class="toplist-gap">··· ${hidden} øl i midten ··· <span>🪣 Botnen</span></p>
+    <ol class="toplist compact bottom">${rank.slice(-BOTTOM_N).map((r, i) => rankRow(r, total - BOTTOM_N + i + 1, total)).join("")}</ol>`;
+}
+
+// ---------- Heile lista: alle øla rangerte, i kolonner ----------
+
+function viewRanking(s) {
+  const rank = ranking(s);
+  if (!rank.length) return `<section class="message enter"><h1>Rangeringa kjem når første øl er ferdig</h1></section>`;
+  const total = rank.length;
+  const cols = total <= 12 ? 1 : total <= 30 ? 2 : 3;
+  const rows = Math.ceil(total / cols);
+  const left = s.beers.filter((b) => b.status !== "done").length;
+  return `<section class="ranking enter">
+    <header class="ranking-head">
+      <h1>📋 Kveldens rangering</h1>
+      <p class="sub">${total} øl smakte${left ? ` · ${left} står att` : ""}</p>
+    </header>
+    <ol class="ranking-list" data-cols="${cols}" style="--cols:${cols};--rows:${rows}">${rank.map((r, i) => rankRow(r, i + 1, total).replace("<li", `<li style="--i:${i}"`)).join("")}</ol>
+  </section>`;
+}
+
 function viewDashboard(s) {
   const rank = ranking(s);
   if (!rank.length) return viewWelcome(s);
@@ -176,7 +219,9 @@ function viewDashboard(s) {
   const hasPulse = Object.keys(pulse).length > 0;
 
   const quotes = s.quotes.slice(-3).reverse();
-  const queued = s.beers.filter((b) => b.status !== "done").slice(0, 6);
+  // Lang toppliste (topp + botn) tek plass – då viser me færre i «Står att»
+  const queued = s.beers.filter((b) => b.status !== "done").slice(0, rank.length > 8 ? 3 : 6);
+  const queuedMore = s.beers.filter((b) => b.status !== "done").length - queued.length;
   const started = checkedIn(s);
   const pace = tempo(s);
 
@@ -193,21 +238,8 @@ function viewDashboard(s) {
 
     <div class="card top">
       <h2>🏆 Topplista</h2>
-      <ol class="toplist">${rank
-        .slice(0, 8)
-        .map(
-          (r, i) => `<li class="${i === 0 ? "first" : ""}">
-            <span class="pos">${i + 1}</span>
-            ${bottle(r.beer, "mini")}
-            <span class="nm">${esc(r.beer.name)}</span>
-            <span class="tm">${clock(r.beer.startedAt)}</span>
-            <span class="bar"><i style="width:${(r.average / 5) * 100}%;background:${scoreColor(r.average)}"></i></span>
-            <b>${fmt(r.average)}</b>
-          </li>`
-        )
-        .join("")}</ol>
-      ${rank.length > 8 ? `<p class="muted small">+ ${rank.length - 8} til</p>` : ""}
-      ${queued.length ? `<h3 class="queued-head">Står att</h3><ul class="queued">${queued
+      ${toplist(rank)}
+      ${queued.length ? `<h3 class="queued-head">Står att${queuedMore > 0 ? ` (${queued.length + queuedMore})` : ""}</h3><ul class="queued">${queued
         .map((b) =>
           b.startedAt
             ? `<li class="now">${esc(b.name)} <span>sjekka inn ${clock(b.startedAt)}</span></li>`
@@ -663,6 +695,7 @@ function render(s, status) {
     mode === "timeline" ? `timeline|${timelinePage(s).page}` :
     mode === "video" ? `video|${s.tv.seq}` :
     mode === "pulse" ? `pulse|${s.tv.pulseRoundId}` :
+    mode === "ranking" ? "ranking" :
     mode === "beer" ? `beer|${beer?.id}|${done ? "result" : "live"}` : "dashboard";
   const fresh = key !== lastKey;
 
@@ -686,6 +719,7 @@ function render(s, status) {
   else if (mode === "timeline") html = viewTimeline(s);
   else if (mode === "video") html = viewVideo(s);
   else if (mode === "pulse") html = viewPulse(s);
+  else if (mode === "ranking") html = viewRanking(s);
   else if (mode === "message") html = viewMessage(s);
   else html = viewDashboard(s);
 

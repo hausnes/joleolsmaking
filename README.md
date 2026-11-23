@@ -15,6 +15,7 @@ node server.mjs        # eller: npm start
 4. Hendingar registrerer du med klikk i tabellen, eller med hurtigtastar: `d` dobesøk, `s` søling, `f` fis/hikk, `i` idioti, `k` krenking, og deretter persontalet. Høgreklikk trekkjer frå.
 5. Sitat blir knytte til ølet som er i gang, men du kan velje eit anna øl i lista ved sida av.
 6. **🕰️ Tidslinje** viser alle øla i rekkjefølgja dei vart sjekka inn, med snitt, sitat og hendingar. Ho blar sjølv vidare kvart 12. sekund og passar fint i pausar og på slutten av kvelden.
+   - **📋 Heile lista** viser alle øla rangerte, i éi til tre kolonner etter kor mange det er. Ho passar fint rett før kåringane. Oversikta viser topp 8, og når lista er lang, òg dei 3 dårlegaste («🪣 Botnen»).
 7. **🎬 Videoar** (nedst til høgre på registreringssida): ▶ spelar ein favoritt på storskjermen. Du kan òg lime inn ei YouTube-lenkje (`?t=1m5s` startar midt i) eller eit filnamn frå `data/videos/`. ⏯ pausar, og ⏹ går tilbake til oversikta. Når videoen er ferdig, viser storskjermen oversikta att.
    - YouTube krev at PC-en har nett (hotspot). Lokale filer i `data/videos/` fungerer utan nett. Sjå `data/videos/README.md`.
    - Favorittane ligg i `data/videos.json`. Videoar du limer inn, blir hugsa resten av kvelden.
