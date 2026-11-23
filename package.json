@@ -1,0 +1,11 @@
+{
+  "name": "joleolsmaking",
+  "private": true,
+  "type": "module",
+  "description": "Registrering og storskjerm for den årlege joleølsmakinga",
+  "scripts": {
+    "start": "node server.mjs",
+    "hent-ol": "node scripts/vinmonopolet.mjs lineup"
+  },
+  "engines": { "node": ">=18" }
+}

@@ -271,6 +271,7 @@ def main():
     OUT_DIR.mkdir(parents=True, exist_ok=True)
 
     people: dict[str, dict] = {}
+    years: list[int] = []
     for ws in wb.worksheets:
         if not ws.title.isdigit():
             continue
@@ -278,6 +279,8 @@ def main():
         (OUT_DIR / f"{data['year']}.json").write_text(
             json.dumps(data, ensure_ascii=False, indent=2) + "\n", encoding="utf-8"
         )
+        if data["beers"]:
+            years.append(data["year"])
         for p in data["participants"]:
             canon = ALIASES.get(p, p)
             entry = people.setdefault(canon, {"name": canon, "aliases": [], "years": []})
@@ -297,6 +300,9 @@ def main():
         json.dumps(ordered, ensure_ascii=False, indent=2) + "\n", encoding="utf-8"
     )
     print(f"{len(ordered)} personar skrivne til data/people.json")
+    (OUT_DIR / "index.json").write_text(
+        json.dumps({"years": sorted(years)}, indent=2) + "\n", encoding="utf-8"
+    )
 
 
 if __name__ == "__main__":

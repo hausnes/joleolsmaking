@@ -2,10 +2,27 @@
 
 Data og verktøy for den årlege joleølsmakinga (sidan 2013).
 
+## Smakekvelden
+
+```sh
+node server.mjs        # eller: npm start
+```
+
+1. Opne <http://localhost:8026/app/operator.html> på PC-en som styrer showet. Første gong blir kvelden oppretta frå `data/lineup/<år>.json`.
+2. Trykk **📺 Opne storskjerm**, dra vindauget over på TV-en og dobbeltklikk for fullskjerm. Trykk 🔇 øvst i hjørnet ein gong for å slå på lyd.
+3. Vel eit øl og trykk **▶**. Då viser storskjermen ølet med bilete og info frå Vinmonopolet. Skriv inn karakterane (`3,75`, `375` eller `35`; `n/a` = smakte ikkje) og trykk **🥁 Avslør**.
+4. Hendingar registrerer du med klikk i tabellen, eller med hurtigtastar: `d` dobesøk, `s` søling, `f` fis/hikk, `i` idioti, `k` krenking, og deretter persontalet. Høgreklikk trekkjer frå.
+5. Til slutt: **🏆 Kåring** og ◀ ▶ for å bla gjennom kåringane.
+
+Alt blir lagra fortløpande i `data/events/<år>.json`, med tryggleikskopiar i `data/events/backups/` kvart minutt. Serveren lyttar berre på `localhost`, og ingenting krev internett. Lagringa toler at nettlesaren blir lukka eller at serveren blir starta på nytt.
+
 ## Struktur
 
 ```
+server.mjs                 Lokal server (ingen avhengigheiter)
+app/                       Registrering (operator.html) og storskjerm (tv.html)
 data/
+  events/<år>.json         Kvelden i år, blir skriven av appen
   history/<år>.json        Alle smakingar, éi fil per år (importert frå Google-reknearket)
   people.json              Alle deltakarar, med år dei har vore med (og ev. alias)
   lineup/<år>.json         Øla som skal smakast i år (varenummer frå Vinmonopolet)

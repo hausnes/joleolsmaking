@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="nn">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Joleølsmaking</title>
+  <style>
+    :root { --bg: #0b1a13; --ink: #f6f2e8; --muted: #a9bcae; --gold: #f2c14e; --card: #ffffff0f; --line: #ffffff22; color-scheme: dark; }
+    * { box-sizing: border-box; }
+    body { margin: 0; min-height: 100vh; display: grid; place-items: center; padding: 1rem;
+      font: 17px/1.5 "Avenir Next", "Segoe UI", system-ui, sans-serif; color: var(--ink);
+      background: radial-gradient(ellipse at top, #24523a, var(--bg) 60%); }
+    main { max-width: 34rem; width: 100%; }
+    h1 { font: 700 2.6rem/1.1 Georgia, serif; margin: 0 0 0.3rem; }
+    p { color: var(--muted); margin: 0 0 1.6rem; }
+    a.card { display: block; padding: 1.1rem 1.3rem; margin-bottom: 0.8rem; border-radius: 0.9rem;
+      background: var(--card); border: 1px solid var(--line); color: inherit; text-decoration: none; }
+    a.card:hover { border-color: var(--gold); }
+    a.card b { display: block; font-size: 1.2rem; }
+    a.card span { color: var(--muted); font-size: 0.95rem; }
+    ol { color: var(--muted); font-size: 0.95rem; padding-left: 1.2rem; }
+  </style>
+</head>
+<body>
+  <main>
+    <h1>🍺 Joleølsmaking</h1>
+    <p>Sidan 2013. Køyrer lokalt – ingen internett nødvendig.</p>
+    <a class="card" href="operator.html"><b>✍️ Registrering</b><span>For den som styrer showet: karakterar, hendingar og sitat.</span></a>
+    <a class="card" href="tv.html"><b>📺 Storskjerm</b><span>Dra vindauget over på TV-en og dobbeltklikk for fullskjerm. Trykk 🔇 øvst i hjørnet for lyd.</span></a>
+    <ol>
+      <li>Opne registreringa først – ho opprettar kvelden frå <code>data/lineup</code>.</li>
+      <li>Opne storskjermen (knappen øvst i registreringa).</li>
+      <li>Alt blir lagra fortløpande i <code>data/events/</code>.</li>
+    </ol>
+  </main>
+</body>
+</html>
