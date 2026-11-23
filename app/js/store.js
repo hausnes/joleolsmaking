@@ -37,7 +37,10 @@ export function beerFromProduct(p, extra = {}) {
   };
 }
 
-export function manualBeer({ name, brewery = null, abv = null, source = "butikk", image = null, style = null }) {
+export function manualBeer({
+  name, brewery = null, abv = null, source = "butikk", image = null, style = null,
+  description = null, untappdUrl = null, historyNames = undefined,
+}) {
   return {
     id: uid("m"),
     vinmonopoletId: null,
@@ -47,6 +50,9 @@ export function manualBeer({ name, brewery = null, abv = null, source = "butikk"
     abv,
     image,
     source,
+    description,
+    untappdUrl,
+    ...(historyNames ? { historyNames } : {}),
     status: "queued",
     scores: {},
   };

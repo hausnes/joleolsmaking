@@ -45,7 +45,9 @@ const brewer = (b) => (b.brewery ?? "").replace(/\s+(AS|ASA|AB|A\/S|SA|NV|BV|Ltd
 
 function bottle(beer, cls = "") {
   const img = imageUrl(beer);
-  if (img) return `<div class="bottle framed ${cls}"><img src="${esc(img)}" alt=""></div>`;
+  // Breie bilete (t.d. kvadratiske etikettar) får ei breiare ramme enn flasker
+  if (img)
+    return `<div class="bottle framed ${cls}"><img src="${esc(img)}" alt="" onload="this.parentNode.classList.toggle('wide', this.naturalWidth / this.naturalHeight > 0.8)"></div>`;
   const initials = (beer.brewery ?? beer.name).split(/\s+/).slice(0, 2).map((w) => w[0]).join("").toUpperCase();
   return `<div class="bottle placeholder ${cls}"><svg viewBox="0 0 60 160" aria-hidden="true">
     <path d="M24 4h12v30c0 8 14 14 14 30v86c0 3-2 6-6 6H16c-4 0-6-3-6-6V64c0-16 14-22 14-30z" fill="currentColor"/>
@@ -338,6 +340,7 @@ function viewBeer(s, beer) {
       </div>
       <h1>${esc(beer.name)}</h1>
       <div class="chips">${meta(beer)}</div>
+      ${beer.description ? `<p class="about">${esc(beer.description)}</p>` : ""}
       ${desc.length ? `<dl class="desc">${desc.map(([k, v]) => `<dt>${k}</dt><dd>${esc(v)}</dd>`).join("")}</dl>` : ""}
       ${
         ch.fylde != null || ch.friskhet != null || ch.bitterhet != null

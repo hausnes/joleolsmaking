@@ -1,12 +1,56 @@
 {
   "year": 2026,
-  "participants": ["Svein", "Brita", "Reid", "Liv Kjersti", "Jo Bjørnar", "Rannveig", "Knut", "Stian"],
+  "participants": [
+    "Svein",
+    "Brita",
+    "Reid",
+    "Liv Kjersti",
+    "Jo Bjørnar",
+    "Rannveig",
+    "Knut",
+    "Stian"
+  ],
   "beers": [
-    { "vinmonopoletId": "194301" },
-    { "vinmonopoletId": "19822702" },
-    { "vinmonopoletId": "21108902" },
-    { "vinmonopoletId": "12269502" },
-    { "vinmonopoletId": "21204602" },
-    { "vinmonopoletId": "21085302" }
+    {
+      "vinmonopoletId": "194301"
+    },
+    {
+      "vinmonopoletId": "19822702"
+    },
+    {
+      "vinmonopoletId": "21108902"
+    },
+    {
+      "vinmonopoletId": "12269502"
+    },
+    {
+      "vinmonopoletId": "21204602"
+    },
+    {
+      "vinmonopoletId": "21085302"
+    },
+    {
+      "name": "Hausnesbrogg Jolastøl (2026)",
+      "brewery": "Hausnesbrogg",
+      "style": "Vossaøl / heimabrygg",
+      "abv": 8.3,
+      "source": "heimebrygg",
+      "image": "products/images/hausnesbrogg-jolastol-2026.jpg",
+      "untappdUrl": "https://untappd.com/b/hausnesbrogg-jolastol-2026/7655739",
+      "description": "Brakje frå Olastøl, pilsner- og München-malt, Rivenes-kveik, Cascade-, Amarillo- og Chinook-humle, og vatn frå nyebrønnen. Impulsbrygging – færre deltakarar enn vanleg, men Hausneskarane var på plass.",
+      "historyNames": [
+        "Hausnesbrogg&Mjøstølen bryggeri - Jolastøl (8%)"
+      ]
+    },
+    {
+      "name": "Hausnesbrogg Smårips",
+      "brewery": "Hausnesbrogg",
+      "style": "Farmhouse ale / heimabrygg",
+      "abv": 5.5,
+      "source": "heimebrygg",
+      "image": "products/images/hausnesbrogg-smarips.jpg",
+      "untappdUrl": "https://untappd.com/b/hausnesbrogg-smarips/7656923",
+      "description": "10 liter som ikkje fekk plass under Jolastøl-brygginga, og fekk sine tilmålte 2 timar aleine i storkjelen på kjøkkenet. Eksperimenteringsoffiseren heiv i rips- og solbærsaft og honning. Amarillo, Cascade og Tettnanger. Umiddelbar reaksjon frå bryggarane: «Uff, og urk.»"
+    }
   ]
 }
