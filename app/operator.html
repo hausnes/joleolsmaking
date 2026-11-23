@@ -20,7 +20,7 @@
     <span class="tvbar-label">Storskjermen:</span>
     <button class="tvmode" data-mode="dashboard">📊 Oversikt</button>
     <button class="tvmode" data-mode="beer">🍺 Vis ølet</button>
-    <button class="tvmode" data-mode="reveal" id="tv-reveal-again" title="Spel av avsløringa på nytt">🥁 Avsløring</button>
+    <button class="tvmode" data-mode="timeline" title="Alle øla i rekkjefølgje, med sitat og hendingar">🕰️ Tidslinje</button>
     <span class="tvbar-group">
       <button class="tvmode" data-mode="awards">🏆 Kåring</button>
       <button id="award-prev" class="btn small" title="Førre kåring">◀</button>
@@ -72,13 +72,15 @@
             <div id="current-meta" class="muted"></div>
             <h2 id="current-name"></h2>
             <div id="current-avg" class="current-avg"></div>
+            <label class="checkin">🕰️ Sjekka inn kl. <input type="time" id="checkin-time"></label>
           </div>
         </div>
         <form id="score-form" class="scores" autocomplete="off"></form>
-        <p class="hint">Skriv <kbd>3,75</kbd>, <kbd>375</kbd> eller <kbd>35</kbd> (=3,5). <kbd>n/a</kbd> = smakte ikkje. <kbd>Enter</kbd> hoppar vidare.</p>
+        <p class="hint">Skriv <kbd>3,75</kbd>, <kbd>375</kbd> eller <kbd>35</kbd> (=3,5). <kbd>n/a</kbd> = var ikkje med / avstår. <kbd>Enter</kbd> hoppar vidare.
+          Karakterane syner på storskjermen med ein gong, og oppsummeringa kjem automatisk når alle har karakter eller <kbd>n/a</kbd>.</p>
         <div class="row actions">
-          <button id="reveal" class="btn primary big">🥁 Avslør på storskjermen</button>
-          <button id="unreveal" class="btn ghost" hidden>↩︎ Opne for endringar</button>
+          <span id="summary-status" class="summary-status"></span>
+          <button id="force-summary" class="btn ghost">📊 Vis oppsummering no</button>
         </div>
       </div>
 
@@ -86,6 +88,9 @@
         <h3>💬 Sitat / morosame ting</h3>
         <div class="row">
           <select id="quote-person"><option value="">– Ingen bestemt –</option></select>
+          <select id="quote-beer" title="Kva øl sitatet høyrer til"></select>
+        </div>
+        <div class="row" style="margin-top:0.5rem">
           <input id="quote-text" placeholder="«Han veks på meg» …" required>
           <button class="btn">Legg til</button>
         </div>

@@ -10,9 +10,12 @@ node server.mjs        # eller: npm start
 
 1. Opne <http://localhost:8026/app/operator.html> på PC-en som styrer showet. Første gong blir kvelden oppretta frå `data/lineup/<år>.json`.
 2. Trykk **📺 Opne storskjerm**, dra vindauget over på TV-en og dobbeltklikk for fullskjerm. Trykk 🔇 øvst i hjørnet ein gong for å slå på lyd.
-3. Vel eit øl og trykk **▶**. Då viser storskjermen ølet med bilete og info frå Vinmonopolet. Skriv inn karakterane (`3,75`, `375` eller `35`; `n/a` = smakte ikkje) og trykk **🥁 Avslør**.
+3. Vel eit øl og trykk **▶**. Då blir ølet sjekka inn med klokkeslett, og storskjermen viser bilete og info frå Vinmonopolet. Klokkeslettet kan rettast på registreringssida. Skriv inn karakterane (`3,75`, `375` eller `35`). Dei dukkar opp på storskjermen med ein gong, og når alle har karakter eller `n/a` (var ikkje med / avstår), kjem oppsummeringa automatisk. **📊 Vis oppsummering no** viser ho før alle har stemt.
+   - Går du vidare før alle har stemt, tel ølet med likevel. Du kan gå tilbake (▶ på ølet) og fylle inn karakterane seinare, til dømes når nokon kjem tilbake.
 4. Hendingar registrerer du med klikk i tabellen, eller med hurtigtastar: `d` dobesøk, `s` søling, `f` fis/hikk, `i` idioti, `k` krenking, og deretter persontalet. Høgreklikk trekkjer frå.
-5. Til slutt: **🏆 Kåring** og ◀ ▶ for å bla gjennom kåringane.
+5. Sitat blir knytte til ølet som er i gang, men du kan velje eit anna øl i lista ved sida av.
+6. **🕰️ Tidslinje** viser alle øla i rekkjefølgja dei vart sjekka inn, med snitt, sitat og hendingar. Ho blar sjølv vidare kvart 12. sekund og passar fint i pausar og på slutten av kvelden.
+7. Til slutt: **🏆 Kåring** og ◀ ▶ for å bla gjennom kåringane.
 
 Alt blir lagra fortløpande i `data/events/<år>.json`, med tryggleikskopiar i `data/events/backups/` kvart minutt. Serveren lyttar berre på `localhost`, og ingenting krev internett. Lagringa toler at nettlesaren blir lukka eller at serveren blir starta på nytt.
 

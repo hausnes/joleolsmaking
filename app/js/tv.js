@@ -2,9 +2,9 @@ import { createStore, currentYear } from "./store.js";
 import { loadHistory, loadPeople, findPrevious, imageUrl } from "./data.js";
 import {
   CATEGORIES, categoryById, beerAverage, givenScores, doneBeers, ranking, personStats, counts,
-  beerOutliers, trend, awards, allTimePersonAverages, fmt,
+  beerOutliers, trend, awards, allTimePersonAverages, fmt, clock, minutesSincePrevious, tempo, checkedIn,
 } from "./stats.js";
-import { toggleSound, drumroll, crash, flip, ding, boing, fanfare } from "./sound.js";
+import { toggleSound, crash, ding, boing, fanfare } from "./sound.js";
 
 const $ = (s, el = document) => el.querySelector(s);
 const esc = (s) =>
@@ -19,7 +19,7 @@ let history = [];
 let allTime = {};
 let people = [];
 let lastKey = null;
-let timers = [];
+let lastGiven = new Set(); // «øl|person» som alt viste karakter – berre nye brikker skal sprette inn
 let prev = null; // førre tilstand, for å oppdage nye hendingar
 
 // ---------- Små byggjeklossar ----------
@@ -134,11 +134,20 @@ function trendSvg(s) {
   const my = vals.reduce((a, b) => a + b, 0) / n;
   const slope = vals.reduce((a, v, i) => a + (i - mx) * (v - my), 0) / vals.reduce((a, _, i) => a + (i - mx) ** 2, 0);
   const verdict = slope > 0.03 ? "Ja! Me blir snillare ↗" : slope < -0.03 ? "Nei – strengare og strengare ↘" : "Stødig som fjell →";
+  // Vis klokkeslett under punkta – men ikkje fleire enn det er plass til
+  const every = Math.ceil(n / 7);
+  const labels = t
+    .map((r, i) =>
+      i % every === 0 || i === n - 1
+        ? `<span style="left:${(x(i) / W) * 100}%">${clock(r.beer.startedAt)}</span>`
+        : ""
+    )
+    .join("");
   return `<svg viewBox="0 0 ${W} ${H}" class="trend" preserveAspectRatio="none">
       <line x1="${x(0)}" x2="${x(n - 1)}" y1="${y(my - slope * mx)}" y2="${y(my + slope * mx)}" class="trend-fit"/>
       <polyline points="${t.map((r, i) => `${x(i)},${y(r.average)}`).join(" ")}" class="trend-line"/>
       ${t.map((r, i) => `<circle cx="${x(i)}" cy="${y(r.average)}" r="6" style="fill:${scoreColor(r.average)}"/>`).join("")}
-    </svg><p class="verdict">${verdict}</p>`;
+    </svg><div class="trend-times">${labels}</div><p class="verdict">${verdict}</p>`;
 }
 
 function viewDashboard(s) {
@@ -167,12 +176,16 @@ function viewDashboard(s) {
 
   const quotes = s.quotes.slice(-3).reverse();
   const queued = s.beers.filter((b) => b.status !== "done").slice(0, 6);
+  const started = checkedIn(s);
+  const pace = tempo(s);
 
   return `<section class="dash enter-soft">
     <header class="dash-head">
       <h1>Joleølsmaking ${year}</h1>
       <div class="dash-stats">
         <span><b>${total}</b>/${s.beers.length} øl</span>
+        ${started.length ? `<span>Første øl <b>${clock(started[0].startedAt)}</b></span>` : ""}
+        ${pace ? `<span>Tempo <b>${pace}</b> min/øl</span>` : ""}
         <span>Kveldens snitt <b>${fmt(nightAvg)}</b>${lastYearAvg ? ` <small>(i fjor ${fmt(lastYearAvg)})</small>` : ""}</span>
       </div>
     </header>
@@ -186,13 +199,20 @@ function viewDashboard(s) {
             <span class="pos">${i + 1}</span>
             ${bottle(r.beer, "mini")}
             <span class="nm">${esc(r.beer.name)}</span>
+            <span class="tm">${clock(r.beer.startedAt)}</span>
             <span class="bar"><i style="width:${(r.average / 5) * 100}%;background:${scoreColor(r.average)}"></i></span>
             <b>${fmt(r.average)}</b>
           </li>`
         )
         .join("")}</ol>
       ${rank.length > 8 ? `<p class="muted small">+ ${rank.length - 8} til</p>` : ""}
-      ${queued.length ? `<h3 class="queued-head">Står att</h3><ul class="queued">${queued.map((b) => `<li>${esc(b.name)}</li>`).join("")}</ul>` : ""}
+      ${queued.length ? `<h3 class="queued-head">Står att</h3><ul class="queued">${queued
+        .map((b) =>
+          b.startedAt
+            ? `<li class="now">${esc(b.name)} <span>sjekka inn ${clock(b.startedAt)}</span></li>`
+            : `<li>${esc(b.name)}</li>`
+        )
+        .join("")}</ul>` : ""}
     </div>
 
     <div class="card people">
@@ -245,6 +265,28 @@ function viewDashboard(s) {
   </section>`;
 }
 
+function checkinBadge(s, beer) {
+  if (!beer.startedAt) return "";
+  const since = minutesSincePrevious(s, beer);
+  return `<div class="checkin"><span class="checkin-icon">🕰️</span><span>Sjekka inn <b>${clock(beer.startedAt)}</b>${
+    since != null ? `<small>${since} min etter førre øl</small>` : `<small>Kveldens første øl!</small>`
+  }</span></div>`;
+}
+
+const scoreText = (v) => (v === null ? "–" : v === undefined ? "…" : fmt(v));
+
+function scoreTiles(s, beer) {
+  const people = s.participants;
+  return `<div class="tiles" style="--n:${Math.max(people.length, 4)}">${people
+    .map((p) => {
+      const v = beer.scores?.[p];
+      const state = typeof v === "number" ? "given" : v === null ? "skipped" : "waiting";
+      return `<div class="tile ${state}" data-person="${esc(p)}" ${state === "given" ? `style="--c:${scoreColor(v)}"` : ""}>
+        <span class="tile-score">${scoreText(v)}</span><span class="tile-name">${esc(p)}</span></div>`;
+    })
+    .join("")}</div>`;
+}
+
 function viewBeer(s, beer) {
   const idx = s.beers.indexOf(beer) + 1;
   const ch = beer.characteristics ?? {};
@@ -253,12 +295,14 @@ function viewBeer(s, beer) {
     ["Lukt", beer.smell],
     ["Smak", beer.taste],
   ].filter(([, v]) => v);
-  const registered = s.participants.map((p) => [p, p in (beer.scores ?? {})]);
-  const nReg = registered.filter(([, r]) => r).length;
+  const nReg = s.participants.filter((p) => p in (beer.scores ?? {})).length;
   return `<section class="beer-view enter">
     <div class="beer-img">${bottle(beer, "big")}</div>
     <div class="beer-info">
-      <p class="kicker">Øl ${idx} av ${s.beers.length}${brewer(beer) ? ` · ${esc(brewer(beer))}` : ""}</p>
+      <div class="beer-top">
+        <p class="kicker">Øl ${idx} av ${s.beers.length}${brewer(beer) ? ` · ${esc(brewer(beer))}` : ""}</p>
+        ${checkinBadge(s, beer)}
+      </div>
       <h1>${esc(beer.name)}</h1>
       <div class="chips">${meta(beer)}</div>
       ${desc.length ? `<dl class="desc">${desc.map(([k, v]) => `<dt>${k}</dt><dd>${esc(v)}</dd>`).join("")}</dl>` : ""}
@@ -269,97 +313,54 @@ function viewBeer(s, beer) {
       }
       ${beer.goodFor?.length ? `<p class="goodfor">Passar til: ${beer.goodFor.map(esc).join(", ")}</p>` : ""}
       ${previousChips(beer)}
-      <div class="registered">
-        <span class="reg-label">${nReg === s.participants.length ? "Alle har stemt – klar for avsløring!" : `Karakterar inne: ${nReg}/${s.participants.length}`}</span>
-        ${registered.map(([p, r]) => `<span class="reg ${r ? "yes" : ""}">${r ? "✓" : "…"} ${esc(p)}</span>`).join("")}
-      </div>
+      <p class="reg-label">Karakterar inne: ${nReg}/${s.participants.length} – oppsummeringa kjem når alle har stemt</p>
+      ${scoreTiles(s, beer)}
     </div>
   </section>`;
 }
 
-function viewReveal(s, beer) {
-  const scores = s.participants.filter((p) => typeof beer.scores?.[p] === "number").map((p) => [p, beer.scores[p]]);
-  const skipped = s.participants.filter((p) => beer.scores?.[p] === null);
-  return `<section class="reveal">
-    <header class="reveal-head">
-      ${bottle(beer, "small")}
-      <div><p class="kicker">Øl ${s.beers.indexOf(beer) + 1} av ${s.beers.length}</p><h1>${esc(beer.name)}</h1></div>
-    </header>
-    <div class="cards" style="--n:${Math.max(scores.length, 4)}">${scores
-      .map(
-        ([p, v]) => `<div class="flip" data-person="${esc(p)}"><div class="flip-inner">
-          <div class="face front">?</div>
-          <div class="face back" style="--c:${scoreColor(v)}">${fmt(v)}</div>
-        </div><span class="flip-name">${esc(p)}</span></div>`
-      )
-      .join("")}</div>
-    ${skipped.length ? `<p class="muted center">Smakte ikkje: ${skipped.map(esc).join(", ")}</p>` : ""}
-    <div class="result" hidden>
-      <div class="big-avg"><span id="avg-num">0,00</span><small>snitt</small></div>
-      <div class="facts" id="facts"></div>
-    </div>
-  </section>`;
-}
-
-function runReveal(s, beer) {
-  const cards = [...stage.querySelectorAll(".flip")];
-  const step = cards.length > 8 ? 550 : 750;
-  drumroll((cards.length * step) / 1000 + 0.6);
-  cards.forEach((card, i) =>
-    timers.push(
-      setTimeout(() => {
-        card.classList.add("flipped");
-        flip();
-      }, 600 + i * step)
-    )
-  );
-  const finish = 600 + cards.length * step + 500;
-  timers.push(
-    setTimeout(() => {
-      crash();
-      const res = stage.querySelector(".result");
-      res.hidden = false;
-      const a = beerAverage(beer) ?? 0;
-      const num = $("#avg-num");
-      num.style.color = scoreColor(a);
-      const t0 = performance.now();
-      const anim = (t) => {
-        const p = Math.min(1, (t - t0) / 1200);
-        num.textContent = fmt(a * (1 - (1 - p) ** 3));
-        if (p < 1) requestAnimationFrame(anim);
-      };
-      requestAnimationFrame(anim);
-      timers.push(setTimeout(() => showFacts(s, beer), 1400));
-    }, finish)
-  );
-}
-
-function showFacts(s, beer) {
+function facts(s, beer) {
   const o = beerOutliers(beer);
-  const facts = [];
+  const out = [];
   const rank = ranking(s);
   const pos = rank.findIndex((r) => r.beer.id === beer.id) + 1;
-  if (pos) facts.push(`<li>📊 Plass <b>${pos}</b> av ${rank.length} så langt i kveld</li>`);
+  if (pos) out.push(`📊 Plass <b>${pos}</b> av ${rank.length} så langt i kveld`);
   if (o && o.spread > 0) {
-    facts.push(`<li>⬆️ Høgast: <b>${esc(o.highest[0])}</b> (${fmt(o.highest[1])})</li>`);
-    facts.push(`<li>⬇️ Lågast: <b>${esc(o.lowest[0])}</b> (${fmt(o.lowest[1])})</li>`);
+    out.push(`😇 Snillast: <b>${esc(o.highest[0])}</b> (${fmt(o.highest[1])})`);
+    out.push(`🧊 Strengast: <b>${esc(o.lowest[0])}</b> (${fmt(o.lowest[1])})`);
     if (Math.abs(o.contrarian[1] - o.average) >= 0.75)
-      facts.push(`<li>🦄 Kontrær: <b>${esc(o.contrarian[0])}</b> – ${fmt(Math.abs(o.contrarian[1] - o.average))} frå snittet</li>`);
+      out.push(`🦄 Kontrær: <b>${esc(o.contrarian[0])}</b> – ${fmt(Math.abs(o.contrarian[1] - o.average))} frå snittet`);
   } else if (o) {
-    facts.push(`<li>🤝 Heilt einige – alle gav ${fmt(o.average)}!</li>`);
+    out.push(`🤝 Heilt einige – alle gav ${fmt(o.average)}!`);
   }
   const before = findPrevious(beer, history);
   if (before.length) {
     const last = before[before.length - 1];
     const d = (beerAverage(beer) ?? 0) - last.average;
-    facts.push(
-      `<li>${d > 0.05 ? "📈" : d < -0.05 ? "📉" : "➡️"} I ${last.year}: ${fmt(last.average)} → i år ${fmt(beerAverage(beer))}</li>`
-    );
+    out.push(`${d > 0.05 ? "📈" : d < -0.05 ? "📉" : "➡️"} I ${last.year}: ${fmt(last.average)} → i år ${fmt(beerAverage(beer))}`);
   }
-  const f = $("#facts");
-  if (!f) return;
-  f.innerHTML = `<ul>${facts.join("")}</ul>`;
-  f.classList.add("show");
+  const missing = s.participants.filter((p) => !(p in (beer.scores ?? {})));
+  if (missing.length) out.push(`⏳ Manglar framleis: ${missing.map(esc).join(", ")}`);
+  return out.map((f, i) => `<li style="--i:${i}">${f}</li>`).join("");
+}
+
+/** Oppsummering når alle har stemt: alle karakterane, snittet og kven som skilde seg ut. */
+function viewResult(s, beer) {
+  const a = beerAverage(beer);
+  return `<section class="result-view enter">
+    <header class="reveal-head">
+      ${bottle(beer, "small")}
+      <div>
+        <p class="kicker">Øl ${s.beers.indexOf(beer) + 1} av ${s.beers.length}${beer.startedAt ? ` · sjekka inn ${clock(beer.startedAt)}` : ""}</p>
+        <h1>${esc(beer.name)}</h1>
+      </div>
+    </header>
+    ${scoreTiles(s, beer)}
+    <div class="result">
+      <div class="big-avg"><span style="color:${scoreColor(a)}">${fmt(a)}</span><small>snitt</small></div>
+      <ul class="facts">${facts(s, beer)}</ul>
+    </div>
+  </section>`;
 }
 
 function viewAwards(s) {
@@ -378,6 +379,81 @@ function viewAwards(s) {
   </section>`;
 }
 
+// ---------- Tidslinje: alle øla i rekkjefølgje, med sitat og hendingar ----------
+
+const TIMELINE_PER_PAGE = 4;
+const TIMELINE_PAGE_MS = 12_000;
+
+function timelinePage(s) {
+  const pages = Math.max(1, Math.ceil(checkedIn(s).length / TIMELINE_PER_PAGE));
+  return { pages, page: Math.floor(Date.now() / TIMELINE_PAGE_MS) % pages };
+}
+
+function viewTimeline(s) {
+  const list = checkedIn(s);
+  if (!list.length) return `<section class="message enter"><h1>Tidslinja startar når første øl er sjekka inn</h1></section>`;
+  const { pages, page } = timelinePage(s);
+  const slice = list.slice(page * TIMELINE_PER_PAGE, (page + 1) * TIMELINE_PER_PAGE);
+  const loose = s.quotes.filter((q) => !q.beerId);
+
+  const col = (b) => {
+    const i = list.indexOf(b);
+    const a = beerAverage(b);
+    const done = b.status === "done";
+    const quotes = s.quotes.filter((q) => q.beerId === b.id);
+    const shown = quotes.slice(-3);
+    const inc = s.incidents.filter((x) => x.beerId === b.id);
+    const since = minutesSincePrevious(s, b);
+    return `<article class="tl-col ${b.id === s.currentBeerId && !done ? "now" : ""}">
+      <div class="tl-dot"></div>
+      <div class="tl-time">${clock(b.startedAt)}${since != null ? `<small>+${since} min</small>` : `<small>start</small>`}</div>
+      <div class="tl-card">
+        <div class="tl-head">
+          ${bottle(b, "tl")}
+          <div class="tl-title">
+            <span class="tl-num">Øl ${i + 1}</span>
+            <h3>${esc(b.name)}</h3>
+          </div>
+        </div>
+        <div class="tl-score">${
+          done && a != null
+            ? `<b style="color:${scoreColor(a)}">${fmt(a)}</b><span>snitt</span>`
+            : `<span class="tl-pending">🍺 smakar no …</span>`
+        }</div>
+        ${
+          shown.length
+            ? `<ul class="tl-quotes">${shown
+                .map((q) => `<li>«${esc(q.text)}»${q.person ? `<span>– ${esc(q.person)}</span>` : ""}</li>`)
+                .join("")}</ul>${quotes.length > shown.length ? `<p class="tl-more">+ ${quotes.length - shown.length} sitat til</p>` : ""}`
+            : `<p class="tl-empty">Ingen sitat</p>`
+        }
+        ${
+          inc.length
+            ? `<div class="tl-inc">${inc
+                .map((x) => `<span title="${esc(categoryById[x.type]?.label ?? x.type)}">${categoryById[x.type]?.icon ?? "•"} ${esc(x.person)}</span>`)
+                .join("")}</div>`
+            : ""
+        }
+      </div>
+    </article>`;
+  };
+
+  return `<section class="timeline enter">
+    <header class="tl-header">
+      <h1>Kveldens tidslinje</h1>
+      <div class="tl-meta">${
+        pages > 1 ? `<span class="tl-pages">${Array.from({ length: pages }, (_, p) => `<i class="${p === page ? "on" : ""}"></i>`).join("")}</span>` : ""
+      }<span>${list.length} øl sidan ${clock(list[0].startedAt)}</span></div>
+    </header>
+    <div class="tl-track" style="--cols:${TIMELINE_PER_PAGE}">${slice.map(col).join("")}</div>
+    ${
+      loose.length
+        ? `<p class="tl-loose">💬 ${loose.slice(-2).map((q) => `«${esc(q.text)}»${q.person ? ` – ${esc(q.person)}` : ""}`).join("  ·  ")}</p>`
+        : ""
+    }
+  </section>`;
+}
+
 const viewMessage = (s) => `<section class="message enter-pop"><h1>${esc(s.tv.message)}</h1></section>`;
 
 // ---------- Render ----------
@@ -390,35 +466,40 @@ function render(s, status) {
 
   announce(s);
 
-  const mode = s.tv?.mode ?? "dashboard";
+  let mode = s.tv?.mode ?? "dashboard";
+  if (mode === "reveal") mode = "beer"; // eldre tilstand frå før avsløringa vart fjerna
   const beer = s.beers.find((b) => b.id === s.tv?.beerId) ?? s.beers.find((b) => b.id === s.currentBeerId);
+  const done = beer?.status === "done";
   // Kva som må til for å starte visninga på nytt (med animasjon)
   const key =
-    mode === "reveal" ? `reveal|${beer?.id}|${s.tv.seq}` :
     mode === "awards" ? `awards|${s.tv.awardIndex}|${s.tv.seq}` :
     mode === "message" ? `message|${s.tv.message}|${s.tv.seq}` :
-    mode === "beer" ? `beer|${beer?.id}` : "dashboard";
+    mode === "timeline" ? `timeline|${timelinePage(s).page}` :
+    mode === "beer" ? `beer|${beer?.id}|${done ? "result" : "live"}` : "dashboard";
   const fresh = key !== lastKey;
 
-  if (mode === "reveal" && !fresh) return; // ikkje forstyrr avsløringa
-  if (fresh) {
-    timers.forEach(clearTimeout);
-    timers = [];
-  }
-
   let html;
-  if (mode === "beer" && beer) html = viewBeer(s, beer);
-  else if (mode === "reveal" && beer) html = viewReveal(s, beer);
+  if (mode === "beer" && beer) html = done ? viewResult(s, beer) : viewBeer(s, beer);
   else if (mode === "awards") html = viewAwards(s);
+  else if (mode === "timeline") html = viewTimeline(s);
   else if (mode === "message") html = viewMessage(s);
   else html = viewDashboard(s);
 
   if (!fresh) html = html.replace(/\benter(-soft|-pop)?\b/, ""); // ingen inngangsanimasjon ved små oppdateringar
+  const wasLive = lastKey === `beer|${beer?.id}|live`;
   stage.innerHTML = html;
   stage.dataset.mode = mode;
   lastKey = key;
 
-  if (fresh && mode === "reveal" && beer) runReveal(s, beer);
+  const given = new Set();
+  for (const t of stage.querySelectorAll(".tile.given")) {
+    const k = `${beer?.id}|${t.dataset.person}`;
+    given.add(k);
+    if (!fresh && !lastGiven.has(k)) t.classList.add("new");
+  }
+  lastGiven = given;
+
+  if (fresh && mode === "beer" && done && wasLive) crash(); // siste karakter kom inn
   if (fresh && mode === "awards") fanfare();
 }
 
@@ -446,7 +527,10 @@ function showToast(html, ms = 5000) {
   const el = document.createElement("div");
   el.className = "toast";
   el.innerHTML = html;
-  $("#toasts").append(el);
+  const box = $("#toasts");
+  box.append(el);
+  // Aldri meir enn 3 varsel samstundes – dei eldste forsvinn først
+  while (box.children.length > 3) box.firstElementChild.remove();
   setTimeout(() => el.classList.add("out"), ms);
   setTimeout(() => el.remove(), ms + 600);
 }
@@ -488,3 +572,5 @@ try {
 store.live();
 // Oppdater klokka/visinga av og til (t.d. tidsavhengige ting)
 setInterval(() => store.state && lastKey === "dashboard" && render(store.state, store.status), 60_000);
+// Tidslinja blar sjølv vidare til neste side
+setInterval(() => store.state && lastKey?.startsWith("timeline") && render(store.state, store.status), 1000);

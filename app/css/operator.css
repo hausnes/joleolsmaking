@@ -160,6 +160,10 @@ input:focus, select:focus { outline: 2px solid var(--accent); outline-offset: 0;
 .current-head h2 { font-size: 1.4rem; margin: 0.15rem 0; }
 .current-avg { font-size: 0.9rem; color: var(--muted); }
 .current-avg b { color: var(--accent); font-size: 1.05rem; }
+.checkin { display: inline-flex; align-items: center; gap: 0.4rem; margin-top: 0.35rem; font-size: 0.9rem; color: var(--muted); }
+.checkin input { padding: 0.15rem 0.4rem; font-variant-numeric: tabular-nums; }
+.summary-status { flex: 1; font-size: 0.9rem; color: var(--muted); }
+.beer .time { color: var(--gold); font-weight: 700; }
 
 .scores { display: grid; gap: 0.35rem; }
 .score-row { display: grid; grid-template-columns: 1fr 90px 90px; gap: 0.6rem; align-items: center; }
@@ -172,7 +176,8 @@ input:focus, select:focus { outline: 2px solid var(--accent); outline-offset: 0;
 
 .quote-form { margin-top: 1.4rem; padding-top: 1rem; border-top: 1px solid var(--line); }
 .quote-form h3 { margin-top: 0; }
-.quote-form select { max-width: 9rem; }
+.quote-form select { max-width: 11rem; }
+.quote-form #quote-beer { flex: 1; max-width: none; min-width: 0; }
 .quotes, .log, .participants { list-style: none; margin: 0.6rem 0 0; padding: 0; display: grid; gap: 0.3rem; font-size: 0.9rem; }
 
 /* Hendingar */

@@ -1,6 +1,6 @@
 import { createStore, currentYear, beersFromLineup, manualBeer, uid } from "./store.js";
 import { imageUrl, loadPeople } from "./data.js";
-import { CATEGORIES, categoryById, beerAverage, counts, fmt, parseScore, awards } from "./stats.js";
+import { CATEGORIES, categoryById, beerAverage, counts, fmt, parseScore, awards, syncStatus, clock } from "./stats.js";
 
 const $ = (s, el = document) => el.querySelector(s);
 const esc = (s) =>
@@ -74,9 +74,7 @@ function renderTvBar(s) {
   for (const b of document.querySelectorAll(".tvmode")) b.classList.toggle("active", b.dataset.mode === s.tv.mode);
   const list = awards(s);
   $("#award-pos").textContent = list.length ? `${Math.min(s.tv.awardIndex ?? 0, list.length - 1) + 1}/${list.length}` : "0/0";
-  const cur = current(s);
-  $('.tvmode[data-mode="beer"]').disabled = !cur;
-  $('.tvmode[data-mode="reveal"]').disabled = !cur || cur.status !== "done";
+  $('.tvmode[data-mode="beer"]').disabled = !current(s);
 }
 
 function renderLineup(s) {
@@ -89,7 +87,7 @@ function renderLineup(s) {
         <span class="thumb">${img ? `<img src="${esc(img)}" alt="">` : "🍺"}</span>
         <span class="beer-text">
           <span class="beer-name">${esc(b.name)}</span>
-          <span class="muted small">${[b.style, b.abv != null ? `${fmt(b.abv, 1)} %` : null, SOURCE_LABEL[b.source]]
+          <span class="muted small">${b.startedAt ? `<b class="time">🕰️ ${clock(b.startedAt)}</b> · ` : ""}${[b.style, b.abv != null ? `${fmt(b.abv, 1)} %` : null, SOURCE_LABEL[b.source]]
             .filter(Boolean)
             .map(esc)
             .join(" · ")}${STATUS_LABEL[b.status] ? ` · <b>${STATUS_LABEL[b.status]}</b>` : ""}</span>
@@ -151,12 +149,46 @@ function renderCurrent(s) {
     if (document.activeElement !== input && !input.classList.contains("invalid")) input.value = shown;
     input.closest(".score-row").querySelector(".score-val").textContent = v === undefined ? "" : v === null ? "smakte ikkje" : "✓";
   }
+  const timeInput = $("#checkin-time");
+  if (document.activeElement !== timeInput) timeInput.value = cur.startedAt ? clock(cur.startedAt) : "";
+
+  const missing = s.participants.filter((p) => !(p in cur.scores));
   const done = cur.status === "done";
-  $("#reveal").textContent = done ? "🥁 Spel avsløringa på nytt" : "🥁 Avslør på storskjermen";
-  $("#unreveal").hidden = !done;
+  $("#force-summary").hidden = done || !givenCount(cur);
+  $("#summary-status").innerHTML = done
+    ? missing.length
+      ? `✅ Oppsummering vist – manglar <b>${missing.map(esc).join(", ")}</b> (kan fyllast inn seinare)`
+      : "✅ Alle har stemt – oppsummeringa er på storskjermen"
+    : `⏳ Ventar på ${missing.length ? missing.map(esc).join(", ") : "…"}`;
 }
 
+/** Byt ut alternativa i ein <select> utan å miste det som er valt. */
+function setOptions(select, html, fallback = "") {
+  const keep = select.value;
+  select.innerHTML = html;
+  select.value = [...select.options].some((o) => o.value === keep) ? keep : fallback;
+}
+
+let quoteBeerFor = null; // kva øl som var i gang sist me sette standardval for sitat-øl
 function renderQuotes(s) {
+  const beerName = (id) => {
+    const n = s.beers.find((b) => b.id === id)?.name;
+    return n && n.length > 28 ? `${n.slice(0, 27)}…` : n;
+  };
+  // Sitat-øl: standard er ølet som er i gang, men kan endrast (t.d. til førre øl)
+  const started = s.beers.filter((b) => b.startedAt || b.id === s.currentBeerId);
+  const sel = $("#quote-beer");
+  setOptions(
+    sel,
+    `<option value="">– Ikkje knytt til eit øl –</option>` +
+      started.map((b) => `<option value="${b.id}">🍺 ${esc(b.name)}</option>`).join(""),
+    s.currentBeerId ?? ""
+  );
+  if (quoteBeerFor !== s.currentBeerId) {
+    quoteBeerFor = s.currentBeerId;
+    sel.value = s.currentBeerId ?? "";
+  }
+
   $("#quotes").innerHTML = s.quotes
     .slice()
     .reverse()
@@ -164,7 +196,8 @@ function renderQuotes(s) {
     .map(
       (q) => `<li data-id="${q.id}"><span class="muted small">${time(q.at)}</span> «${esc(q.text)}»${
         q.person ? ` <span class="muted">– ${esc(q.person)}</span>` : ""
-      } <button class="link danger" data-act="del-quote" title="Slett">✕</button></li>`
+      }${beerName(q.beerId) ? ` <span class="muted small">· 🍺 ${esc(beerName(q.beerId))}</span>` : ""}
+      <button class="link danger" data-act="del-quote" title="Slett">✕</button></li>`
     )
     .join("");
 }
@@ -195,8 +228,10 @@ function renderIncidents(s) {
 }
 
 function renderPeople(s) {
-  $("#quote-person").innerHTML =
-    `<option value="">– Ingen bestemt –</option>` + s.participants.map((p) => `<option>${esc(p)}</option>`).join("");
+  setOptions(
+    $("#quote-person"),
+    `<option value="">– Ingen bestemt –</option>` + s.participants.map((p) => `<option>${esc(p)}</option>`).join("")
+  );
   $("#participants").innerHTML = s.participants
     .map(
       (p, i) => `<li data-person="${esc(p)}"><kbd>${i + 1}</kbd> ${esc(p)}
@@ -236,7 +271,19 @@ $("#lineup").addEventListener("click", (e) => {
   const id = li.dataset.id;
   const act = btn?.dataset.act;
   if (act === "start") {
+    const prevBeer = current();
+    const target = store.state.beers.find((x) => x.id === id);
+    // Berre når me går vidare til eit nytt øl – ikkje når me går tilbake for å fylle inn ein karakter
+    const unfinished = prevBeer && target.status === "queued" && prevBeer.status !== "done" && givenCount(prevBeer) > 0;
     store.update((s) => {
+      // Gjekk me vidare før alle hadde stemt? Då tel det førre ølet med likevel, og kan fyllast ut seinare.
+      if (unfinished) {
+        const p = current(s);
+        p.forcedDone = true;
+        syncStatus(p, s.participants);
+        p.status = "done";
+        p.revealedAt ??= new Date().toISOString();
+      }
       const b = s.beers.find((x) => x.id === id);
       s.currentBeerId = id;
       if (b.status === "queued") {
@@ -245,6 +292,7 @@ $("#lineup").addEventListener("click", (e) => {
       }
       s.tv = { ...s.tv, mode: "beer", beerId: id, seq: (s.tv.seq ?? 0) + 1 };
     });
+    if (unfinished) toast(`«${prevBeer.name}» manglar nokre karakterar – du kan gå tilbake og fylle dei inn seinare`, 4000);
     setTimeout(() => $("#score-form input")?.focus(), 0);
   } else if (act === "up" || act === "down") {
     store.update((s) => {
@@ -310,6 +358,7 @@ function commitScore(input) {
     const b = current(s);
     if (r.empty) delete b.scores[p];
     else b.scores[p] = r.value;
+    syncStatus(b, s.participants);
   });
   return true;
 }
@@ -321,30 +370,33 @@ scoreForm.addEventListener("keydown", (e) => {
   const inputs = [...scoreForm.querySelectorAll("input")];
   const next = inputs[inputs.indexOf(e.target) + 1];
   if (next) next.focus();
-  else $("#reveal").focus();
+  else if (!$("#force-summary").hidden) $("#force-summary").focus();
 });
 scoreForm.addEventListener("submit", (e) => e.preventDefault());
 
-$("#reveal").addEventListener("click", () => {
+$("#force-summary").addEventListener("click", () => {
   for (const input of scoreForm.querySelectorAll("input")) if (!commitScore(input)) return toast("Rett opp ugyldige karakterar først");
   const cur = current();
   if (!cur || beerAverage(cur) == null) return toast("Ingen karakterar registrerte enno");
-  const missing = store.state.participants.filter((p) => !(p in cur.scores));
-  if (missing.length && cur.status !== "done" && !confirm(`Manglar karakter frå ${missing.join(", ")}. Avsløre likevel?`)) return;
   store.update((s) => {
     const b = current(s);
-    if (b.status !== "done") b.revealedAt = new Date().toISOString();
+    b.forcedDone = true;
     b.status = "done";
-    s.tv = { ...s.tv, mode: "reveal", beerId: b.id, seq: (s.tv.seq ?? 0) + 1 };
+    b.revealedAt ??= new Date().toISOString();
+    s.tv = { ...s.tv, mode: "beer", beerId: b.id, seq: (s.tv.seq ?? 0) + 1 };
   });
 });
 
-$("#unreveal").addEventListener("click", () => {
+$("#checkin-time").addEventListener("change", (e) => {
+  const m = e.target.value.match(/^(\d{2}):(\d{2})$/);
+  if (!m) return;
   store.update((s) => {
     const b = current(s);
-    b.status = "tasting";
-    if (s.tv.mode === "reveal") s.tv = { ...s.tv, mode: "beer", seq: (s.tv.seq ?? 0) + 1 };
+    const d = b.startedAt ? new Date(b.startedAt) : new Date();
+    d.setHours(Number(m[1]), Number(m[2]), 0, 0);
+    b.startedAt = d.toISOString();
   });
+  toast(`Innsjekk endra til ${e.target.value}`);
 });
 
 // Storskjerm
@@ -391,9 +443,11 @@ $("#quote-form").addEventListener("submit", (e) => {
   const text = $("#quote-text").value.trim();
   if (!text) return;
   const person = $("#quote-person").value || null;
-  store.update((s) => s.quotes.push({ id: uid("q"), text, person, at: new Date().toISOString(), beerId: s.currentBeerId }));
+  const beerId = $("#quote-beer").value || null;
+  store.update((s) => s.quotes.push({ id: uid("q"), text, person, at: new Date().toISOString(), beerId }));
   $("#quote-text").value = "";
   $("#quote-person").value = "";
+  $("#quote-beer").value = store.state.currentBeerId ?? ""; // neste sitat gjeld truleg ølet som er i gang
 });
 $("#quotes").addEventListener("click", (e) => {
   if (e.target.dataset.act !== "del-quote") return;

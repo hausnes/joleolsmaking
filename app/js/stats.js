@@ -75,9 +75,52 @@ export function beerOutliers(beer) {
 export function trend(state) {
   return doneBeers(state)
     .slice()
-    .sort((a, b) => (a.revealedAt ?? 0) - (b.revealedAt ?? 0))
+    .sort((a, b) => checkinMs(a) - checkinMs(b))
     .map((b) => ({ beer: b, average: beerAverage(b) }))
     .filter((r) => r.average != null);
+}
+
+// ---------- Tidspunkt ----------
+
+/** Tidspunktet ølet vart sjekka inn (trykt ▶). */
+export const checkinMs = (b) => (b.startedAt ? Date.parse(b.startedAt) : Infinity);
+
+export const clock = (iso) =>
+  iso ? new Date(iso).toLocaleTimeString("nb-NO", { hour: "2-digit", minute: "2-digit" }) : "";
+
+/** Øl som er sjekka inn, i rekkjefølgja dei vart sjekka inn. */
+export const checkedIn = (state) => state.beers.filter((b) => b.startedAt).sort((a, b) => checkinMs(a) - checkinMs(b));
+
+/** Minutt sidan førre øl vart sjekka inn (null for det første). */
+export function minutesSincePrevious(state, beer) {
+  const list = checkedIn(state);
+  const i = list.findIndex((b) => b.id === beer.id);
+  if (i <= 0) return null;
+  return Math.round((checkinMs(list[i]) - checkinMs(list[i - 1])) / 60000);
+}
+
+/** Gjennomsnittleg tid mellom kvart øl, i minutt. */
+export function tempo(state) {
+  const list = checkedIn(state);
+  if (list.length < 2) return null;
+  return Math.round((checkinMs(list[list.length - 1]) - checkinMs(list[0])) / 60000 / (list.length - 1));
+}
+
+// ---------- Status ----------
+
+/** Alle deltakarane har anten gitt karakter eller n/a, og minst éin har gitt karakter. */
+export function isComplete(beer, participants) {
+  return participants.every((p) => p in (beer.scores ?? {})) && givenScores(beer).length > 0;
+}
+
+/** Set status ut frå karakterane: ferdig når alle har stemt (eller når oppsummeringa er tvinga fram). */
+export function syncStatus(beer, participants) {
+  if (isComplete(beer, participants)) {
+    if (beer.status !== "done") beer.revealedAt ??= new Date().toISOString();
+    beer.status = "done";
+  } else if (beer.status === "done" && !beer.forcedDone) {
+    beer.status = "tasting";
+  }
 }
 
 function winners(entries, pick, { min = true, filter = () => true } = {}) {
