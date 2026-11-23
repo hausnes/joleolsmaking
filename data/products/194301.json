@@ -1,0 +1,33 @@
+{
+  "id": "194301",
+  "name": "Kinn Tomasmesse",
+  "producer": "Kinn Bryggeri AS",
+  "country": "Norge",
+  "district": "Vestland",
+  "style": "Klosterstil",
+  "abv": 10.5,
+  "volumeCl": 75,
+  "price": 139.9,
+  "litrePrice": 186.53,
+  "color": "Mørk brun.",
+  "smell": "Aroma med nøtter, karamell, sitrus, gran og krydder..",
+  "taste": "Konsentrasjon og balanse.",
+  "method": "Brygging i åpne gjæringskar.",
+  "ingredients": "Vann, malt (bygg), humle, gjær, kandissirup, sukker",
+  "goodFor": [
+    "Aperitiff",
+    "Ost",
+    "Dessert"
+  ],
+  "characteristics": {
+    "fylde": 10,
+    "friskhet": 5,
+    "bitterhet": 5
+  },
+  "packaging": "Glass",
+  "selection": "Bestillingsutvalget",
+  "url": "https://www.vinmonopolet.no/Land/Norge/Vestland/Kinn/Kinn-Tomasmesse/p/194301",
+  "imageUrl": "https://bilder.vinmonopolet.no/cache/515x515-0/194301-1.jpg",
+  "image": "products/images/194301.jpg",
+  "fetchedAt": "2026-11-23T15:37:24.185Z"
+}

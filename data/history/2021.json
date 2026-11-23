@@ -1,0 +1,590 @@
+{
+  "year": 2021,
+  "participants": [
+    "Jo Bjørnar",
+    "Reid",
+    "Brita Karoline",
+    "Svein",
+    "Stian",
+    "Knut Marius",
+    "Jarle"
+  ],
+  "categories": {
+    "toilet": {
+      "label": "Dobesøk",
+      "counts": {
+        "Jo Bjørnar": 2.0,
+        "Reid": 2.0,
+        "Brita Karoline": 2.0,
+        "Svein": 1.0,
+        "Stian": 2.0,
+        "Knut Marius": 2.0,
+        "Jarle": 1.0
+      }
+    },
+    "spill": {
+      "label": "Søling",
+      "counts": {
+        "Brita Karoline": 2.0,
+        "Svein": 2.0,
+        "Stian": 2.0
+      }
+    },
+    "fart": {
+      "label": "Fising/hikking/gupling",
+      "counts": {
+        "Jo Bjørnar": 2.0,
+        "Jarle": 375.0
+      }
+    },
+    "idiocy": {
+      "label": "Generell idioti",
+      "counts": {
+        "Jo Bjørnar": 6.0,
+        "Brita Karoline": 1.0,
+        "Stian": 3.0
+      }
+    },
+    "offence": {
+      "label": "Krenking",
+      "counts": {
+        "Jo Bjørnar": 1.0,
+        "Reid": 1.0,
+        "Brita Karoline": 1.0,
+        "Svein": 2.0,
+        "Stian": 2.0,
+        "Knut Marius": 1.0,
+        "Jarle": 1.0
+      }
+    }
+  },
+  "beers": [
+    {
+      "order": 1,
+      "name": "Ægir Bryggeri - Ylir (7%)",
+      "brewery": "Ægir Bryggeri",
+      "beer": "Ylir",
+      "abv": 7.0,
+      "source": "pol",
+      "time": "17:50",
+      "vinmonopoletId": "13638402",
+      "untappdUrl": "https://untappd.com/b/aegir-bryggeri-ylir-julebrygg/509482",
+      "scores": {
+        "Jo Bjørnar": 4.0,
+        "Reid": 3.75,
+        "Brita Karoline": 4.0,
+        "Svein": 4.0,
+        "Stian": 3.5,
+        "Knut Marius": 3.5,
+        "Jarle": 3.5
+      },
+      "average": 3.75,
+      "comments": []
+    },
+    {
+      "order": 2,
+      "name": "Mjøstølen Bryggeri/Hausnesbrogg - Bryggenissen krydrar jola 2021 (6,5%)",
+      "brewery": "Mjøstølen Bryggeri/Hausnesbrogg",
+      "beer": "Bryggenissen krydrar jola 2021",
+      "abv": 6.5,
+      "source": "heimebrygg",
+      "time": "18:03",
+      "vinmonopoletId": null,
+      "untappdUrl": "https://untappd.com/b/mjostolen-bryggeri-bryggenissen-krydrar-jola-2021/4622062",
+      "scores": {
+        "Jo Bjørnar": 4.25,
+        "Reid": 4.25,
+        "Brita Karoline": 4.0,
+        "Svein": 4.75,
+        "Stian": 3.25,
+        "Knut Marius": 4.0,
+        "Jarle": 3.75
+      },
+      "average": 4.0357,
+      "comments": []
+    },
+    {
+      "order": 3,
+      "name": "ÅrgangsYlir frå Jarle",
+      "brewery": null,
+      "beer": null,
+      "abv": null,
+      "source": "heimebrygg",
+      "time": "18:03",
+      "vinmonopoletId": null,
+      "untappdUrl": null,
+      "scores": {
+        "Jo Bjørnar": 4.5,
+        "Reid": 4.0,
+        "Brita Karoline": 4.25,
+        "Svein": 4.5,
+        "Stian": 3.75,
+        "Knut Marius": 4.0,
+        "Jarle": 3.75
+      },
+      "average": 4.1071,
+      "comments": []
+    },
+    {
+      "order": 4,
+      "name": "Lervig - Hipster for christmas (13%)",
+      "brewery": "Lervig",
+      "beer": "Hipster for christmas",
+      "abv": 13.0,
+      "source": "pol",
+      "time": "18:22",
+      "vinmonopoletId": "13650502",
+      "untappdUrl": "https://untappd.com/b/lervig-hipster-for-christmas-2020-edition/4060922",
+      "scores": {
+        "Jo Bjørnar": 4.5,
+        "Reid": 3.5,
+        "Brita Karoline": 4.25,
+        "Svein": 4.0,
+        "Stian": 4.25,
+        "Knut Marius": 3.0,
+        "Jarle": 3.5
+      },
+      "average": 3.8571,
+      "comments": [
+        "tjuktflytande greier. Kva er dette? Sirup?"
+      ]
+    },
+    {
+      "order": 5,
+      "name": "Lervig - Hipster for christmas (13%) - boks",
+      "brewery": "Lervig",
+      "beer": "Hipster for christmas (13%) - boks",
+      "abv": 13.0,
+      "source": "pol",
+      "time": "18:22",
+      "vinmonopoletId": "12276402",
+      "untappdUrl": null,
+      "scores": {
+        "Jo Bjørnar": 4.25,
+        "Reid": 3.75,
+        "Brita Karoline": 4.5,
+        "Svein": 4.0,
+        "Stian": 4.25,
+        "Knut Marius": 3.25,
+        "Jarle": 3.75
+      },
+      "average": 3.9643,
+      "comments": []
+    },
+    {
+      "order": 6,
+      "name": "Kinn Bryggeri - Julefred (6,5%)",
+      "brewery": "Kinn Bryggeri",
+      "beer": "Julefred",
+      "abv": 6.5,
+      "source": "pol",
+      "time": "18:39",
+      "vinmonopoletId": "9520801",
+      "untappdUrl": "https://untappd.com/b/kinn-bryggeri-julefred-2021/4574161",
+      "scores": {
+        "Jo Bjørnar": 4.25,
+        "Reid": 4.0,
+        "Brita Karoline": 4.0,
+        "Svein": 4.0,
+        "Stian": 4.5,
+        "Knut Marius": 4.25,
+        "Jarle": 4.0
+      },
+      "average": 4.1429,
+      "comments": [
+        "Få vekk slimbobla di. Du kan sleppa unna nokon gasskammer om du lager god julemusikk"
+      ]
+    },
+    {
+      "order": 7,
+      "name": "Eik & Tid - Juleheliks (7,2%)",
+      "brewery": "Eik & Tid",
+      "beer": "Juleheliks",
+      "abv": 7.2,
+      "source": "pol",
+      "time": "18:57",
+      "vinmonopoletId": "12278402",
+      "untappdUrl": "https://untappd.com/b/eik-and-tid-juleheliks/4010299",
+      "scores": {
+        "Jo Bjørnar": 4.0,
+        "Reid": 3.75,
+        "Brita Karoline": 3.0,
+        "Svein": 3.75,
+        "Stian": 0.75,
+        "Knut Marius": 4.0,
+        "Jarle": 4.25
+      },
+      "average": 3.3571,
+      "comments": [
+        "Å javelja!"
+      ]
+    },
+    {
+      "order": 8,
+      "name": "Mjøstølen Bryggeri - Fyrste joledag (4,8%)",
+      "brewery": "Mjøstølen Bryggeri",
+      "beer": "Fyrste joledag",
+      "abv": 4.8,
+      "source": null,
+      "time": "19:09",
+      "vinmonopoletId": null,
+      "untappdUrl": "https://untappd.com/b/mjostolen-bryggeri-fyrste-joledag/4622002",
+      "scores": {
+        "Jo Bjørnar": 3.5,
+        "Reid": 3.5,
+        "Brita Karoline": 3.75,
+        "Svein": 3.0,
+        "Stian": 2.5,
+        "Knut Marius": 2.5,
+        "Jarle": 3.75
+      },
+      "average": 3.2143,
+      "comments": []
+    },
+    {
+      "order": 9,
+      "name": "Krecher - Slushcrusher (11%)",
+      "brewery": "Krecher",
+      "beer": "Slushcrusher",
+      "abv": 11.0,
+      "source": "pol",
+      "time": "19:17",
+      "vinmonopoletId": "13644102",
+      "untappdUrl": "https://untappd.com/b/krecher-slushcrusher/4556208",
+      "scores": {
+        "Jo Bjørnar": 3.75,
+        "Reid": 3.5,
+        "Brita Karoline": 4.5,
+        "Svein": 4.5,
+        "Stian": 4.0,
+        "Knut Marius": 3.5,
+        "Jarle": 3.75
+      },
+      "average": 3.9286,
+      "comments": [
+        "Vaniljen var veldig inspirerande"
+      ]
+    },
+    {
+      "order": 10,
+      "name": "Amundsen bryggeri - Christmas tart (12,5%)",
+      "brewery": "Amundsen bryggeri",
+      "beer": "Christmas tart",
+      "abv": 12.5,
+      "source": null,
+      "time": "19:38",
+      "vinmonopoletId": null,
+      "untappdUrl": null,
+      "scores": {
+        "Jo Bjørnar": 4.75,
+        "Reid": 4.25,
+        "Brita Karoline": 4.75,
+        "Svein": 4.75,
+        "Stian": 4.5,
+        "Knut Marius": 4.25,
+        "Jarle": 4.25
+      },
+      "average": 4.5,
+      "comments": [
+        "Jo Bjørnar skiftar profilbilete"
+      ]
+    },
+    {
+      "order": 11,
+      "name": "Amundsen bryggeri - Sticky little fingers (12,5%)",
+      "brewery": "Amundsen bryggeri",
+      "beer": "Sticky little fingers",
+      "abv": 12.5,
+      "source": null,
+      "time": "20:15",
+      "vinmonopoletId": null,
+      "untappdUrl": null,
+      "scores": {
+        "Jo Bjørnar": 4.5,
+        "Reid": 4.25,
+        "Brita Karoline": 4.75,
+        "Svein": 4.75,
+        "Stian": 4.25,
+        "Knut Marius": 4.25,
+        "Jarle": 4.0
+      },
+      "average": 4.3929,
+      "comments": [
+        "https://www.nrk.no/skole/?page=search&q=anders%20nesb%C3%B8%20prestegard&mediaId=12134"
+      ]
+    },
+    {
+      "order": 12,
+      "name": "Rygr - I svarta nåttå (8%)",
+      "brewery": "Rygr",
+      "beer": "I svarta nåttå",
+      "abv": 8.0,
+      "source": "pol",
+      "time": "20:43",
+      "vinmonopoletId": "13649302",
+      "untappdUrl": "https://untappd.com/b/rygr-brygghus-i-svarta-natta-black-granskudd-neipa/4546026",
+      "scores": {
+        "Jo Bjørnar": 4.25,
+        "Reid": 4.25,
+        "Brita Karoline": 4.25,
+        "Svein": 4.0,
+        "Stian": 4.25,
+        "Knut Marius": 4.0,
+        "Jarle": 4.25
+      },
+      "average": 4.1786,
+      "comments": []
+    },
+    {
+      "order": 13,
+      "name": "Skudenes Bryggeri - Santas Candy (6%)",
+      "brewery": "Skudenes Bryggeri",
+      "beer": "Santas Candy",
+      "abv": 6.0,
+      "source": "pol",
+      "time": "21:08",
+      "vinmonopoletId": "13648802",
+      "untappdUrl": "https://untappd.com/b/skudenes-bryggeri-santas-candy/4574797",
+      "scores": {
+        "Jo Bjørnar": 3.75,
+        "Reid": 3.75,
+        "Brita Karoline": 3.0,
+        "Svein": 3.75,
+        "Stian": 1.5,
+        "Knut Marius": 3.5,
+        "Jarle": 4.0
+      },
+      "average": 3.3214,
+      "comments": []
+    },
+    {
+      "order": 14,
+      "name": "Krecher - Gynjerdread (11%)",
+      "brewery": "Krecher",
+      "beer": "Gynjerdread",
+      "abv": 11.0,
+      "source": "pol",
+      "time": "21:35",
+      "vinmonopoletId": "13644202",
+      "untappdUrl": "https://untappd.com/b/krecher-gynjerdread/4556206",
+      "scores": {
+        "Jo Bjørnar": 3.0,
+        "Reid": 2.5,
+        "Brita Karoline": 2.75,
+        "Svein": 3.0,
+        "Stian": 2.75,
+        "Knut Marius": 2.0,
+        "Jarle": 2.5
+      },
+      "average": 2.6429,
+      "comments": [
+        "kanelfaen. Hugs pussy prosecco! Kusecava"
+      ]
+    },
+    {
+      "order": 15,
+      "name": "Monkey Brew - Joule (6%)",
+      "brewery": "Monkey Brew",
+      "beer": "Joule",
+      "abv": 6.0,
+      "source": "pol",
+      "time": "22:37",
+      "vinmonopoletId": "11353702",
+      "untappdUrl": "https://untappd.com/b/monkey-brew-joule/1326218",
+      "scores": {
+        "Jo Bjørnar": 2.75,
+        "Reid": 3.25,
+        "Brita Karoline": 3.5,
+        "Svein": 3.75,
+        "Stian": 3.0,
+        "Knut Marius": 3.75,
+        "Jarle": 3.5
+      },
+      "average": 3.3571,
+      "comments": [
+        "Kebabpause"
+      ]
+    },
+    {
+      "order": 16,
+      "name": "7 Fjell - Hyrdestund (6,5%)",
+      "brewery": "7 Fjell",
+      "beer": "Hyrdestund",
+      "abv": 6.5,
+      "source": "pol",
+      "time": "22:50",
+      "vinmonopoletId": "13666502",
+      "untappdUrl": "https://untappd.com/b/7-fjell-bryggeri-hyrdestund-christmas-blonde/4545940",
+      "scores": {
+        "Jo Bjørnar": 3.0,
+        "Reid": 3.25,
+        "Brita Karoline": 3.0,
+        "Svein": 3.25,
+        "Stian": 2.5,
+        "Knut Marius": 3.0,
+        "Jarle": 3.0
+      },
+      "average": 3.0,
+      "comments": []
+    },
+    {
+      "order": 17,
+      "name": "Kinn Bryggeri - Stjernenatt (8%)",
+      "brewery": "Kinn Bryggeri",
+      "beer": "Stjernenatt",
+      "abv": 8.0,
+      "source": "pol",
+      "time": "23:01",
+      "vinmonopoletId": "13620901",
+      "untappdUrl": "https://untappd.com/b/kinn-bryggeri-stjernenatt/4547330",
+      "scores": {
+        "Jo Bjørnar": 3.0,
+        "Reid": 3.25,
+        "Brita Karoline": null,
+        "Svein": 3.0,
+        "Stian": 3.5,
+        "Knut Marius": 3.5,
+        "Jarle": 3.5
+      },
+      "average": 3.2917,
+      "comments": []
+    },
+    {
+      "order": 18,
+      "name": "Nøgne Ø - God jul (8,5%)",
+      "brewery": "Nøgne Ø",
+      "beer": "God jul",
+      "abv": 8.5,
+      "source": "pol",
+      "time": "23:18",
+      "vinmonopoletId": "4679102",
+      "untappdUrl": "https://untappd.com/b/nogne-o-god-jul/69",
+      "scores": {
+        "Jo Bjørnar": 3.75,
+        "Reid": 3.5,
+        "Brita Karoline": 3.5,
+        "Svein": 4.0,
+        "Stian": 4.25,
+        "Knut Marius": 4.0,
+        "Jarle": 3.75
+      },
+      "average": 3.8214,
+      "comments": []
+    },
+    {
+      "order": 19,
+      "name": "Nøgne Ø - Ekstra god jul (13,5%)",
+      "brewery": "Nøgne Ø",
+      "beer": "Ekstra god jul",
+      "abv": 13.5,
+      "source": "pol",
+      "time": "23:18",
+      "vinmonopoletId": "12269502",
+      "untappdUrl": "https://untappd.com/b/nogne-o-ekstra-god-jul-2021/4571989",
+      "scores": {
+        "Jo Bjørnar": 4.0,
+        "Reid": 3.5,
+        "Brita Karoline": null,
+        "Svein": 4.25,
+        "Stian": 2.0,
+        "Knut Marius": 1.75,
+        "Jarle": 3.25
+      },
+      "average": 3.125,
+      "comments": []
+    },
+    {
+      "order": 20,
+      "name": "Nøgne Ø - Julequad 2021 (12%)",
+      "brewery": "Nøgne Ø",
+      "beer": "Julequad 2021",
+      "abv": 12.0,
+      "source": "pol",
+      "time": "00:23",
+      "vinmonopoletId": "13620802",
+      "untappdUrl": "https://untappd.com/b/nogne-o-julequad-2021/4564612",
+      "scores": {
+        "Jo Bjørnar": 4.25,
+        "Reid": 3.25,
+        "Brita Karoline": null,
+        "Svein": 3.75,
+        "Stian": 3.5,
+        "Knut Marius": 3.75,
+        "Jarle": 3.25
+      },
+      "average": 3.625,
+      "comments": []
+    },
+    {
+      "order": 21,
+      "name": "7 Fjell - Môdrahit (8%)",
+      "brewery": "7 Fjell",
+      "beer": "Môdrahit",
+      "abv": 8.0,
+      "source": "pol",
+      "time": "00:47",
+      "vinmonopoletId": "11301602",
+      "untappdUrl": "https://untappd.com/b/7-fjell-bryggeri-modraniht-black-christmas-ale/3471109",
+      "scores": {
+        "Jo Bjørnar": 4.0,
+        "Reid": null,
+        "Brita Karoline": null,
+        "Svein": 4.0,
+        "Stian": 3.5,
+        "Knut Marius": null,
+        "Jarle": 3.25
+      },
+      "average": 3.6875,
+      "comments": []
+    },
+    {
+      "order": 22,
+      "name": "Hansa - Juleøl (6,5%)",
+      "brewery": "Hansa",
+      "beer": "Juleøl",
+      "abv": 6.5,
+      "source": "pol",
+      "time": "00:55",
+      "vinmonopoletId": "3535402",
+      "untappdUrl": "https://untappd.com/b/hansa-borg-bryggerier-hansa-juleol-kl-f-6-5/523260",
+      "scores": {
+        "Jo Bjørnar": 3.5,
+        "Reid": 3.75,
+        "Brita Karoline": null,
+        "Svein": 3.5,
+        "Stian": 4.0,
+        "Knut Marius": 4.0,
+        "Jarle": 4.0
+      },
+      "average": 3.7917,
+      "comments": []
+    }
+  ],
+  "notes": [],
+  "planned": [
+    {
+      "name": "Fjordfolk - Jolnir (12%)",
+      "brewery": "Fjordfolk",
+      "beer": "Jolnir",
+      "abv": 12.0,
+      "source": null,
+      "vinmonopoletId": "13643902"
+    },
+    {
+      "name": "Monkey Brew - Kilojoule (9%)",
+      "brewery": "Monkey Brew",
+      "beer": "Kilojoule",
+      "abv": 9.0,
+      "source": null,
+      "vinmonopoletId": "12275102"
+    },
+    {
+      "name": "Haandbryggeriet - Bestefar (9%)",
+      "brewery": "Haandbryggeriet",
+      "beer": "Bestefar",
+      "abv": 9.0,
+      "source": null,
+      "vinmonopoletId": "6842202"
+    }
+  ]
+}

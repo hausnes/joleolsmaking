@@ -1,0 +1,33 @@
+{
+  "id": "21108902",
+  "name": "Pomona Island x Dankhouse Well so could anyone DIPA",
+  "producer": "Pomona Island Brew",
+  "country": "Storbritannia",
+  "district": null,
+  "style": "India pale ale",
+  "abv": 8.1,
+  "volumeCl": 44,
+  "price": 119.9,
+  "litrePrice": 272.5,
+  "color": "Dyp gul.",
+  "smell": "Sitrus og moden tropisk frukt.",
+  "taste": "Søt tropisk frukt, mango, grapefrukt, bitter avslutning.",
+  "method": "Dobbel IPA med humlene Cryo Krush, Cryo Nelson. Krush HyperBoost, Citra HyperBoost og Mosaic HyperBoost.",
+  "ingredients": "Vann, bygg, havre, hvete, humle, gjær",
+  "goodFor": [
+    "Aperitiff",
+    "Storfe",
+    "Lam og sau"
+  ],
+  "characteristics": {
+    "fylde": 7,
+    "friskhet": 4,
+    "bitterhet": 5
+  },
+  "packaging": "Metall",
+  "selection": "Bestillingsutvalget",
+  "url": "https://www.vinmonopolet.no/Land/Storbritannia/Pomona-Island-x-Dankhouse-Well-so-could-anyone-DIPA/p/21108902",
+  "imageUrl": "https://bilder.vinmonopolet.no/cache/515x515-0/21108902-1.jpg",
+  "image": null,
+  "fetchedAt": "2026-11-23T15:37:25.160Z"
+}

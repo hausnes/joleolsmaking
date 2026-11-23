@@ -1,0 +1,626 @@
+{
+  "year": 2017,
+  "participants": [
+    "Stian",
+    "Jo Bjørnar",
+    "Reid",
+    "Knut Marius",
+    "Knut",
+    "Håkon",
+    "Svein",
+    "Lars"
+  ],
+  "categories": {
+    "toilet": {
+      "label": "Dobesøk",
+      "counts": {
+        "Stian": 3.0,
+        "Jo Bjørnar": 2.0,
+        "Reid": 2.0,
+        "Knut Marius": 2.0,
+        "Knut": 3.0,
+        "Håkon": 3.0,
+        "Svein": 2.0,
+        "Lars": 2.0
+      }
+    },
+    "spill": {
+      "label": "Søling",
+      "counts": {
+        "Reid": 3.0,
+        "Håkon": 1.0,
+        "Svein": 101.0,
+        "Lars": 5.0
+      }
+    },
+    "fart": {
+      "label": "Fising/hikking/gupling",
+      "counts": {
+        "Stian": 1.0,
+        "Jo Bjørnar": 3.0
+      }
+    }
+  },
+  "beers": [
+    {
+      "order": 1,
+      "name": "Mack God Jul",
+      "brewery": null,
+      "beer": null,
+      "abv": null,
+      "source": null,
+      "time": "19:30",
+      "vinmonopoletId": null,
+      "untappdUrl": null,
+      "scores": {
+        "Stian": 2.75,
+        "Jo Bjørnar": 2.0,
+        "Reid": 2.25,
+        "Knut Marius": 2.25,
+        "Knut": 2.25,
+        "Håkon": 2.0,
+        "Svein": 2.0,
+        "Lars": 3.0
+      },
+      "average": 2.3125,
+      "comments": []
+    },
+    {
+      "order": 2,
+      "name": "Fredrikstad Juleøl",
+      "brewery": null,
+      "beer": null,
+      "abv": null,
+      "source": null,
+      "time": "19:57",
+      "vinmonopoletId": null,
+      "untappdUrl": null,
+      "scores": {
+        "Stian": 3.0,
+        "Jo Bjørnar": 2.75,
+        "Reid": 3.25,
+        "Knut Marius": 3.0,
+        "Knut": 2.75,
+        "Håkon": 3.0,
+        "Svein": 3.0,
+        "Lars": 3.75
+      },
+      "average": 3.0625,
+      "comments": []
+    },
+    {
+      "order": 3,
+      "name": "Nøgne Hvit Jul",
+      "brewery": null,
+      "beer": null,
+      "abv": null,
+      "source": null,
+      "time": "20:15",
+      "vinmonopoletId": null,
+      "untappdUrl": null,
+      "scores": {
+        "Stian": 3.25,
+        "Jo Bjørnar": 3.25,
+        "Reid": 3.75,
+        "Knut Marius": 3.75,
+        "Knut": 3.0,
+        "Håkon": 3.75,
+        "Svein": 3.5,
+        "Lars": 2.0
+      },
+      "average": 3.2812,
+      "comments": [
+        "Knut Maruis kommer med nye teorier...."
+      ]
+    },
+    {
+      "order": 4,
+      "name": "Kinn Julefred",
+      "brewery": null,
+      "beer": null,
+      "abv": null,
+      "source": null,
+      "time": "20:38",
+      "vinmonopoletId": null,
+      "untappdUrl": null,
+      "scores": {
+        "Stian": 4.5,
+        "Jo Bjørnar": 4.25,
+        "Reid": 4.5,
+        "Knut Marius": 4.25,
+        "Knut": 4.75,
+        "Håkon": 2.5,
+        "Svein": 4.0,
+        "Lars": 4.0
+      },
+      "average": 4.0938,
+      "comments": []
+    },
+    {
+      "order": 5,
+      "name": "Eiker Ølfabrikk Juleøl",
+      "brewery": null,
+      "beer": null,
+      "abv": null,
+      "source": null,
+      "time": "21:00",
+      "vinmonopoletId": null,
+      "untappdUrl": null,
+      "scores": {
+        "Stian": 2.75,
+        "Jo Bjørnar": 3.5,
+        "Reid": 3.5,
+        "Knut Marius": 3.75,
+        "Knut": 3.0,
+        "Håkon": 2.75,
+        "Svein": 3.75,
+        "Lars": 3.0
+      },
+      "average": 3.25,
+      "comments": []
+    },
+    {
+      "order": 6,
+      "name": "Julebrus for Vaksne",
+      "brewery": null,
+      "beer": null,
+      "abv": null,
+      "source": null,
+      "time": "21:09",
+      "vinmonopoletId": null,
+      "untappdUrl": null,
+      "scores": {
+        "Stian": 3.25,
+        "Jo Bjørnar": 3.5,
+        "Reid": 3.25,
+        "Knut Marius": 3.5,
+        "Knut": 3.5,
+        "Håkon": 3.0,
+        "Svein": 3.75,
+        "Lars": 3.5
+      },
+      "average": 3.4062,
+      "comments": []
+    },
+    {
+      "order": 7,
+      "name": "Delerium Christmas",
+      "brewery": null,
+      "beer": null,
+      "abv": null,
+      "source": null,
+      "time": "21:18",
+      "vinmonopoletId": null,
+      "untappdUrl": null,
+      "scores": {
+        "Stian": 3.0,
+        "Jo Bjørnar": 3.75,
+        "Reid": 3.75,
+        "Knut Marius": 4.0,
+        "Knut": 4.25,
+        "Håkon": 4.0,
+        "Svein": 3.5,
+        "Lars": 2.5
+      },
+      "average": 3.5938,
+      "comments": [
+        "Lars: De må jo kommentera. Da e kjekt. JB: God med padda..."
+      ]
+    },
+    {
+      "order": 8,
+      "name": "Lindheim 100 days",
+      "brewery": null,
+      "beer": null,
+      "abv": null,
+      "source": null,
+      "time": "21:32",
+      "vinmonopoletId": null,
+      "untappdUrl": null,
+      "scores": {
+        "Stian": 3.25,
+        "Jo Bjørnar": 4.25,
+        "Reid": 3.75,
+        "Knut Marius": 3.5,
+        "Knut": 3.25,
+        "Håkon": 3.5,
+        "Svein": 4.25,
+        "Lars": 4.25
+      },
+      "average": 3.75,
+      "comments": [
+        "Håkon: Ein av dei betre mørkre"
+      ]
+    },
+    {
+      "order": 9,
+      "name": "Voss Bryggeri Jolabrygg",
+      "brewery": null,
+      "beer": null,
+      "abv": null,
+      "source": null,
+      "time": "21:48",
+      "vinmonopoletId": null,
+      "untappdUrl": null,
+      "scores": {
+        "Stian": 3.0,
+        "Jo Bjørnar": 3.5,
+        "Reid": 2.5,
+        "Knut Marius": 2.75,
+        "Knut": 2.75,
+        "Håkon": 3.0,
+        "Svein": 3.25,
+        "Lars": 2.75
+      },
+      "average": 2.9375,
+      "comments": [
+        "Lars: Junior Delerium"
+      ]
+    },
+    {
+      "order": 10,
+      "name": "Hansa JuleAle",
+      "brewery": null,
+      "beer": null,
+      "abv": null,
+      "source": null,
+      "time": "22:00",
+      "vinmonopoletId": null,
+      "untappdUrl": null,
+      "scores": {
+        "Stian": 3.5,
+        "Jo Bjørnar": 2.5,
+        "Reid": 2.0,
+        "Knut Marius": 3.0,
+        "Knut": 2.25,
+        "Håkon": 3.0,
+        "Svein": 3.5,
+        "Lars": 2.5
+      },
+      "average": 2.7812,
+      "comments": [
+        "Lars: Har drokke Bayer eg KM: Snakka om BITCOINT eg... Lars: Likte da ikkje, Lukta kattemat. Men eg vil ha meir."
+      ]
+    },
+    {
+      "order": 11,
+      "name": "7-Fjell James",
+      "brewery": null,
+      "beer": null,
+      "abv": null,
+      "source": null,
+      "time": "22:16",
+      "vinmonopoletId": null,
+      "untappdUrl": null,
+      "scores": {
+        "Stian": 3.5,
+        "Jo Bjørnar": 2.75,
+        "Reid": 3.75,
+        "Knut Marius": 3.75,
+        "Knut": 2.75,
+        "Håkon": 2.5,
+        "Svein": 3.5,
+        "Lars": 2.0
+      },
+      "average": 3.0625,
+      "comments": [
+        "Lars: Ikkje set på WIGWAM med last x-mas"
+      ]
+    },
+    {
+      "order": 12,
+      "name": "Ægir Eldir",
+      "brewery": null,
+      "beer": null,
+      "abv": null,
+      "source": null,
+      "time": "22:30",
+      "vinmonopoletId": null,
+      "untappdUrl": null,
+      "scores": {
+        "Stian": 4.25,
+        "Jo Bjørnar": 4.0,
+        "Reid": 3.5,
+        "Knut Marius": 4.0,
+        "Knut": 4.5,
+        "Håkon": 3.5,
+        "Svein": 4.0,
+        "Lars": 2.0
+      },
+      "average": 3.7188,
+      "comments": []
+    },
+    {
+      "order": 13,
+      "name": "Hansa Julebrygg",
+      "brewery": null,
+      "beer": null,
+      "abv": null,
+      "source": "pol",
+      "time": "22:50",
+      "vinmonopoletId": null,
+      "untappdUrl": null,
+      "scores": {
+        "Stian": 2.0,
+        "Jo Bjørnar": 2.5,
+        "Reid": 2.25,
+        "Knut Marius": 3.0,
+        "Knut": 2.0,
+        "Håkon": 2.75,
+        "Svein": 2.5,
+        "Lars": 1.5
+      },
+      "average": 2.3125,
+      "comments": []
+    },
+    {
+      "order": 14,
+      "name": "Jackobsen GoldenNaked X-mas Ale",
+      "brewery": null,
+      "beer": null,
+      "abv": null,
+      "source": null,
+      "time": "23:05",
+      "vinmonopoletId": null,
+      "untappdUrl": null,
+      "scores": {
+        "Stian": 1.5,
+        "Jo Bjørnar": 2.0,
+        "Reid": 2.25,
+        "Knut Marius": 2.0,
+        "Knut": 2.5,
+        "Håkon": 2.5,
+        "Svein": 2.0,
+        "Lars": 2.5
+      },
+      "average": 2.1562,
+      "comments": [
+        "KM: Pissoarrens"
+      ]
+    },
+    {
+      "order": 15,
+      "name": "Nøgne Juequad",
+      "brewery": null,
+      "beer": null,
+      "abv": null,
+      "source": null,
+      "time": "23:25",
+      "vinmonopoletId": null,
+      "untappdUrl": null,
+      "scores": {
+        "Stian": 4.5,
+        "Jo Bjørnar": 4.5,
+        "Reid": 4.5,
+        "Knut Marius": 3.75,
+        "Knut": 5.0,
+        "Håkon": 3.0,
+        "Svein": 4.25,
+        "Lars": 3.75
+      },
+      "average": 4.1562,
+      "comments": [
+        "Håkon: Absolutt en juleøl"
+      ]
+    },
+    {
+      "order": 16,
+      "name": "Kinn Tomasmesse",
+      "brewery": null,
+      "beer": null,
+      "abv": null,
+      "source": null,
+      "time": "23:40",
+      "vinmonopoletId": null,
+      "untappdUrl": null,
+      "scores": {
+        "Stian": 4.5,
+        "Jo Bjørnar": 4.75,
+        "Reid": 4.5,
+        "Knut Marius": 4.5,
+        "Knut": 4.75,
+        "Håkon": 3.5,
+        "Svein": 4.25,
+        "Lars": 4.0
+      },
+      "average": 4.3438,
+      "comments": []
+    },
+    {
+      "order": 17,
+      "name": "Berentsen Jullefnugg",
+      "brewery": null,
+      "beer": null,
+      "abv": null,
+      "source": null,
+      "time": "00:15",
+      "vinmonopoletId": null,
+      "untappdUrl": null,
+      "scores": {
+        "Stian": 4.25,
+        "Jo Bjørnar": 4.0,
+        "Reid": 3.5,
+        "Knut Marius": 4.0,
+        "Knut": 3.25,
+        "Håkon": 3.25,
+        "Svein": 2.5,
+        "Lars": 4.0
+      },
+      "average": 3.5938,
+      "comments": []
+    },
+    {
+      "order": 18,
+      "name": "Ass juleøl",
+      "brewery": null,
+      "beer": null,
+      "abv": null,
+      "source": null,
+      "time": "00:33",
+      "vinmonopoletId": null,
+      "untappdUrl": null,
+      "scores": {
+        "Stian": 4.0,
+        "Jo Bjørnar": 3.25,
+        "Reid": 3.75,
+        "Knut Marius": 4.75,
+        "Knut": 3.75,
+        "Håkon": 3.25,
+        "Svein": 3.0,
+        "Lars": 2.75
+      },
+      "average": 3.5625,
+      "comments": [
+        "JB: Han Heia Norge reporteren fingra meg faktisk: https://www.nrk.no/skole/?page=search&q=anders nesbø prestegard&mediaId=12134"
+      ]
+    },
+    {
+      "order": 19,
+      "name": "CB Juleøl",
+      "brewery": null,
+      "beer": null,
+      "abv": null,
+      "source": null,
+      "time": "00:50",
+      "vinmonopoletId": null,
+      "untappdUrl": null,
+      "scores": {
+        "Stian": 3.5,
+        "Jo Bjørnar": 3.25,
+        "Reid": 4.25,
+        "Knut Marius": 3.75,
+        "Knut": 3.75,
+        "Håkon": 3.25,
+        "Svein": 3.0,
+        "Lars": 3.0
+      },
+      "average": 3.4688,
+      "comments": []
+    },
+    {
+      "order": 20,
+      "name": "Mjøderiet Julemjød",
+      "brewery": null,
+      "beer": null,
+      "abv": null,
+      "source": null,
+      "time": "00:56",
+      "vinmonopoletId": null,
+      "untappdUrl": null,
+      "scores": {
+        "Stian": 2.5,
+        "Jo Bjørnar": 3.0,
+        "Reid": 3.5,
+        "Knut Marius": 1.25,
+        "Knut": 1.0,
+        "Håkon": 0.5,
+        "Svein": 3.5,
+        "Lars": 2.5
+      },
+      "average": 2.2188,
+      "comments": [
+        "JB: Lute gilf, litt kvalm. Lars: Spektakulert i ein anna dimensjon"
+      ]
+    },
+    {
+      "order": 21,
+      "name": "Voss Fellesbryggeri Jola Gåva",
+      "brewery": null,
+      "beer": null,
+      "abv": null,
+      "source": null,
+      "time": "01:10",
+      "vinmonopoletId": null,
+      "untappdUrl": null,
+      "scores": {
+        "Stian": 4.25,
+        "Jo Bjørnar": 3.75,
+        "Reid": 4.25,
+        "Knut Marius": 4.0,
+        "Knut": 3.0,
+        "Håkon": 3.5,
+        "Svein": 4.0,
+        "Lars": 3.25
+      },
+      "average": 3.75,
+      "comments": []
+    },
+    {
+      "order": 22,
+      "name": "Lofotpils Julebrygg",
+      "brewery": null,
+      "beer": null,
+      "abv": null,
+      "source": null,
+      "time": "01:26",
+      "vinmonopoletId": null,
+      "untappdUrl": null,
+      "scores": {
+        "Stian": 3.0,
+        "Jo Bjørnar": 3.5,
+        "Reid": 3.0,
+        "Knut Marius": 3.0,
+        "Knut": 2.75,
+        "Håkon": 3.0,
+        "Svein": 3.5,
+        "Lars": 3.25
+      },
+      "average": 3.125,
+      "comments": []
+    },
+    {
+      "order": 23,
+      "name": "Søl Svart gull",
+      "brewery": null,
+      "beer": null,
+      "abv": null,
+      "source": null,
+      "time": "01:38",
+      "vinmonopoletId": null,
+      "untappdUrl": null,
+      "scores": {
+        "Stian": 3.25,
+        "Jo Bjørnar": 3.0,
+        "Reid": 3.0,
+        "Knut Marius": 2.0,
+        "Knut": 3.25,
+        "Håkon": 3.0,
+        "Svein": 3.0,
+        "Lars": 2.5
+      },
+      "average": 2.875,
+      "comments": [
+        "Håkon: Manglende notering: Stina: Har spurt deg 3 gonger. Ingen svar"
+      ]
+    },
+    {
+      "order": 24,
+      "name": "Borg Juleøl",
+      "brewery": null,
+      "beer": null,
+      "abv": null,
+      "source": null,
+      "time": "01:53",
+      "vinmonopoletId": null,
+      "untappdUrl": null,
+      "scores": {
+        "Stian": 3.5,
+        "Jo Bjørnar": 3.5,
+        "Reid": 4.0,
+        "Knut Marius": 3.5,
+        "Knut": 3.75,
+        "Håkon": 3.6,
+        "Svein": 2.0,
+        "Lars": 3.5
+      },
+      "average": 3.4188,
+      "comments": [
+        "Lars gløymte å stemma. Fekk snittet."
+      ]
+    }
+  ],
+  "notes": [
+    "Svein knuste alle med ei puta… Puta Madre…",
+    "Som vanlig vinn JB denne kategorien uten noko særlig konkuranse."
+  ]
+}

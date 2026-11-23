@@ -1,0 +1,33 @@
+{
+  "id": "19822702",
+  "name": "La Chouffe Christmas Edition",
+  "producer": "Brasserie d'Achouffe",
+  "country": "Belgia",
+  "district": null,
+  "style": "Lys ale",
+  "abv": 8,
+  "volumeCl": 50,
+  "price": 88.9,
+  "litrePrice": 173.8,
+  "color": "Middels dyp oransjegul.",
+  "smell": "Aroma av lyst malt, krydder og urt, litt gjærbakst, fersken og eple.",
+  "taste": "Lys malt og brød, fersken fruktighet, litt krydder og urter, fyldig.",
+  "method": "Overgjæret produksjonsmetode.",
+  "ingredients": "Vann, malt (bygg), humle, gjær",
+  "goodFor": [
+    "Skalldyr",
+    "Fisk",
+    "Lyst kjøtt"
+  ],
+  "characteristics": {
+    "fylde": 7,
+    "friskhet": 3,
+    "bitterhet": 4
+  },
+  "packaging": "Emballasje med pant",
+  "selection": "Bestillingsutvalget",
+  "url": "https://www.vinmonopolet.no/Land/Belgia/La-Chouffe-Christmas-Edition/p/19822702",
+  "imageUrl": "https://bilder.vinmonopolet.no/cache/515x515-0/19822702-1.jpg",
+  "image": "products/images/19822702.jpg",
+  "fetchedAt": "2026-11-23T15:37:24.679Z"
+}

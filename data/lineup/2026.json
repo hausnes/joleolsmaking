@@ -1,0 +1,12 @@
+{
+  "year": 2026,
+  "participants": ["Svein", "Brita", "Reid", "Liv Kjersti", "Jo Bjørnar", "Rannveig", "Knut", "Stian"],
+  "beers": [
+    { "vinmonopoletId": "194301" },
+    { "vinmonopoletId": "19822702" },
+    { "vinmonopoletId": "21108902" },
+    { "vinmonopoletId": "12269502" },
+    { "vinmonopoletId": "21204602" },
+    { "vinmonopoletId": "21085302" }
+  ]
+}

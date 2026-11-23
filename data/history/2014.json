@@ -1,0 +1,421 @@
+{
+  "year": 2014,
+  "participants": [
+    "Stian",
+    "Svein",
+    "Trond",
+    "Knut",
+    "Jo Bjørnar",
+    "Åsmund"
+  ],
+  "categories": {},
+  "beers": [
+    {
+      "order": 1,
+      "name": "Kinn Solsnu",
+      "brewery": null,
+      "beer": null,
+      "abv": null,
+      "source": null,
+      "time": null,
+      "vinmonopoletId": null,
+      "untappdUrl": null,
+      "scores": {
+        "Stian": 4.5,
+        "Svein": 4.0,
+        "Trond": 3.5,
+        "Knut": 3.5,
+        "Jo Bjørnar": 4.5,
+        "Åsmund": 4.0
+      },
+      "average": 4.0,
+      "comments": []
+    },
+    {
+      "order": 2,
+      "name": "Jacobsen Golden Naked Christmas Ale",
+      "brewery": null,
+      "beer": null,
+      "abv": null,
+      "source": null,
+      "time": null,
+      "vinmonopoletId": null,
+      "untappdUrl": null,
+      "scores": {
+        "Stian": 3.0,
+        "Svein": 3.5,
+        "Trond": 4.0,
+        "Knut": 4.0,
+        "Jo Bjørnar": 3.5,
+        "Åsmund": 4.5
+      },
+      "average": 3.75,
+      "comments": [
+        "Jolefratrekk på ein halv (0,5) (Åsmund)."
+      ]
+    },
+    {
+      "order": 3,
+      "name": "Hod",
+      "brewery": null,
+      "beer": null,
+      "abv": null,
+      "source": null,
+      "time": null,
+      "vinmonopoletId": null,
+      "untappdUrl": null,
+      "scores": {
+        "Stian": 3.0,
+        "Svein": 3.5,
+        "Trond": 2.0,
+        "Knut": 2.5,
+        "Jo Bjørnar": 3.0,
+        "Åsmund": 3.0
+      },
+      "average": 2.8333,
+      "comments": []
+    },
+    {
+      "order": 4,
+      "name": "Julesnadder",
+      "brewery": null,
+      "beer": null,
+      "abv": null,
+      "source": null,
+      "time": null,
+      "vinmonopoletId": null,
+      "untappdUrl": null,
+      "scores": {
+        "Stian": 4.0,
+        "Svein": 3.0,
+        "Trond": 3.5,
+        "Knut": 3.5,
+        "Jo Bjørnar": 3.5,
+        "Åsmund": 3.0
+      },
+      "average": 3.4167,
+      "comments": [
+        "Tar eit drag før du drikke."
+      ]
+    },
+    {
+      "order": 5,
+      "name": "Aas Juleøl (4.7%)",
+      "brewery": null,
+      "beer": null,
+      "abv": 4.7,
+      "source": null,
+      "time": null,
+      "vinmonopoletId": null,
+      "untappdUrl": null,
+      "scores": {
+        "Stian": 3.0,
+        "Svein": 3.5,
+        "Trond": 4.0,
+        "Knut": 2.5,
+        "Jo Bjørnar": 3.0,
+        "Åsmund": 4.0
+      },
+      "average": 3.3333,
+      "comments": []
+    },
+    {
+      "order": 6,
+      "name": "Aas Juleøl Premium",
+      "brewery": null,
+      "beer": null,
+      "abv": null,
+      "source": null,
+      "time": null,
+      "vinmonopoletId": null,
+      "untappdUrl": null,
+      "scores": {
+        "Stian": 4.0,
+        "Svein": 3.5,
+        "Trond": 3.5,
+        "Knut": 4.0,
+        "Jo Bjørnar": 3.5,
+        "Åsmund": 4.0
+      },
+      "average": 3.75,
+      "comments": []
+    },
+    {
+      "order": 7,
+      "name": "Schoukjelleren Juleøl",
+      "brewery": null,
+      "beer": null,
+      "abv": null,
+      "source": null,
+      "time": null,
+      "vinmonopoletId": null,
+      "untappdUrl": null,
+      "scores": {
+        "Stian": 3.5,
+        "Svein": 4.0,
+        "Trond": 3.0,
+        "Knut": 4.0,
+        "Jo Bjørnar": 3.5,
+        "Åsmund": 4.0
+      },
+      "average": 3.6667,
+      "comments": [
+        "Påslag"
+      ]
+    },
+    {
+      "order": 8,
+      "name": "Borg Juleøl",
+      "brewery": null,
+      "beer": null,
+      "abv": null,
+      "source": null,
+      "time": null,
+      "vinmonopoletId": null,
+      "untappdUrl": null,
+      "scores": {
+        "Stian": 3.5,
+        "Svein": 2.5,
+        "Trond": 3.5,
+        "Knut": 3.0,
+        "Jo Bjørnar": 3.0,
+        "Åsmund": 2.5
+      },
+      "average": 3.0,
+      "comments": [
+        "ingen julebonmus. \"Kva er det me drikk på eigentleg?\""
+      ]
+    },
+    {
+      "order": 9,
+      "name": "Ylir",
+      "brewery": null,
+      "beer": null,
+      "abv": null,
+      "source": null,
+      "time": null,
+      "vinmonopoletId": null,
+      "untappdUrl": null,
+      "scores": {
+        "Stian": 5.0,
+        "Svein": 5.0,
+        "Trond": 4.5,
+        "Knut": 4.5,
+        "Jo Bjørnar": 5.0,
+        "Åsmund": 4.5
+      },
+      "average": 4.75,
+      "comments": []
+    },
+    {
+      "order": 10,
+      "name": "Nissegodt",
+      "brewery": null,
+      "beer": null,
+      "abv": null,
+      "source": null,
+      "time": null,
+      "vinmonopoletId": null,
+      "untappdUrl": null,
+      "scores": {
+        "Stian": 2.5,
+        "Svein": 3.0,
+        "Trond": 3.5,
+        "Knut": 2.0,
+        "Jo Bjørnar": 3.0,
+        "Åsmund": 3.5
+      },
+      "average": 2.9167,
+      "comments": [
+        "Flat trear."
+      ]
+    },
+    {
+      "order": 11,
+      "name": "Winter Welcome Ale (Sam Smiths)",
+      "brewery": null,
+      "beer": null,
+      "abv": null,
+      "source": null,
+      "time": null,
+      "vinmonopoletId": null,
+      "untappdUrl": null,
+      "scores": {
+        "Stian": 4.0,
+        "Svein": 4.0,
+        "Trond": 4.0,
+        "Knut": 4.0,
+        "Jo Bjørnar": 4.0,
+        "Åsmund": 4.0
+      },
+      "average": 4.0,
+      "comments": []
+    },
+    {
+      "order": 12,
+      "name": "Dorothy Goodbodies Christmas Cracker Ale",
+      "brewery": null,
+      "beer": null,
+      "abv": null,
+      "source": null,
+      "time": null,
+      "vinmonopoletId": null,
+      "untappdUrl": null,
+      "scores": {
+        "Stian": 3.5,
+        "Svein": 3.5,
+        "Trond": 4.0,
+        "Knut": 3.5,
+        "Jo Bjørnar": 3.5,
+        "Åsmund": 4.0
+      },
+      "average": 3.6667,
+      "comments": []
+    },
+    {
+      "order": 13,
+      "name": "Fredrikstad juleøl",
+      "brewery": null,
+      "beer": null,
+      "abv": null,
+      "source": null,
+      "time": null,
+      "vinmonopoletId": null,
+      "untappdUrl": null,
+      "scores": {
+        "Stian": 3.5,
+        "Svein": 2.0,
+        "Trond": 3.0,
+        "Knut": 2.5,
+        "Jo Bjørnar": 3.0,
+        "Åsmund": 3.5
+      },
+      "average": 2.9167,
+      "comments": []
+    },
+    {
+      "order": 14,
+      "name": "Nørrebros",
+      "brewery": null,
+      "beer": null,
+      "abv": null,
+      "source": null,
+      "time": null,
+      "vinmonopoletId": null,
+      "untappdUrl": null,
+      "scores": {
+        "Stian": 4.5,
+        "Svein": 4.5,
+        "Trond": 4.5,
+        "Knut": 4.5,
+        "Jo Bjørnar": 4.5,
+        "Åsmund": 5.0
+      },
+      "average": 4.5833,
+      "comments": []
+    },
+    {
+      "order": 15,
+      "name": "Balder Julebrygg",
+      "brewery": null,
+      "beer": null,
+      "abv": null,
+      "source": null,
+      "time": null,
+      "vinmonopoletId": null,
+      "untappdUrl": null,
+      "scores": {
+        "Stian": 3.5,
+        "Svein": 3.0,
+        "Trond": 3.5,
+        "Knut": 3.5,
+        "Jo Bjørnar": 3.5,
+        "Åsmund": 2.5
+      },
+      "average": 3.25,
+      "comments": [
+        "Veldig rik i munnholo."
+      ]
+    },
+    {
+      "order": 16,
+      "name": "Hansa Julebrygg (4,5%)",
+      "brewery": null,
+      "beer": null,
+      "abv": 4.5,
+      "source": null,
+      "time": null,
+      "vinmonopoletId": null,
+      "untappdUrl": null,
+      "scores": {
+        "Stian": 3.0,
+        "Svein": 2.5,
+        "Trond": 2.0,
+        "Knut": 2.5,
+        "Jo Bjørnar": 3.0,
+        "Åsmund": 3.0
+      },
+      "average": 2.6667,
+      "comments": []
+    },
+    {
+      "order": 17,
+      "name": "Ringnes Juleøl",
+      "brewery": null,
+      "beer": null,
+      "abv": null,
+      "source": null,
+      "time": null,
+      "vinmonopoletId": null,
+      "untappdUrl": null,
+      "scores": {
+        "Stian": 2.0,
+        "Svein": 2.0,
+        "Trond": 2.5,
+        "Knut": 2.0,
+        "Jo Bjørnar": 2.5,
+        "Åsmund": 3.0
+      },
+      "average": 2.3333,
+      "comments": []
+    },
+    {
+      "order": 18,
+      "name": "Jolly`s Revenge",
+      "brewery": null,
+      "beer": null,
+      "abv": null,
+      "source": null,
+      "time": null,
+      "vinmonopoletId": null,
+      "untappdUrl": null,
+      "scores": {
+        "Svein": 4.0,
+        "Knut": 3.0,
+        "Jo Bjørnar": 3.5,
+        "Åsmund": 2.0
+      },
+      "average": 3.125,
+      "comments": []
+    },
+    {
+      "order": 19,
+      "name": "Hansa Juleale",
+      "brewery": null,
+      "beer": null,
+      "abv": null,
+      "source": null,
+      "time": null,
+      "vinmonopoletId": null,
+      "untappdUrl": null,
+      "scores": {
+        "Svein": 2.5,
+        "Knut": 3.0,
+        "Jo Bjørnar": 3.0
+      },
+      "average": 2.8333,
+      "comments": []
+    }
+  ],
+  "notes": []
+}

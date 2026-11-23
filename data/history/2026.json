@@ -1,0 +1,82 @@
+{
+  "year": 2026,
+  "participants": [
+    "Svein",
+    "Brita",
+    "Reid",
+    "Liv Kjersti",
+    "Jo Bjørnar",
+    "Rannveig",
+    "Knut",
+    "Stian"
+  ],
+  "categories": {
+    "toilet": {
+      "label": "Dobesøk",
+      "counts": {
+        "Svein": 0.0,
+        "Brita": 0.0,
+        "Reid": 0.0,
+        "Liv Kjersti": 0.0,
+        "Jo Bjørnar": 0.0,
+        "Rannveig": 0.0,
+        "Knut": 0.0,
+        "Stian": 0.0
+      }
+    },
+    "spill": {
+      "label": "Søling",
+      "counts": {
+        "Svein": 0.0,
+        "Brita": 0.0,
+        "Reid": 0.0,
+        "Liv Kjersti": 0.0,
+        "Jo Bjørnar": 0.0,
+        "Rannveig": 0.0,
+        "Knut": 0.0,
+        "Stian": 0.0
+      }
+    },
+    "fart": {
+      "label": "Fising/hikking/gupling",
+      "counts": {
+        "Svein": 0.0,
+        "Brita": 0.0,
+        "Reid": 0.0,
+        "Liv Kjersti": 0.0,
+        "Jo Bjørnar": 0.0,
+        "Rannveig": 0.0,
+        "Knut": 0.0,
+        "Stian": 0.0
+      }
+    },
+    "idiocy": {
+      "label": "Generell idioti",
+      "counts": {
+        "Svein": 0.0,
+        "Brita": 0.0,
+        "Reid": 0.0,
+        "Liv Kjersti": 0.0,
+        "Jo Bjørnar": 0.0,
+        "Rannveig": 0.0,
+        "Knut": 0.0,
+        "Stian": 0.0
+      }
+    },
+    "offence": {
+      "label": "Krenking",
+      "counts": {
+        "Svein": 0.0,
+        "Brita": 0.0,
+        "Reid": 0.0,
+        "Liv Kjersti": 0.0,
+        "Jo Bjørnar": 0.0,
+        "Rannveig": 0.0,
+        "Knut": 0.0,
+        "Stian": 0.0
+      }
+    }
+  },
+  "beers": [],
+  "notes": []
+}

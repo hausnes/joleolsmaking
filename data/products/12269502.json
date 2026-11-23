@@ -1,0 +1,33 @@
+{
+  "id": "12269502",
+  "name": "Nøgne Ø Ekstra God Jul",
+  "producer": "Nøgne Ø Det kompromissløse Bryggeri",
+  "country": "Norge",
+  "district": "Agder",
+  "style": "Spesial",
+  "abv": 15.5,
+  "volumeCl": 50,
+  "price": 109.9,
+  "litrePrice": 219.8,
+  "color": "Mørk brun.",
+  "smell": "Aroma av tørket frukt, kandis, kaffe.",
+  "taste": "Tørket frukt, kandis, kaffe, varm.",
+  "method": "Overgjæret.",
+  "ingredients": "Vann, malt (bygg), hvete, humle, gjær, demerarasukker",
+  "goodFor": [
+    "Aperitiff",
+    "Ost",
+    "Dessert"
+  ],
+  "characteristics": {
+    "fylde": 8,
+    "friskhet": 4,
+    "bitterhet": 4
+  },
+  "packaging": "Glass",
+  "selection": "Bestillingsutvalget",
+  "url": "https://www.vinmonopolet.no/Land/Norge/Agder/Grimstad/N%C3%B8gne-%C3%98-Ekstra-God-Jul/p/12269502",
+  "imageUrl": "https://bilder.vinmonopolet.no/cache/515x515-0/12269502-1.jpg",
+  "image": "products/images/12269502.jpg",
+  "fetchedAt": "2026-11-23T15:37:25.654Z"
+}

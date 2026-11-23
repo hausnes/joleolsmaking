@@ -1,0 +1,625 @@
+{
+  "year": 2016,
+  "participants": [
+    "Stian",
+    "Eivind",
+    "Sveinung",
+    "Torje",
+    "Jo Bjørnar",
+    "Knut Marius",
+    "Brita",
+    "Svein",
+    "Odd Eirik",
+    "Ole Jørgen"
+  ],
+  "categories": {
+    "toilet": {
+      "label": "Dobesøk",
+      "counts": {
+        "Stian": 2.0,
+        "Eivind": 3.0,
+        "Sveinung": 4.0,
+        "Torje": 1.0,
+        "Jo Bjørnar": 4.0,
+        "Knut Marius": 1.0,
+        "Brita": 2.0,
+        "Svein": 2.0,
+        "Odd Eirik": 1.0,
+        "Ole Jørgen": 4.0
+      }
+    },
+    "spill": {
+      "label": "Søling",
+      "counts": {
+        "Stian": 1.0,
+        "Eivind": 4.0,
+        "Sveinung": 5.0,
+        "Torje": 0.0,
+        "Jo Bjørnar": 4.0,
+        "Knut Marius": 0.0,
+        "Brita": 0.0,
+        "Svein": 0.0,
+        "Odd Eirik": 0.0,
+        "Ole Jørgen": 0.0
+      }
+    },
+    "fart": {
+      "label": "Fising/hikking/gupling",
+      "counts": {
+        "Stian": 2.0,
+        "Eivind": 0.0,
+        "Sveinung": 0.0,
+        "Torje": 0.0,
+        "Jo Bjørnar": 5.0,
+        "Knut Marius": 0.0,
+        "Brita": 0.0,
+        "Svein": 2.0,
+        "Odd Eirik": 0.0,
+        "Ole Jørgen": 0.0
+      }
+    }
+  },
+  "beers": [
+    {
+      "order": 1,
+      "name": "7 Fjell Grevinnen",
+      "brewery": null,
+      "beer": null,
+      "abv": null,
+      "source": "butikk",
+      "time": "19:23",
+      "vinmonopoletId": null,
+      "untappdUrl": null,
+      "scores": {
+        "Stian": 2.0,
+        "Eivind": 3.0,
+        "Sveinung": 2.75,
+        "Torje": 3.0,
+        "Jo Bjørnar": 3.0,
+        "Knut Marius": 3.0,
+        "Brita": 2.75,
+        "Svein": 3.5,
+        "Odd Eirik": 3.0,
+        "Ole Jørgen": 2.5
+      },
+      "average": 2.85,
+      "comments": [
+        "Smakte som Tyggis-extra sabel"
+      ]
+    },
+    {
+      "order": 2,
+      "name": "7 Fjell Hovmesteren",
+      "brewery": null,
+      "beer": null,
+      "abv": null,
+      "source": "butikk",
+      "time": "19:33",
+      "vinmonopoletId": null,
+      "untappdUrl": null,
+      "scores": {
+        "Stian": 3.75,
+        "Eivind": 3.25,
+        "Sveinung": 3.5,
+        "Torje": 3.5,
+        "Jo Bjørnar": 3.5,
+        "Knut Marius": 3.5,
+        "Brita": 3.75,
+        "Svein": 3.5,
+        "Odd Eirik": 3.25,
+        "Ole Jørgen": 4.0
+      },
+      "average": 3.55,
+      "comments": []
+    },
+    {
+      "order": 3,
+      "name": "Voss Fellesbryggeri LL Jolagåva",
+      "brewery": null,
+      "beer": null,
+      "abv": null,
+      "source": "pol",
+      "time": "19:43",
+      "vinmonopoletId": null,
+      "untappdUrl": null,
+      "scores": {
+        "Stian": 4.25,
+        "Eivind": 4.25,
+        "Sveinung": 4.25,
+        "Torje": 4.25,
+        "Jo Bjørnar": 4.25,
+        "Knut Marius": 4.0,
+        "Brita": 4.25,
+        "Svein": 4.0,
+        "Odd Eirik": 3.5,
+        "Ole Jørgen": 4.0
+      },
+      "average": 4.1,
+      "comments": [
+        "Nellik er jul"
+      ]
+    },
+    {
+      "order": 4,
+      "name": "Lysefjorden Jul",
+      "brewery": null,
+      "beer": null,
+      "abv": null,
+      "source": "butikk",
+      "time": "19:57",
+      "vinmonopoletId": null,
+      "untappdUrl": null,
+      "scores": {
+        "Stian": 1.5,
+        "Eivind": 1.75,
+        "Sveinung": 1.75,
+        "Torje": 2.5,
+        "Jo Bjørnar": 2.25,
+        "Knut Marius": 2.25,
+        "Brita": 2.25,
+        "Svein": 2.0,
+        "Odd Eirik": 2.0,
+        "Ole Jørgen": 3.0
+      },
+      "average": 2.125,
+      "comments": [
+        "Kolsyre og gjærsmak"
+      ]
+    },
+    {
+      "order": 5,
+      "name": "Balder Brygg Juleøl",
+      "brewery": null,
+      "beer": null,
+      "abv": null,
+      "source": "butikk",
+      "time": "19:59",
+      "vinmonopoletId": null,
+      "untappdUrl": null,
+      "scores": {
+        "Stian": 3.0,
+        "Eivind": 3.0,
+        "Sveinung": 2.0,
+        "Torje": 2.5,
+        "Jo Bjørnar": 2.25,
+        "Knut Marius": 2.75,
+        "Brita": 2.75,
+        "Svein": 2.5,
+        "Odd Eirik": 2.5,
+        "Ole Jørgen": 2.5
+      },
+      "average": 2.575,
+      "comments": []
+    },
+    {
+      "order": 6,
+      "name": "Nøisom Juleøl",
+      "brewery": null,
+      "beer": null,
+      "abv": null,
+      "source": "butikk",
+      "time": "20:21",
+      "vinmonopoletId": null,
+      "untappdUrl": null,
+      "scores": {
+        "Stian": 3.25,
+        "Eivind": 3.25,
+        "Sveinung": 1.25,
+        "Torje": 3.0,
+        "Jo Bjørnar": 3.5,
+        "Knut Marius": 2.5,
+        "Brita": 2.5,
+        "Svein": 3.5,
+        "Odd Eirik": 2.0,
+        "Ole Jørgen": 2.75
+      },
+      "average": 2.75,
+      "comments": [
+        "Stian:Det er bilde av ein liten Negergut. Odd Eirik: Nei, det er ein pepperkakemann"
+      ]
+    },
+    {
+      "order": 7,
+      "name": "Grevens Julecider",
+      "brewery": null,
+      "beer": null,
+      "abv": null,
+      "source": null,
+      "time": "20:31",
+      "vinmonopoletId": null,
+      "untappdUrl": null,
+      "scores": {
+        "Stian": 1.5,
+        "Eivind": 1.5,
+        "Sveinung": 3.0,
+        "Torje": 4.0,
+        "Jo Bjørnar": 4.0,
+        "Knut Marius": 2.5,
+        "Brita": 1.5,
+        "Svein": 3.75,
+        "Odd Eirik": 1.5,
+        "Ole Jørgen": 4.0
+      },
+      "average": 2.725,
+      "comments": [
+        "Julebrus"
+      ]
+    },
+    {
+      "order": 8,
+      "name": "Aas Juleøl",
+      "brewery": null,
+      "beer": null,
+      "abv": null,
+      "source": "pol",
+      "time": "20:40",
+      "vinmonopoletId": null,
+      "untappdUrl": null,
+      "scores": {
+        "Stian": 4.0,
+        "Eivind": 3.75,
+        "Sveinung": 2.0,
+        "Torje": 3.0,
+        "Jo Bjørnar": 4.0,
+        "Knut Marius": 4.75,
+        "Brita": 4.25,
+        "Svein": 3.75,
+        "Odd Eirik": 4.0,
+        "Ole Jørgen": 4.0
+      },
+      "average": 3.75,
+      "comments": []
+    },
+    {
+      "order": 9,
+      "name": "Haandbryggeriet Nissebrygg",
+      "brewery": null,
+      "beer": null,
+      "abv": null,
+      "source": "butikk",
+      "time": "20:48",
+      "vinmonopoletId": null,
+      "untappdUrl": null,
+      "scores": {
+        "Stian": 3.25,
+        "Eivind": 2.25,
+        "Sveinung": 2.5,
+        "Torje": 3.0,
+        "Jo Bjørnar": 3.5,
+        "Knut Marius": 3.5,
+        "Brita": 3.25,
+        "Svein": 3.0,
+        "Odd Eirik": 2.5,
+        "Ole Jørgen": 3.75
+      },
+      "average": 3.05,
+      "comments": [
+        "Knut Marius: Rapen frå Grevens da"
+      ]
+    },
+    {
+      "order": 10,
+      "name": "Hardanger Handbryggeri Potlaskatt Jolaskatt",
+      "brewery": null,
+      "beer": null,
+      "abv": null,
+      "source": "butikk",
+      "time": "21:03",
+      "vinmonopoletId": null,
+      "untappdUrl": null,
+      "scores": {
+        "Stian": 3.25,
+        "Eivind": 3.75,
+        "Sveinung": 3.0,
+        "Torje": 2.75,
+        "Jo Bjørnar": 3.0,
+        "Knut Marius": 3.0,
+        "Brita": 3.5,
+        "Svein": 3.25,
+        "Odd Eirik": 3.0,
+        "Ole Jørgen": 3.5
+      },
+      "average": 3.2,
+      "comments": []
+    },
+    {
+      "order": 11,
+      "name": "Hansa Julebrygg",
+      "brewery": null,
+      "beer": null,
+      "abv": null,
+      "source": "pol",
+      "time": "21:26",
+      "vinmonopoletId": null,
+      "untappdUrl": null,
+      "scores": {
+        "Stian": 3.5,
+        "Eivind": 4.0,
+        "Sveinung": 4.0,
+        "Torje": 3.5,
+        "Jo Bjørnar": 3.25,
+        "Knut Marius": 4.0,
+        "Brita": 3.5,
+        "Svein": 3.5,
+        "Odd Eirik": 3.0,
+        "Ole Jørgen": 3.75
+      },
+      "average": 3.6,
+      "comments": []
+    },
+    {
+      "order": 12,
+      "name": "Hansa JuleAle",
+      "brewery": null,
+      "beer": null,
+      "abv": null,
+      "source": "pol",
+      "time": "21:48",
+      "vinmonopoletId": null,
+      "untappdUrl": null,
+      "scores": {
+        "Stian": 3.75,
+        "Eivind": 3.5,
+        "Sveinung": 3.0,
+        "Torje": 3.0,
+        "Jo Bjørnar": 3.5,
+        "Knut Marius": 2.5,
+        "Brita": 3.5,
+        "Svein": 3.5,
+        "Odd Eirik": 2.5,
+        "Ole Jørgen": 3.5
+      },
+      "average": 3.225,
+      "comments": []
+    },
+    {
+      "order": 13,
+      "name": "7Fjell Sinterklaas",
+      "brewery": null,
+      "beer": null,
+      "abv": null,
+      "source": "pol",
+      "time": "22:03",
+      "vinmonopoletId": null,
+      "untappdUrl": null,
+      "scores": {
+        "Stian": 3.5,
+        "Eivind": 3.75,
+        "Sveinung": 3.25,
+        "Torje": 3.75,
+        "Jo Bjørnar": 3.75,
+        "Knut Marius": 3.75,
+        "Brita": 2.5,
+        "Svein": 3.25,
+        "Odd Eirik": 3.0,
+        "Ole Jørgen": 2.75
+      },
+      "average": 3.325,
+      "comments": []
+    },
+    {
+      "order": 14,
+      "name": "ST. Bernadus Christmas Ale",
+      "brewery": null,
+      "beer": null,
+      "abv": null,
+      "source": "pol",
+      "time": "22:20",
+      "vinmonopoletId": null,
+      "untappdUrl": null,
+      "scores": {
+        "Stian": 3.75,
+        "Eivind": 4.5,
+        "Sveinung": 4.25,
+        "Torje": 3.0,
+        "Jo Bjørnar": 3.25,
+        "Knut Marius": 4.0,
+        "Brita": 3.25,
+        "Svein": 3.0,
+        "Odd Eirik": 4.0,
+        "Ole Jørgen": 3.0
+      },
+      "average": 3.6,
+      "comments": [
+        "Årest mest diskuterte øl"
+      ]
+    },
+    {
+      "order": 15,
+      "name": "Kinn Julefred",
+      "brewery": null,
+      "beer": null,
+      "abv": null,
+      "source": "pol",
+      "time": "22:37",
+      "vinmonopoletId": null,
+      "untappdUrl": null,
+      "scores": {
+        "Stian": 4.75,
+        "Eivind": 4.25,
+        "Sveinung": 4.5,
+        "Torje": 4.0,
+        "Jo Bjørnar": 4.25,
+        "Knut Marius": 4.5,
+        "Brita": 4.25,
+        "Svein": 4.0,
+        "Odd Eirik": 4.0,
+        "Ole Jørgen": 4.5
+      },
+      "average": 4.3,
+      "comments": [
+        "Dagens høgaste applaus"
+      ]
+    },
+    {
+      "order": 16,
+      "name": "CB Juleøl",
+      "brewery": null,
+      "beer": null,
+      "abv": null,
+      "source": null,
+      "time": "23:02",
+      "vinmonopoletId": null,
+      "untappdUrl": null,
+      "scores": {
+        "Stian": 3.5,
+        "Eivind": 3.75,
+        "Sveinung": 3.75,
+        "Torje": 3.0,
+        "Jo Bjørnar": 3.5,
+        "Knut Marius": 4.0,
+        "Brita": 2.5,
+        "Svein": 1.5,
+        "Odd Eirik": 1.5,
+        "Ole Jørgen": 4.5
+      },
+      "average": 3.15,
+      "comments": []
+    },
+    {
+      "order": 17,
+      "name": "Berentsen Jule Avec",
+      "brewery": null,
+      "beer": null,
+      "abv": null,
+      "source": "pol",
+      "time": "23:17",
+      "vinmonopoletId": null,
+      "untappdUrl": null,
+      "scores": {
+        "Stian": 4.25,
+        "Eivind": 4.0,
+        "Sveinung": 4.0,
+        "Torje": 3.75,
+        "Jo Bjørnar": 4.25,
+        "Knut Marius": 4.0,
+        "Brita": 4.0,
+        "Svein": 4.0,
+        "Odd Eirik": 3.75,
+        "Ole Jørgen": 4.0
+      },
+      "average": 4.0,
+      "comments": []
+    },
+    {
+      "order": 18,
+      "name": "Nøgne Ø Julekveld",
+      "brewery": null,
+      "beer": null,
+      "abv": null,
+      "source": null,
+      "time": "23:40",
+      "vinmonopoletId": null,
+      "untappdUrl": null,
+      "scores": {
+        "Stian": 3.75,
+        "Eivind": 3.0,
+        "Sveinung": 3.5,
+        "Torje": 3.5,
+        "Jo Bjørnar": 2.25,
+        "Knut Marius": 2.25,
+        "Brita": 3.5,
+        "Svein": 3.25,
+        "Odd Eirik": 2.5,
+        "Ole Jørgen": 3.0
+      },
+      "average": 3.05,
+      "comments": [
+        "Jo bjøarnar sender kjønnshår\\rompehår i posten til alle som gliser"
+      ]
+    },
+    {
+      "order": 19,
+      "name": "Chapeau winter gueuze",
+      "brewery": null,
+      "beer": null,
+      "abv": null,
+      "source": "pol",
+      "time": "00:12",
+      "vinmonopoletId": null,
+      "untappdUrl": null,
+      "scores": {
+        "Stian": 2.0,
+        "Eivind": 1.5,
+        "Sveinung": 2.25,
+        "Torje": 2.75,
+        "Jo Bjørnar": 2.25,
+        "Knut Marius": 1.0,
+        "Brita": 0.5,
+        "Svein": 1.0,
+        "Odd Eirik": 1.5,
+        "Ole Jørgen": 2.25
+      },
+      "average": 1.7,
+      "comments": [
+        "Surøl, med trekork"
+      ]
+    },
+    {
+      "order": 20,
+      "name": "Mikkeller Santas little helper",
+      "brewery": null,
+      "beer": null,
+      "abv": null,
+      "source": null,
+      "time": "00:20",
+      "vinmonopoletId": null,
+      "untappdUrl": null,
+      "scores": {
+        "Stian": 4.0,
+        "Eivind": 2.0,
+        "Sveinung": 3.75,
+        "Torje": 2.75,
+        "Jo Bjørnar": 3.75,
+        "Knut Marius": 4.25,
+        "Brita": 3.75,
+        "Svein": 3.5,
+        "Odd Eirik": 4.0,
+        "Ole Jørgen": 2.25
+      },
+      "average": 3.4,
+      "comments": []
+    },
+    {
+      "order": 21,
+      "name": "Ægir Ylir 2015",
+      "brewery": null,
+      "beer": null,
+      "abv": null,
+      "source": null,
+      "time": "00:45",
+      "vinmonopoletId": null,
+      "untappdUrl": null,
+      "scores": {
+        "Stian": 4.25,
+        "Torje": 4.5,
+        "Jo Bjørnar": 4.5,
+        "Brita": 4.5,
+        "Svein": 4.75
+      },
+      "average": 4.5,
+      "comments": []
+    },
+    {
+      "order": 22,
+      "name": "Voss Bryggeri Jolabrygg",
+      "brewery": null,
+      "beer": null,
+      "abv": null,
+      "source": null,
+      "time": "01:05",
+      "vinmonopoletId": null,
+      "untappdUrl": null,
+      "scores": {
+        "Stian": 4.0,
+        "Torje": 3.0,
+        "Jo Bjørnar": 3.5,
+        "Brita": 3.25,
+        "Svein": 3.5
+      },
+      "average": 3.45,
+      "comments": []
+    }
+  ],
+  "notes": []
+}

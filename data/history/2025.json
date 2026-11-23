@@ -1,0 +1,544 @@
+{
+  "year": 2025,
+  "participants": [
+    "Svein",
+    "Brita",
+    "Reid",
+    "Liv Kjersti",
+    "Jo Bjørnar",
+    "Rannveig",
+    "Stian"
+  ],
+  "categories": {
+    "toilet": {
+      "label": "Dobesøk",
+      "counts": {
+        "Svein": 2.0,
+        "Brita": 1.0,
+        "Reid": 0.0,
+        "Liv Kjersti": 1.0,
+        "Jo Bjørnar": 1.0,
+        "Rannveig": 1.0,
+        "Stian": 0.0
+      }
+    },
+    "spill": {
+      "label": "Søling",
+      "counts": {
+        "Svein": 0.0,
+        "Brita": 0.0,
+        "Reid": 1.0,
+        "Liv Kjersti": 0.0,
+        "Jo Bjørnar": 3.0,
+        "Rannveig": 0.0,
+        "Stian": 0.0
+      }
+    },
+    "fart": {
+      "label": "Fising/hikking/gupling",
+      "counts": {
+        "Svein": 0.0,
+        "Brita": 0.0,
+        "Reid": 0.0,
+        "Liv Kjersti": 0.0,
+        "Jo Bjørnar": 2.0,
+        "Rannveig": 0.0,
+        "Stian": 1.0
+      }
+    },
+    "idiocy": {
+      "label": "Generell idioti",
+      "counts": {
+        "Svein": 0.0,
+        "Brita": 1.0,
+        "Reid": 0.0,
+        "Liv Kjersti": 1.0,
+        "Jo Bjørnar": 1.0,
+        "Rannveig": 1.0,
+        "Stian": 0.0
+      }
+    },
+    "offence": {
+      "label": "Krenking",
+      "counts": {
+        "Svein": 0.0,
+        "Brita": 0.0,
+        "Reid": 0.0,
+        "Liv Kjersti": 0.0,
+        "Jo Bjørnar": 0.0,
+        "Rannveig": 0.0,
+        "Stian": 1.0
+      }
+    },
+    "pulse": {
+      "label": "Puls",
+      "counts": {
+        "Svein": 91.0,
+        "Brita": 72.0,
+        "Reid": 74.0,
+        "Liv Kjersti": 77.0,
+        "Jo Bjørnar": 105.0,
+        "Rannveig": 74.0,
+        "Stian": 77.0
+      }
+    }
+  },
+  "beers": [
+    {
+      "order": 1,
+      "name": "Hansa - Juleøl (4,7%)",
+      "brewery": "Hansa",
+      "beer": "Juleøl",
+      "abv": 4.7,
+      "source": null,
+      "time": "18:42",
+      "vinmonopoletId": null,
+      "untappdUrl": null,
+      "scores": {
+        "Svein": 3.0,
+        "Brita": 3.25,
+        "Reid": 3.25,
+        "Liv Kjersti": 3.0,
+        "Jo Bjørnar": 3.25,
+        "Rannveig": 3.0,
+        "Stian": 3.25
+      },
+      "average": 3.1429,
+      "comments": [
+        "Faen, eg får den ikkje ned! - Jobis. Det vokser på meg - Rannveig"
+      ]
+    },
+    {
+      "order": 2,
+      "name": "Amundsens bryggeri - Santas hop sack (5,3%)",
+      "brewery": "Amundsens bryggeri",
+      "beer": "Santas hop sack",
+      "abv": 5.3,
+      "source": null,
+      "time": "18:55",
+      "vinmonopoletId": null,
+      "untappdUrl": null,
+      "scores": {
+        "Svein": 4.25,
+        "Brita": 4.25,
+        "Reid": 4.25,
+        "Liv Kjersti": 5.0,
+        "Jo Bjørnar": 4.25,
+        "Rannveig": 4.25,
+        "Stian": 4.75
+      },
+      "average": 4.4286,
+      "comments": [
+        "Rannveig får den alltid opp på siden"
+      ]
+    },
+    {
+      "order": 3,
+      "name": "Mjøstølen bryggeri - Nytelse frå Nissemor (10,5%)",
+      "brewery": "Mjøstølen bryggeri",
+      "beer": "Nytelse frå Nissemor",
+      "abv": 10.5,
+      "source": null,
+      "time": "19:13",
+      "vinmonopoletId": null,
+      "untappdUrl": null,
+      "scores": {
+        "Svein": 4.75,
+        "Brita": 4.75,
+        "Reid": 4.75,
+        "Liv Kjersti": 5.0,
+        "Jo Bjørnar": 4.75,
+        "Rannveig": 4.5,
+        "Stian": 4.75
+      },
+      "average": 4.75,
+      "comments": []
+    },
+    {
+      "order": 4,
+      "name": "Mack bryggeri - God jul (4,5%)",
+      "brewery": "Mack bryggeri",
+      "beer": "God jul",
+      "abv": 4.5,
+      "source": null,
+      "time": "19:24",
+      "vinmonopoletId": null,
+      "untappdUrl": null,
+      "scores": {
+        "Svein": 3.0,
+        "Brita": 3.0,
+        "Reid": 3.5,
+        "Liv Kjersti": 2.0,
+        "Jo Bjørnar": 3.5,
+        "Rannveig": 3.5,
+        "Stian": 3.5
+      },
+      "average": 3.1429,
+      "comments": []
+    },
+    {
+      "order": 5,
+      "name": "Kinn bryggeri - Julelys (5,5%)",
+      "brewery": "Kinn bryggeri",
+      "beer": "Julelys",
+      "abv": 5.5,
+      "source": null,
+      "time": "19:39",
+      "vinmonopoletId": null,
+      "untappdUrl": null,
+      "scores": {
+        "Svein": 3.25,
+        "Brita": 3.5,
+        "Reid": 3.25,
+        "Liv Kjersti": 3.5,
+        "Jo Bjørnar": 3.25,
+        "Rannveig": 3.75,
+        "Stian": 3.25
+      },
+      "average": 3.3929,
+      "comments": [
+        "Stian er var på surøl, men vrenger seg ikkje",
+        "Skarp kryddersmak bak i halsen"
+      ]
+    },
+    {
+      "order": 6,
+      "name": "Rygr bryggeri - Juleøl (4,7%)",
+      "brewery": "Rygr bryggeri",
+      "beer": "Juleøl",
+      "abv": 4.7,
+      "source": null,
+      "time": "19:58",
+      "vinmonopoletId": null,
+      "untappdUrl": null,
+      "scores": {
+        "Svein": 3.25,
+        "Brita": 3.0,
+        "Reid": 3.25,
+        "Liv Kjersti": 3.0,
+        "Jo Bjørnar": 3.0,
+        "Rannveig": 2.5,
+        "Stian": 4.0
+      },
+      "average": 3.1429,
+      "comments": []
+    },
+    {
+      "order": 7,
+      "name": "Hausnesbrogg&Mjøstølen bryggeri - Denna va de heldige med (8,5%)",
+      "brewery": "Hausnesbrogg&Mjøstølen bryggeri",
+      "beer": "Denna va de heldige med",
+      "abv": 8.5,
+      "source": "heimebrygg",
+      "time": "20:11",
+      "vinmonopoletId": null,
+      "untappdUrl": null,
+      "scores": {
+        "Svein": 4.75,
+        "Brita": 4.5,
+        "Reid": 4.25,
+        "Liv Kjersti": 4.0,
+        "Jo Bjørnar": 4.5,
+        "Rannveig": 4.0,
+        "Stian": 3.0
+      },
+      "average": 4.1429,
+      "comments": [
+        "God heimabrygg, dårlig jolabrygg"
+      ]
+    },
+    {
+      "order": 8,
+      "name": "Kinn bryggeri - Julebukk (9,5%)",
+      "brewery": "Kinn bryggeri",
+      "beer": "Julebukk",
+      "abv": 9.5,
+      "source": null,
+      "time": "20:25",
+      "vinmonopoletId": null,
+      "untappdUrl": null,
+      "scores": {
+        "Svein": 4.0,
+        "Brita": 3.5,
+        "Reid": 4.0,
+        "Liv Kjersti": 4.0,
+        "Jo Bjørnar": 4.0,
+        "Rannveig": 2.5,
+        "Stian": 4.0
+      },
+      "average": 3.7143,
+      "comments": []
+    },
+    {
+      "order": 9,
+      "name": "Midfyns bryggeri - Funky Santa (8,5%)",
+      "brewery": "Midfyns bryggeri",
+      "beer": "Funky Santa",
+      "abv": 8.5,
+      "source": null,
+      "time": "21:13",
+      "vinmonopoletId": null,
+      "untappdUrl": null,
+      "scores": {
+        "Svein": 3.75,
+        "Brita": 3.5,
+        "Reid": 4.0,
+        "Liv Kjersti": 3.5,
+        "Jo Bjørnar": 4.0,
+        "Rannveig": 2.5,
+        "Stian": 4.25
+      },
+      "average": 3.6429,
+      "comments": []
+    },
+    {
+      "order": 10,
+      "name": "Samuel smith - Winter welcome (6,0%)",
+      "brewery": "Samuel smith",
+      "beer": "Winter welcome",
+      "abv": 6.0,
+      "source": null,
+      "time": "21:26",
+      "vinmonopoletId": null,
+      "untappdUrl": null,
+      "scores": {
+        "Svein": 4.0,
+        "Brita": 3.5,
+        "Reid": 3.75,
+        "Liv Kjersti": 3.5,
+        "Jo Bjørnar": 3.5,
+        "Rannveig": 3.0,
+        "Stian": 4.5
+      },
+      "average": 3.6786,
+      "comments": []
+    },
+    {
+      "order": 11,
+      "name": "Oslo brewing - Voksenjulebrus (6%)",
+      "brewery": "Oslo brewing",
+      "beer": "Voksenjulebrus",
+      "abv": 6.0,
+      "source": null,
+      "time": "21:40",
+      "vinmonopoletId": null,
+      "untappdUrl": null,
+      "scores": {
+        "Svein": 3.25,
+        "Brita": 3.25,
+        "Reid": 3.75,
+        "Liv Kjersti": 4.0,
+        "Jo Bjørnar": 3.75,
+        "Rannveig": 4.0,
+        "Stian": 1.75
+      },
+      "average": 3.3929,
+      "comments": [
+        "Mamma har aldri hatt mye sukker i saftene sine - Rannveig"
+      ]
+    },
+    {
+      "order": 12,
+      "name": "Hansa - Julebrygg (4,7%)",
+      "brewery": "Hansa",
+      "beer": "Julebrygg",
+      "abv": 4.7,
+      "source": null,
+      "time": "21:55",
+      "vinmonopoletId": null,
+      "untappdUrl": null,
+      "scores": {
+        "Svein": 3.0,
+        "Brita": 3.25,
+        "Reid": 3.25,
+        "Liv Kjersti": 3.25,
+        "Jo Bjørnar": 3.5,
+        "Rannveig": 3.25,
+        "Stian": 4.5
+      },
+      "average": 3.4286,
+      "comments": []
+    },
+    {
+      "order": 13,
+      "name": "Kinn bryggeri - Polarnatt (6%)",
+      "brewery": "Kinn bryggeri",
+      "beer": "Polarnatt",
+      "abv": 6.0,
+      "source": null,
+      "time": "22:14",
+      "vinmonopoletId": null,
+      "untappdUrl": null,
+      "scores": {
+        "Svein": 4.0,
+        "Brita": 4.0,
+        "Reid": 3.5,
+        "Liv Kjersti": 4.0,
+        "Jo Bjørnar": 3.5,
+        "Rannveig": 0.5,
+        "Stian": 4.0
+      },
+      "average": 3.3571,
+      "comments": []
+    },
+    {
+      "order": 14,
+      "name": "Grevens julecider (4,7%)",
+      "brewery": null,
+      "beer": null,
+      "abv": 4.7,
+      "source": null,
+      "time": "22:33",
+      "vinmonopoletId": null,
+      "untappdUrl": null,
+      "scores": {
+        "Svein": 3.5,
+        "Brita": 1.5,
+        "Reid": 3.0,
+        "Liv Kjersti": 1.25,
+        "Jo Bjørnar": 2.5,
+        "Rannveig": 4.0,
+        "Stian": 3.0
+      },
+      "average": 2.6786,
+      "comments": []
+    },
+    {
+      "order": 15,
+      "name": "Jåttå Gardsbryggeri - Humla god jul ((6%)",
+      "brewery": "Jåttå Gardsbryggeri",
+      "beer": "Humla god jul",
+      "abv": 6.0,
+      "source": null,
+      "time": "22:50",
+      "vinmonopoletId": null,
+      "untappdUrl": null,
+      "scores": {
+        "Svein": 3.75,
+        "Brita": 3.5,
+        "Reid": 3.75,
+        "Liv Kjersti": 4.5,
+        "Jo Bjørnar": 3.75,
+        "Rannveig": 3.5,
+        "Stian": 3.75
+      },
+      "average": 3.7857,
+      "comments": [
+        "Friksjonen kjem naturlig. Serviettar fin du der, Svein"
+      ]
+    },
+    {
+      "order": 16,
+      "name": "Jacobsen - Christmas ale (7,5%)",
+      "brewery": "Jacobsen",
+      "beer": "Christmas ale",
+      "abv": 7.5,
+      "source": null,
+      "time": "23:20",
+      "vinmonopoletId": null,
+      "untappdUrl": null,
+      "scores": {
+        "Svein": 3.5,
+        "Brita": 3.75,
+        "Reid": 3.5,
+        "Liv Kjersti": 4.0,
+        "Jo Bjørnar": 3.75,
+        "Rannveig": 4.0,
+        "Stian": 4.0
+      },
+      "average": 3.7857,
+      "comments": [
+        "Eg bruke altfor mykje mus."
+      ]
+    },
+    {
+      "order": 17,
+      "name": "Kinn bryggeri - Julefred (6,5%)",
+      "brewery": "Kinn bryggeri",
+      "beer": "Julefred",
+      "abv": 6.5,
+      "source": null,
+      "time": "23:42",
+      "vinmonopoletId": null,
+      "untappdUrl": null,
+      "scores": {
+        "Svein": 4.0,
+        "Brita": 4.0,
+        "Reid": 3.75,
+        "Liv Kjersti": 3.75,
+        "Jo Bjørnar": 3.75,
+        "Rannveig": 2.0,
+        "Stian": 4.25
+      },
+      "average": 3.6429,
+      "comments": []
+    },
+    {
+      "order": 18,
+      "name": "Amundsens bryggeri - Christmas soda float pastry sour (6,5%)",
+      "brewery": "Amundsens bryggeri",
+      "beer": "Christmas soda float pastry sour",
+      "abv": 6.5,
+      "source": null,
+      "time": "00:21",
+      "vinmonopoletId": null,
+      "untappdUrl": null,
+      "scores": {
+        "Svein": 3.75,
+        "Brita": 2.75,
+        "Reid": 3.5,
+        "Liv Kjersti": 2.0,
+        "Jo Bjørnar": 3.25,
+        "Rannveig": 4.0,
+        "Stian": 2.5
+      },
+      "average": 3.1071,
+      "comments": []
+    },
+    {
+      "order": 19,
+      "name": "Voss bryggeri - Sterk jolagåva (6,5%)",
+      "brewery": "Voss bryggeri",
+      "beer": "Sterk jolagåva",
+      "abv": 6.5,
+      "source": null,
+      "time": "00:40",
+      "vinmonopoletId": null,
+      "untappdUrl": null,
+      "scores": {
+        "Svein": 3.75,
+        "Brita": 3.5,
+        "Reid": 3.25,
+        "Liv Kjersti": 3.75,
+        "Jo Bjørnar": 4.0,
+        "Rannveig": 3.25,
+        "Stian": 4.5
+      },
+      "average": 3.7143,
+      "comments": []
+    },
+    {
+      "order": 20,
+      "name": "Kinn bryggeri - Solsnu (7,5%)",
+      "brewery": "Kinn bryggeri",
+      "beer": "Solsnu",
+      "abv": 7.5,
+      "source": null,
+      "time": "01:05",
+      "vinmonopoletId": null,
+      "untappdUrl": null,
+      "scores": {
+        "Svein": 3.75,
+        "Brita": 3.75,
+        "Reid": 3.5,
+        "Liv Kjersti": 3.75,
+        "Jo Bjørnar": 4.0,
+        "Rannveig": 3.5,
+        "Stian": 4.0
+      },
+      "average": 3.75,
+      "comments": []
+    }
+  ],
+  "notes": []
+}

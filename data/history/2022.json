@@ -1,0 +1,499 @@
+{
+  "year": 2022,
+  "participants": [
+    "Svein",
+    "Brita",
+    "Reid",
+    "Jo Bjørnar",
+    "Stian",
+    "Stine"
+  ],
+  "categories": {
+    "toilet": {
+      "label": "Dobesøk",
+      "counts": {
+        "Svein": 1.0,
+        "Brita": 1.0,
+        "Reid": 1.0,
+        "Jo Bjørnar": 1.0,
+        "Stian": 1.0,
+        "Stine": 0.0
+      }
+    },
+    "spill": {
+      "label": "Søling",
+      "counts": {
+        "Svein": 0.0,
+        "Brita": 0.0,
+        "Reid": 0.0,
+        "Jo Bjørnar": 2.0,
+        "Stian": 1.0,
+        "Stine": 0.0
+      }
+    },
+    "fart": {
+      "label": "Fising/hikking/gupling",
+      "counts": {
+        "Svein": 0.0,
+        "Brita": 0.0,
+        "Reid": 0.0,
+        "Jo Bjørnar": 3.0,
+        "Stian": 2.0,
+        "Stine": 0.0
+      }
+    },
+    "idiocy": {
+      "label": "Generell idioti",
+      "counts": {
+        "Svein": 1.0,
+        "Brita": 0.0,
+        "Reid": 1.0,
+        "Jo Bjørnar": 1.0,
+        "Stian": 1.0,
+        "Stine": 10.0
+      }
+    },
+    "offence": {
+      "label": "Krenking",
+      "counts": {
+        "Svein": 1.0,
+        "Brita": 0.0,
+        "Reid": 4.0,
+        "Jo Bjørnar": 6.0,
+        "Stian": 2.0,
+        "Stine": 5.0
+      }
+    }
+  },
+  "beers": [
+    {
+      "order": 1,
+      "name": "Mjøstølen bryggeri og Hausnesbrogg - Bryggenissen krydrar jola 2022 (6,2%)",
+      "brewery": "Mjøstølen bryggeri og Hausnesbrogg",
+      "beer": "Bryggenissen krydrar jola 2022",
+      "abv": 6.2,
+      "source": "heimebrygg",
+      "time": "18:17",
+      "vinmonopoletId": null,
+      "untappdUrl": null,
+      "scores": {
+        "Svein": 4.75,
+        "Brita": 4.75,
+        "Reid": 4.5,
+        "Jo Bjørnar": 4.5,
+        "Stian": 4.0
+      },
+      "average": 4.5,
+      "comments": [
+        "Ikkje som originalen, men betre enn kopien"
+      ]
+    },
+    {
+      "order": 2,
+      "name": "Amundsen - Barrel aged ashes to ashes christmas 2021 (11,5%)",
+      "brewery": "Amundsen",
+      "beer": "Barrel aged ashes to ashes christmas 2021",
+      "abv": 11.5,
+      "source": null,
+      "time": "18:41",
+      "vinmonopoletId": null,
+      "untappdUrl": null,
+      "scores": {
+        "Svein": 4.75,
+        "Brita": 4.75,
+        "Reid": 4.75,
+        "Jo Bjørnar": 4.75,
+        "Stian": 4.5
+      },
+      "average": 4.7,
+      "comments": [
+        "Her skjer det mykje i kakefatet. Fyrste slurken var best?"
+      ]
+    },
+    {
+      "order": 3,
+      "name": "Boxcar - Xmas mild (6,3%)",
+      "brewery": "Boxcar",
+      "beer": "Xmas mild",
+      "abv": 6.3,
+      "source": null,
+      "time": "19:00",
+      "vinmonopoletId": null,
+      "untappdUrl": null,
+      "scores": {
+        "Svein": 2.75,
+        "Brita": 3.0,
+        "Reid": 2.5,
+        "Jo Bjørnar": 2.75,
+        "Stian": 2.25
+      },
+      "average": 2.65,
+      "comments": [
+        "Denne traff ikkje heilt leskelauken"
+      ]
+    },
+    {
+      "order": 4,
+      "name": "Haandbryggeriet - Halvors jul (8%)",
+      "brewery": "Haandbryggeriet",
+      "beer": "Halvors jul",
+      "abv": 8.0,
+      "source": null,
+      "time": "19:17",
+      "vinmonopoletId": null,
+      "untappdUrl": null,
+      "scores": {
+        "Svein": 2.75,
+        "Brita": 3.0,
+        "Reid": 3.0,
+        "Jo Bjørnar": 3.25,
+        "Stian": 3.25
+      },
+      "average": 3.05,
+      "comments": [
+        "Halvor har skjerpa seg sidan 2019"
+      ]
+    },
+    {
+      "order": 5,
+      "name": "Three hills brewing - Trium (11%)",
+      "brewery": "Three hills brewing",
+      "beer": "Trium",
+      "abv": 11.0,
+      "source": null,
+      "time": "19:28",
+      "vinmonopoletId": null,
+      "untappdUrl": null,
+      "scores": {
+        "Svein": 3.75,
+        "Brita": 3.75,
+        "Reid": 3.5,
+        "Jo Bjørnar": 3.75,
+        "Stian": 3.5
+      },
+      "average": 3.65,
+      "comments": [
+        "https://www.nrk.no/skole/?page=search&q=anders%20nesb%C3%B8%20prestegard&mediaId=12134"
+      ]
+    },
+    {
+      "order": 6,
+      "name": "Lindheim ølkompani - Winter berry (8%)",
+      "brewery": "Lindheim ølkompani",
+      "beer": "Winter berry",
+      "abv": 8.0,
+      "source": null,
+      "time": "19:51",
+      "vinmonopoletId": null,
+      "untappdUrl": null,
+      "scores": {
+        "Svein": 4.25,
+        "Brita": 4.0,
+        "Reid": 4.5,
+        "Jo Bjørnar": 4.5,
+        "Stian": 3.75
+      },
+      "average": 4.2,
+      "comments": [
+        "Veit ikkje kven eg kan beskriva i munnholo"
+      ]
+    },
+    {
+      "order": 7,
+      "name": "Lindheim ølkompani - Rød IPA (7%)",
+      "brewery": "Lindheim ølkompani",
+      "beer": "Rød IPA",
+      "abv": 7.0,
+      "source": null,
+      "time": "20:12",
+      "vinmonopoletId": null,
+      "untappdUrl": null,
+      "scores": {
+        "Svein": 4.0,
+        "Brita": 3.5,
+        "Reid": 3.75,
+        "Jo Bjørnar": 3.5,
+        "Stian": 3.75
+      },
+      "average": 3.7,
+      "comments": [
+        "Rød IPA, tante rød på etiketten"
+      ]
+    },
+    {
+      "order": 8,
+      "name": "Ægir bryggeri - Nissebokk (7%)",
+      "brewery": "Ægir bryggeri",
+      "beer": "Nissebokk",
+      "abv": 7.0,
+      "source": null,
+      "time": "20:31",
+      "vinmonopoletId": null,
+      "untappdUrl": null,
+      "scores": {
+        "Svein": 3.0,
+        "Brita": 3.5,
+        "Reid": 3.25,
+        "Jo Bjørnar": 3.75,
+        "Stian": 4.0
+      },
+      "average": 3.5,
+      "comments": []
+    },
+    {
+      "order": 9,
+      "name": "Slakterens brygghus - Slakterens jul (6,5%)",
+      "brewery": "Slakterens brygghus",
+      "beer": "Slakterens jul",
+      "abv": 6.5,
+      "source": null,
+      "time": "21:00",
+      "vinmonopoletId": null,
+      "untappdUrl": null,
+      "scores": {
+        "Svein": 3.25,
+        "Brita": 3.5,
+        "Reid": 3.25,
+        "Jo Bjørnar": 3.5,
+        "Stian": 4.25
+      },
+      "average": 3.55,
+      "comments": [
+        "20000 i sædsøyle"
+      ]
+    },
+    {
+      "order": 10,
+      "name": "Mjøstølen bryggeri - Den mørke løynda til nissemor (8,3%)",
+      "brewery": "Mjøstølen bryggeri",
+      "beer": "Den mørke løynda til nissemor",
+      "abv": 8.3,
+      "source": null,
+      "time": "21:15",
+      "vinmonopoletId": null,
+      "untappdUrl": null,
+      "scores": {
+        "Svein": 4.75,
+        "Brita": 4.75,
+        "Reid": 4.5,
+        "Jo Bjørnar": 4.5,
+        "Stian": 4.5
+      },
+      "average": 4.6,
+      "comments": [
+        "Reid må vente med å smake...har mykje vinglefitta i kjeften"
+      ]
+    },
+    {
+      "order": 11,
+      "name": "Eik&Tid - Syrlig jul (5%)",
+      "brewery": "Eik&Tid",
+      "beer": "Syrlig jul",
+      "abv": 5.0,
+      "source": null,
+      "time": "21:40",
+      "vinmonopoletId": null,
+      "untappdUrl": null,
+      "scores": {
+        "Svein": 2.75,
+        "Brita": 2.25,
+        "Reid": 3.5,
+        "Jo Bjørnar": 3.25,
+        "Stian": 2.75
+      },
+      "average": 2.9,
+      "comments": [
+        "Ingenting med jol å gjera, men ein god sur..?"
+      ]
+    },
+    {
+      "order": 12,
+      "name": "Kercher - Gynjerdread (11%)",
+      "brewery": "Kercher",
+      "beer": "Gynjerdread",
+      "abv": 11.0,
+      "source": null,
+      "time": "22:03",
+      "vinmonopoletId": null,
+      "untappdUrl": null,
+      "scores": {
+        "Svein": 4.0,
+        "Brita": 4.5,
+        "Reid": 4.5,
+        "Jo Bjørnar": 4.25,
+        "Stian": 4.75
+      },
+      "average": 4.4,
+      "comments": []
+    },
+    {
+      "order": 13,
+      "name": "ELØ - Damnation Imperial brown ale (7%)",
+      "brewery": "ELØ",
+      "beer": "Damnation Imperial brown ale",
+      "abv": 7.0,
+      "source": null,
+      "time": "22:22",
+      "vinmonopoletId": null,
+      "untappdUrl": null,
+      "scores": {
+        "Svein": 3.5,
+        "Brita": 3.5,
+        "Reid": 3.25,
+        "Jo Bjørnar": 3.5,
+        "Stian": 3.5
+      },
+      "average": 3.45,
+      "comments": []
+    },
+    {
+      "order": 14,
+      "name": "Voss fellesbryggeri - Sterk jolegåva (6,5%)",
+      "brewery": "Voss fellesbryggeri",
+      "beer": "Sterk jolegåva",
+      "abv": 6.5,
+      "source": null,
+      "time": "22:44",
+      "vinmonopoletId": null,
+      "untappdUrl": null,
+      "scores": {
+        "Svein": 3.5,
+        "Brita": 2.75,
+        "Reid": 2.5,
+        "Jo Bjørnar": 2.5,
+        "Stian": 3.0
+      },
+      "average": 2.85,
+      "comments": []
+    },
+    {
+      "order": 15,
+      "name": "Brulandselva - Gneten julenisse (9%)",
+      "brewery": "Brulandselva",
+      "beer": "Gneten julenisse",
+      "abv": 9.0,
+      "source": null,
+      "time": "22:54",
+      "vinmonopoletId": null,
+      "untappdUrl": null,
+      "scores": {
+        "Svein": 3.0,
+        "Brita": 2.75,
+        "Reid": 3.5,
+        "Jo Bjørnar": 3.25,
+        "Stian": 3.5
+      },
+      "average": 3.2,
+      "comments": [
+        "Da e 0,05 i glaset, dette klarar me!"
+      ]
+    },
+    {
+      "order": 16,
+      "name": "Amundsen - Barrel aged upside down christmascake 2022 (11,5%)",
+      "brewery": "Amundsen",
+      "beer": "Barrel aged upside down christmascake 2022",
+      "abv": 11.5,
+      "source": null,
+      "time": "23:09",
+      "vinmonopoletId": null,
+      "untappdUrl": null,
+      "scores": {
+        "Svein": 4.75,
+        "Brita": 4.75,
+        "Reid": 4.75,
+        "Jo Bjørnar": 4.75,
+        "Stian": 5.0
+      },
+      "average": 4.8,
+      "comments": [
+        "Det er på ein måte penislava. Jamfør videoen sett tidligare - Embarrassing bodies -smegma"
+      ]
+    },
+    {
+      "order": 17,
+      "name": "Einstök - Winter ale (8%)",
+      "brewery": "Einstök",
+      "beer": "Winter ale",
+      "abv": 8.0,
+      "source": null,
+      "time": "23:23",
+      "vinmonopoletId": null,
+      "untappdUrl": null,
+      "scores": {
+        "Svein": 3.0,
+        "Brita": 3.0,
+        "Reid": 3.5,
+        "Jo Bjørnar": 3.25,
+        "Stian": 3.25
+      },
+      "average": 3.2,
+      "comments": [
+        "Her var lukten betre enn smaken"
+      ]
+    },
+    {
+      "order": 18,
+      "name": "Borg - Juleøl (6,5%)",
+      "brewery": "Borg",
+      "beer": "Juleøl",
+      "abv": 6.5,
+      "source": null,
+      "time": "23:37",
+      "vinmonopoletId": null,
+      "untappdUrl": null,
+      "scores": {
+        "Svein": 1.5,
+        "Brita": 1.75,
+        "Reid": 2.0,
+        "Jo Bjørnar": 2.25,
+        "Stian": 3.0
+      },
+      "average": 2.1,
+      "comments": []
+    },
+    {
+      "order": 19,
+      "name": "Bådin - Jul i sjøgata (8%)",
+      "brewery": "Bådin",
+      "beer": "Jul i sjøgata",
+      "abv": 8.0,
+      "source": null,
+      "time": "23:52",
+      "vinmonopoletId": null,
+      "untappdUrl": null,
+      "scores": {
+        "Svein": 3.0,
+        "Brita": 3.0,
+        "Reid": 3.0,
+        "Jo Bjørnar": 2.75,
+        "Stian": 3.25
+      },
+      "average": 3.0,
+      "comments": [
+        "Jo Bjørnar; \"Eg e'kje noke noko\" Svein:\"Eg er ikkje ferdig med cello\""
+      ]
+    },
+    {
+      "order": 20,
+      "name": "Bådin - Landegode (7,5%)",
+      "brewery": "Bådin",
+      "beer": "Landegode",
+      "abv": 7.5,
+      "source": null,
+      "time": "00:05",
+      "vinmonopoletId": null,
+      "untappdUrl": null,
+      "scores": {
+        "Svein": 2.5,
+        "Brita": 3.0,
+        "Reid": 2.5,
+        "Jo Bjørnar": 2.5,
+        "Stian": 3.0
+      },
+      "average": 2.7,
+      "comments": []
+    }
+  ],
+  "notes": []
+}

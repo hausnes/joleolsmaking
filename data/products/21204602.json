@@ -1,0 +1,33 @@
+{
+  "id": "21204602",
+  "name": "Rygr Nissepilt Gulrotkake & Jordbær Fatlagret",
+  "producer": "RYGR Brygghus",
+  "country": "Norge",
+  "district": "Rogaland",
+  "style": "Surøl",
+  "abv": 6.5,
+  "volumeCl": 33,
+  "price": 121.8,
+  "litrePrice": 363.03,
+  "color": "Oransje.",
+  "smell": "Gulrot og jordbær.",
+  "taste": "Gulrot, jordbær og syre.",
+  "method": null,
+  "ingredients": "Vann, malt (bygg, hvete, havre) humle, gjær, gulrot, jordbær, krydder",
+  "goodFor": [
+    "Aperitiff",
+    "Ost",
+    "Dessert"
+  ],
+  "characteristics": {
+    "fylde": 7,
+    "friskhet": 8,
+    "bitterhet": 2
+  },
+  "packaging": "Emballasje med pant",
+  "selection": "Tilleggsutvalget",
+  "url": "https://www.vinmonopolet.no/Land/Norge/Rogaland/Klepp/Rygr-Nissepilt-Gulrotkake-%26-Jordb%C3%A6r-Fatlagret/p/21204602",
+  "imageUrl": "https://bilder.vinmonopolet.no/cache/515x515-0/21204602-1.jpg",
+  "image": null,
+  "fetchedAt": "2026-11-23T15:37:26.123Z"
+}

@@ -1,0 +1,545 @@
+{
+  "year": 2013,
+  "participants": [
+    "Torje",
+    "Knut Marius",
+    "Reid",
+    "Jo Bjørnar",
+    "Svein",
+    "Odd Eirik",
+    "Andreas",
+    "Stian"
+  ],
+  "categories": {},
+  "beers": [
+    {
+      "order": 1,
+      "name": "Slogen Juleøl",
+      "brewery": null,
+      "beer": null,
+      "abv": null,
+      "source": null,
+      "time": null,
+      "vinmonopoletId": null,
+      "untappdUrl": null,
+      "scores": {
+        "Torje": 4.0,
+        "Knut Marius": 3.0,
+        "Reid": 3.0,
+        "Jo Bjørnar": 3.0,
+        "Svein": 4.0,
+        "Andreas": 3.0,
+        "Stian": 3.0
+      },
+      "average": 3.2857,
+      "comments": []
+    },
+    {
+      "order": 2,
+      "name": "Fredrikstad Juleøl",
+      "brewery": null,
+      "beer": null,
+      "abv": null,
+      "source": null,
+      "time": null,
+      "vinmonopoletId": null,
+      "untappdUrl": null,
+      "scores": {
+        "Torje": 4.0,
+        "Knut Marius": 2.0,
+        "Reid": 2.0,
+        "Jo Bjørnar": 3.0,
+        "Svein": 3.0,
+        "Odd Eirik": 3.0,
+        "Andreas": 2.0,
+        "Stian": 3.0
+      },
+      "average": 2.75,
+      "comments": []
+    },
+    {
+      "order": 3,
+      "name": "Nibe Brygghus, Rudolf Dobbelbock",
+      "brewery": null,
+      "beer": null,
+      "abv": null,
+      "source": null,
+      "time": null,
+      "vinmonopoletId": null,
+      "untappdUrl": null,
+      "scores": {
+        "Torje": 4.0,
+        "Knut Marius": 2.0,
+        "Reid": 2.0,
+        "Jo Bjørnar": 2.0,
+        "Svein": 3.0,
+        "Odd Eirik": 2.0,
+        "Andreas": 3.0,
+        "Stian": 2.0
+      },
+      "average": 2.5,
+      "comments": []
+    },
+    {
+      "order": 4,
+      "name": "Jacobsen Golden Naked X-mas Ale",
+      "brewery": null,
+      "beer": null,
+      "abv": null,
+      "source": null,
+      "time": null,
+      "vinmonopoletId": null,
+      "untappdUrl": null,
+      "scores": {
+        "Torje": 4.0,
+        "Knut Marius": 4.0,
+        "Reid": 4.0,
+        "Jo Bjørnar": 4.0,
+        "Svein": 4.0,
+        "Odd Eirik": 4.0,
+        "Andreas": 3.0,
+        "Stian": 4.0
+      },
+      "average": 3.875,
+      "comments": [
+        "Mest mandig flaske. Golden Shower."
+      ]
+    },
+    {
+      "order": 5,
+      "name": "Ægir Ylir",
+      "brewery": null,
+      "beer": null,
+      "abv": null,
+      "source": null,
+      "time": null,
+      "vinmonopoletId": null,
+      "untappdUrl": null,
+      "scores": {
+        "Torje": 5.0,
+        "Knut Marius": 5.0,
+        "Reid": 5.0,
+        "Jo Bjørnar": 6.0,
+        "Svein": 6.0,
+        "Odd Eirik": 5.0,
+        "Andreas": 5.0,
+        "Stian": 5.0
+      },
+      "average": 5.25,
+      "comments": [
+        "Gran Kvae"
+      ]
+    },
+    {
+      "order": 6,
+      "name": "Berentsen Rogalands Juleøl",
+      "brewery": null,
+      "beer": null,
+      "abv": null,
+      "source": null,
+      "time": null,
+      "vinmonopoletId": null,
+      "untappdUrl": null,
+      "scores": {
+        "Torje": 4.0,
+        "Knut Marius": 4.0,
+        "Reid": 3.0,
+        "Jo Bjørnar": 4.0,
+        "Svein": 4.0,
+        "Odd Eirik": 4.0,
+        "Andreas": 3.0,
+        "Stian": 3.0
+      },
+      "average": 3.625,
+      "comments": []
+    },
+    {
+      "order": 7,
+      "name": "Coisbo Pinnekjøttøl",
+      "brewery": null,
+      "beer": null,
+      "abv": null,
+      "source": null,
+      "time": null,
+      "vinmonopoletId": null,
+      "untappdUrl": null,
+      "scores": {
+        "Torje": 2.0,
+        "Knut Marius": 3.0,
+        "Reid": 4.0,
+        "Jo Bjørnar": 4.0,
+        "Svein": 4.0,
+        "Odd Eirik": 4.0,
+        "Andreas": 3.0,
+        "Stian": 5.0
+      },
+      "average": 3.625,
+      "comments": []
+    },
+    {
+      "order": 8,
+      "name": "Delerium X-mas",
+      "brewery": null,
+      "beer": null,
+      "abv": null,
+      "source": null,
+      "time": null,
+      "vinmonopoletId": null,
+      "untappdUrl": null,
+      "scores": {
+        "Torje": 4.0,
+        "Knut Marius": 4.0,
+        "Reid": 4.0,
+        "Jo Bjørnar": 4.0,
+        "Svein": 4.0,
+        "Odd Eirik": 5.0,
+        "Andreas": 4.0,
+        "Stian": 4.0
+      },
+      "average": 4.125,
+      "comments": [
+        "Rosa elefphant . 10 pct"
+      ]
+    },
+    {
+      "order": 9,
+      "name": "Nøgne Ø God Jul",
+      "brewery": null,
+      "beer": null,
+      "abv": null,
+      "source": null,
+      "time": null,
+      "vinmonopoletId": null,
+      "untappdUrl": null,
+      "scores": {
+        "Torje": 4.0,
+        "Knut Marius": 3.0,
+        "Reid": 3.0,
+        "Jo Bjørnar": 4.0,
+        "Svein": 3.0,
+        "Odd Eirik": 2.0,
+        "Andreas": 3.0,
+        "Stian": 2.0
+      },
+      "average": 3.0,
+      "comments": [
+        "Boblete på tongo. Litt uretferdig tungst mest gi kar summen"
+      ]
+    },
+    {
+      "order": 10,
+      "name": "Lervigs Jul",
+      "brewery": null,
+      "beer": null,
+      "abv": null,
+      "source": null,
+      "time": null,
+      "vinmonopoletId": null,
+      "untappdUrl": null,
+      "scores": {
+        "Torje": 4.0,
+        "Knut Marius": 4.0,
+        "Reid": 3.0,
+        "Jo Bjørnar": 3.0,
+        "Svein": 3.0,
+        "Odd Eirik": 3.0,
+        "Andreas": 3.0,
+        "Stian": 3.0
+      },
+      "average": 3.25,
+      "comments": []
+    },
+    {
+      "order": 11,
+      "name": "Kinn Julefred",
+      "brewery": null,
+      "beer": null,
+      "abv": null,
+      "source": null,
+      "time": null,
+      "vinmonopoletId": null,
+      "untappdUrl": null,
+      "scores": {
+        "Torje": 4.0,
+        "Knut Marius": 5.0,
+        "Reid": 4.0,
+        "Jo Bjørnar": 5.0,
+        "Svein": 4.0,
+        "Odd Eirik": 4.0,
+        "Andreas": 4.0,
+        "Stian": 5.0
+      },
+      "average": 4.375,
+      "comments": [
+        "Bør retestes på jolaftan"
+      ]
+    },
+    {
+      "order": 12,
+      "name": "Erdinger schneeweisse",
+      "brewery": null,
+      "beer": null,
+      "abv": null,
+      "source": null,
+      "time": null,
+      "vinmonopoletId": null,
+      "untappdUrl": null,
+      "scores": {
+        "Torje": 4.0,
+        "Knut Marius": 4.0,
+        "Reid": 5.0,
+        "Jo Bjørnar": 4.0,
+        "Svein": 3.0,
+        "Odd Eirik": 5.0,
+        "Andreas": 4.0,
+        "Stian": 3.0
+      },
+      "average": 4.0,
+      "comments": [
+        "magler sommersol og reger"
+      ]
+    },
+    {
+      "order": 13,
+      "name": "Haandbryggeriet Nissemor",
+      "brewery": null,
+      "beer": null,
+      "abv": null,
+      "source": null,
+      "time": null,
+      "vinmonopoletId": null,
+      "untappdUrl": null,
+      "scores": {
+        "Torje": 4.0,
+        "Knut Marius": 5.0,
+        "Reid": 4.0,
+        "Jo Bjørnar": 5.0,
+        "Svein": 4.0,
+        "Odd Eirik": 4.0,
+        "Andreas": 3.0,
+        "Stian": 4.0
+      },
+      "average": 4.125,
+      "comments": []
+    },
+    {
+      "order": 14,
+      "name": "Grans ekle jul",
+      "brewery": null,
+      "beer": null,
+      "abv": null,
+      "source": null,
+      "time": null,
+      "vinmonopoletId": null,
+      "untappdUrl": null,
+      "scores": {
+        "Torje": 1.0,
+        "Knut Marius": 1.0,
+        "Reid": 1.0,
+        "Jo Bjørnar": 1.0,
+        "Svein": 1.0,
+        "Odd Eirik": 1.0,
+        "Andreas": 1.0,
+        "Stian": 1.0
+      },
+      "average": 1.0,
+      "comments": []
+    },
+    {
+      "order": 15,
+      "name": "Hansa Julebrygg boks",
+      "brewery": null,
+      "beer": null,
+      "abv": null,
+      "source": null,
+      "time": null,
+      "vinmonopoletId": null,
+      "untappdUrl": null,
+      "scores": {
+        "Torje": 1.0,
+        "Knut Marius": 1.0,
+        "Reid": 1.0,
+        "Jo Bjørnar": 2.0,
+        "Svein": 2.0,
+        "Odd Eirik": 1.0,
+        "Andreas": 2.0,
+        "Stian": 1.0
+      },
+      "average": 1.375,
+      "comments": []
+    },
+    {
+      "order": 16,
+      "name": "Hansa Julebrygg flaske",
+      "brewery": null,
+      "beer": null,
+      "abv": null,
+      "source": null,
+      "time": null,
+      "vinmonopoletId": null,
+      "untappdUrl": null,
+      "scores": {
+        "Torje": 2.0,
+        "Knut Marius": 3.0,
+        "Reid": 2.0,
+        "Jo Bjørnar": 3.0,
+        "Svein": 3.0,
+        "Odd Eirik": 3.0,
+        "Andreas": 3.0,
+        "Stian": 3.0
+      },
+      "average": 2.75,
+      "comments": []
+    },
+    {
+      "order": 17,
+      "name": "ATNA",
+      "brewery": null,
+      "beer": null,
+      "abv": null,
+      "source": null,
+      "time": null,
+      "vinmonopoletId": null,
+      "untappdUrl": null,
+      "scores": {
+        "Torje": 4.0,
+        "Knut Marius": 3.0,
+        "Reid": 2.0,
+        "Jo Bjørnar": 5.0,
+        "Svein": 3.0,
+        "Odd Eirik": 4.0,
+        "Andreas": 3.0,
+        "Stian": 4.0
+      },
+      "average": 3.5,
+      "comments": []
+    },
+    {
+      "order": 18,
+      "name": "Haandbryggeriet Essefar",
+      "brewery": null,
+      "beer": null,
+      "abv": null,
+      "source": null,
+      "time": null,
+      "vinmonopoletId": null,
+      "untappdUrl": null,
+      "scores": {
+        "Torje": 3.0,
+        "Knut Marius": 5.0,
+        "Reid": 3.0,
+        "Jo Bjørnar": 5.0,
+        "Svein": 5.0,
+        "Odd Eirik": 4.0,
+        "Andreas": 3.0,
+        "Stian": 5.0
+      },
+      "average": 4.125,
+      "comments": []
+    },
+    {
+      "order": 19,
+      "name": "Hansa juleøl Flaske",
+      "brewery": null,
+      "beer": null,
+      "abv": null,
+      "source": null,
+      "time": null,
+      "vinmonopoletId": null,
+      "untappdUrl": null,
+      "scores": {
+        "Torje": 4.0,
+        "Knut Marius": 4.0,
+        "Reid": 2.0,
+        "Jo Bjørnar": 4.0,
+        "Svein": 3.0,
+        "Odd Eirik": 4.0,
+        "Andreas": 3.0,
+        "Stian": 4.0
+      },
+      "average": 3.5,
+      "comments": []
+    },
+    {
+      "order": 20,
+      "name": "Indslev Jule Hvede",
+      "brewery": null,
+      "beer": null,
+      "abv": null,
+      "source": null,
+      "time": null,
+      "vinmonopoletId": null,
+      "untappdUrl": null,
+      "scores": {
+        "Torje": 3.0,
+        "Reid": 3.0,
+        "Jo Bjørnar": 4.0,
+        "Svein": 4.0,
+        "Odd Eirik": 5.0,
+        "Andreas": 3.0
+      },
+      "average": 3.6667,
+      "comments": []
+    },
+    {
+      "order": 21,
+      "name": "Samuel Smiths winter welcome",
+      "brewery": null,
+      "beer": null,
+      "abv": null,
+      "source": null,
+      "time": null,
+      "vinmonopoletId": null,
+      "untappdUrl": null,
+      "scores": {
+        "Torje": 4.0,
+        "Knut Marius": 5.0,
+        "Reid": 4.0,
+        "Jo Bjørnar": 5.0,
+        "Svein": 4.0,
+        "Stian": 5.0
+      },
+      "average": 4.5,
+      "comments": []
+    },
+    {
+      "order": 22,
+      "name": "Julebokk",
+      "brewery": null,
+      "beer": null,
+      "abv": null,
+      "source": null,
+      "time": null,
+      "vinmonopoletId": null,
+      "untappdUrl": null,
+      "scores": {
+        "Torje": 3.0,
+        "Reid": 3.0,
+        "Jo Bjørnar": 4.0,
+        "Svein": 4.0
+      },
+      "average": 3.5,
+      "comments": []
+    },
+    {
+      "order": 23,
+      "name": "Santa Clausthaler",
+      "brewery": null,
+      "beer": null,
+      "abv": null,
+      "source": null,
+      "time": null,
+      "vinmonopoletId": null,
+      "untappdUrl": null,
+      "scores": {
+        "Svein": 2.0
+      },
+      "average": 2.0,
+      "comments": []
+    }
+  ],
+  "notes": [
+    "Main Kommentaris",
+    "Neste år skal me faen meg eta pinnakjøt mens me drikk"
+  ]
+}

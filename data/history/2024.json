@@ -1,0 +1,579 @@
+{
+  "year": 2024,
+  "participants": [
+    "Svein",
+    "Brita",
+    "Reid",
+    "Liv Kjersti",
+    "Jo Bjørnar",
+    "Rannveig",
+    "Stian",
+    "Stine"
+  ],
+  "categories": {
+    "toilet": {
+      "label": "Dobesøk",
+      "counts": {
+        "Svein": 2.0,
+        "Brita": 1.0,
+        "Reid": 2.0,
+        "Liv Kjersti": 1.0,
+        "Jo Bjørnar": 2.0,
+        "Rannveig": 1.0,
+        "Stian": 1.0,
+        "Stine": 2.0
+      }
+    },
+    "spill": {
+      "label": "Søling",
+      "counts": {
+        "Svein": 0.0,
+        "Brita": 2.0,
+        "Reid": 0.0,
+        "Liv Kjersti": 0.0,
+        "Jo Bjørnar": 5.0,
+        "Rannveig": 0.0,
+        "Stian": 0.0,
+        "Stine": 0.0
+      }
+    },
+    "fart": {
+      "label": "Fising/hikking/gupling",
+      "counts": {
+        "Svein": 0.0,
+        "Brita": 0.0,
+        "Reid": 0.0,
+        "Liv Kjersti": 0.0,
+        "Jo Bjørnar": 1.0,
+        "Rannveig": 0.0,
+        "Stian": 2.0,
+        "Stine": 10.0
+      }
+    },
+    "idiocy": {
+      "label": "Generell idioti",
+      "counts": {
+        "Svein": 1.0,
+        "Brita": 2.0,
+        "Reid": 0.0,
+        "Liv Kjersti": 1.0,
+        "Jo Bjørnar": 3.0,
+        "Rannveig": 0.0,
+        "Stian": 1.3,
+        "Stine": 1.0
+      }
+    },
+    "offence": {
+      "label": "Krenking",
+      "counts": {
+        "Svein": 1.0,
+        "Brita": 0.0,
+        "Reid": 0.0,
+        "Liv Kjersti": 0.0,
+        "Jo Bjørnar": 1.0,
+        "Rannveig": 1.0,
+        "Stian": 0.0,
+        "Stine": 1.0
+      }
+    }
+  },
+  "beers": [
+    {
+      "order": 1,
+      "name": "Hausnesbrogg&Mjøstølen bryggeri - Bryggenissen krydrar jola 2023 (6,2%)",
+      "brewery": "Hausnesbrogg&Mjøstølen bryggeri",
+      "beer": "Bryggenissen krydrar jola 2023",
+      "abv": 6.2,
+      "source": "heimebrygg",
+      "time": "17:23",
+      "vinmonopoletId": null,
+      "untappdUrl": null,
+      "scores": {
+        "Svein": 4.5,
+        "Brita": 4.5,
+        "Reid": 4.25,
+        "Liv Kjersti": 5.0,
+        "Jo Bjørnar": 4.25,
+        "Rannveig": 2.75,
+        "Stian": 4.0,
+        "Stine": 4.0
+      },
+      "average": 4.1562,
+      "comments": [
+        "Rannveig \"Han vokste på meg\""
+      ]
+    },
+    {
+      "order": 2,
+      "name": "Hausnesbrogg&Mjøstølen bryggeri - Krydra jolastøl (8%)",
+      "brewery": "Hausnesbrogg&Mjøstølen bryggeri",
+      "beer": "Krydra jolastøl",
+      "abv": 8.0,
+      "source": "heimebrygg",
+      "time": "17:36",
+      "vinmonopoletId": null,
+      "untappdUrl": null,
+      "scores": {
+        "Svein": 3.0,
+        "Brita": 2.5,
+        "Reid": 2.75,
+        "Liv Kjersti": 0.25,
+        "Jo Bjørnar": 3.0,
+        "Rannveig": 0.5,
+        "Stian": 0.25,
+        "Stine": 0.5
+      },
+      "average": 1.5938,
+      "comments": [
+        "Rannveig: \"Han var grei i munnen, men når eg svelgte...\""
+      ]
+    },
+    {
+      "order": 3,
+      "name": "Hausnesbrogg&Mjøstølen bryggeri - Jolastøl (8%)",
+      "brewery": "Hausnesbrogg&Mjøstølen bryggeri",
+      "beer": "Jolastøl",
+      "abv": 8.0,
+      "source": "heimebrygg",
+      "time": "17:45",
+      "vinmonopoletId": null,
+      "untappdUrl": null,
+      "scores": {
+        "Svein": 4.25,
+        "Brita": 4.5,
+        "Reid": 3.5,
+        "Liv Kjersti": 4.0,
+        "Jo Bjørnar": 4.25,
+        "Rannveig": 3.5,
+        "Stian": 3.0,
+        "Stine": 4.0
+      },
+      "average": 3.875,
+      "comments": []
+    },
+    {
+      "order": 4,
+      "name": "Voss bryggeri - Brukbar jolagåva (4,7%)",
+      "brewery": "Voss bryggeri",
+      "beer": "Brukbar jolagåva",
+      "abv": 4.7,
+      "source": null,
+      "time": "17:55",
+      "vinmonopoletId": null,
+      "untappdUrl": null,
+      "scores": {
+        "Svein": 3.75,
+        "Brita": 4.0,
+        "Reid": 4.0,
+        "Liv Kjersti": 3.0,
+        "Jo Bjørnar": 3.5,
+        "Rannveig": 3.75,
+        "Stian": 4.0,
+        "Stine": 5.0
+      },
+      "average": 3.875,
+      "comments": [
+        "Sitronbrusaktig"
+      ]
+    },
+    {
+      "order": 5,
+      "name": "Hansa bryggeri - Juleøl (4,7%)",
+      "brewery": "Hansa bryggeri",
+      "beer": "Juleøl",
+      "abv": 4.7,
+      "source": null,
+      "time": "18:08",
+      "vinmonopoletId": null,
+      "untappdUrl": null,
+      "scores": {
+        "Svein": 3.0,
+        "Brita": 3.25,
+        "Reid": 3.0,
+        "Liv Kjersti": 3.5,
+        "Jo Bjørnar": 3.25,
+        "Rannveig": 3.0,
+        "Stian": 3.25,
+        "Stine": 4.25
+      },
+      "average": 3.3125,
+      "comments": [
+        "Bæsj end carry. Kven har bæsja i ei trillebår?"
+      ]
+    },
+    {
+      "order": 6,
+      "name": "7 Fjell bryggeri - Lys juleøl (4,7%)",
+      "brewery": "7 Fjell bryggeri",
+      "beer": "Lys juleøl",
+      "abv": 4.7,
+      "source": null,
+      "time": "18:31",
+      "vinmonopoletId": null,
+      "untappdUrl": null,
+      "scores": {
+        "Svein": 2.75,
+        "Brita": 3.5,
+        "Reid": 3.0,
+        "Liv Kjersti": 4.25,
+        "Jo Bjørnar": 3.5,
+        "Rannveig": 3.5,
+        "Stian": 4.25,
+        "Stine": 4.5
+      },
+      "average": 3.6562,
+      "comments": [
+        "Holda ut med det trollet der i 14 år"
+      ]
+    },
+    {
+      "order": 7,
+      "name": "Mjøstølen bryggeri - Nissemor for tredje gong (7,2%)",
+      "brewery": "Mjøstølen bryggeri",
+      "beer": "Nissemor for tredje gong",
+      "abv": 7.2,
+      "source": null,
+      "time": "18:53",
+      "vinmonopoletId": null,
+      "untappdUrl": null,
+      "scores": {
+        "Svein": 4.25,
+        "Brita": 4.5,
+        "Reid": 4.25,
+        "Liv Kjersti": 4.75,
+        "Jo Bjørnar": 4.25,
+        "Rannveig": 2.5,
+        "Stian": 4.0,
+        "Stine": 2.5
+      },
+      "average": 3.875,
+      "comments": [
+        "Den svarte, Dette blir for mørkt for meg - her var det mykje rasisme"
+      ]
+    },
+    {
+      "order": 8,
+      "name": "Kinn Bryggeri - Polarnatt (6%)",
+      "brewery": "Kinn Bryggeri",
+      "beer": "Polarnatt",
+      "abv": 6.0,
+      "source": null,
+      "time": "19:34",
+      "vinmonopoletId": null,
+      "untappdUrl": null,
+      "scores": {
+        "Svein": 4.25,
+        "Brita": 3.75,
+        "Reid": 3.75,
+        "Liv Kjersti": 4.0,
+        "Jo Bjørnar": 4.0,
+        "Rannveig": 1.0,
+        "Stian": 4.25,
+        "Stine": 3.0
+      },
+      "average": 3.5,
+      "comments": [
+        "https://www.youtube.com/watch?v=1Qy7oTb-yic"
+      ]
+    },
+    {
+      "order": 9,
+      "name": "Mjøstølen bryggeri - Joleleveranse (5,8%)",
+      "brewery": "Mjøstølen bryggeri",
+      "beer": "Joleleveranse",
+      "abv": 5.8,
+      "source": null,
+      "time": "19:50",
+      "vinmonopoletId": null,
+      "untappdUrl": null,
+      "scores": {
+        "Svein": 4.25,
+        "Brita": 4.0,
+        "Reid": 4.5,
+        "Liv Kjersti": 4.25,
+        "Jo Bjørnar": 3.5,
+        "Rannveig": 2.5,
+        "Stian": 4.25,
+        "Stine": 2.5
+      },
+      "average": 3.7188,
+      "comments": [
+        "Mus har ein tendens til å hoppa på meg - sitat Jobis  \"Dette var mykje bedre enn den svarte\" - Rannveig"
+      ]
+    },
+    {
+      "order": 10,
+      "name": "Cervisiam - Barrel aged Chocolated Salty christmas balls (10%)",
+      "brewery": "Cervisiam",
+      "beer": "Barrel aged Chocolated Salty christmas balls",
+      "abv": 10.0,
+      "source": null,
+      "time": "20:01",
+      "vinmonopoletId": null,
+      "untappdUrl": null,
+      "scores": {
+        "Svein": 5.0,
+        "Brita": 5.0,
+        "Reid": 5.0,
+        "Liv Kjersti": 4.75,
+        "Jo Bjørnar": 5.0,
+        "Rannveig": 0.5,
+        "Stian": 4.5,
+        "Stine": 0.5
+      },
+      "average": 3.7812,
+      "comments": [
+        "Rannveig strekker seg. Meir so spredning. Og den voks på Stian"
+      ]
+    },
+    {
+      "order": 11,
+      "name": "Voss Bryggeri - Jolabrygg (6,5%)",
+      "brewery": "Voss Bryggeri",
+      "beer": "Jolabrygg",
+      "abv": 6.5,
+      "source": null,
+      "time": "20:19",
+      "vinmonopoletId": null,
+      "untappdUrl": null,
+      "scores": {
+        "Svein": 3.5,
+        "Brita": 3.0,
+        "Reid": 3.0,
+        "Liv Kjersti": 0.75,
+        "Jo Bjørnar": 3.5,
+        "Rannveig": 1.5,
+        "Stian": 4.0,
+        "Stine": 1.5
+      },
+      "average": 2.5938,
+      "comments": [
+        "Stine: Smak av fjøs. Jobis: Smak av Anne Mari. Stian: kor mange av oss har smakt på Anne Mari? LK: Smake jo julepølsesaft. LK: Eg får gåsehud av ubehag."
+      ]
+    },
+    {
+      "order": 12,
+      "name": "Grevens - Julecider (4,7%)",
+      "brewery": "Grevens",
+      "beer": "Julecider",
+      "abv": 4.7,
+      "source": null,
+      "time": "20:35",
+      "vinmonopoletId": null,
+      "untappdUrl": null,
+      "scores": {
+        "Svein": 1.0,
+        "Brita": 1.0,
+        "Reid": 0.75,
+        "Liv Kjersti": 1.0,
+        "Jo Bjørnar": 1.5,
+        "Rannveig": 3.5,
+        "Stian": 1.0,
+        "Stine": 3.5
+      },
+      "average": 1.6562,
+      "comments": []
+    },
+    {
+      "order": 13,
+      "name": "Ringnes - Juleøl (4,7%)",
+      "brewery": "Ringnes",
+      "beer": "Juleøl",
+      "abv": 4.7,
+      "source": null,
+      "time": "20:45",
+      "vinmonopoletId": null,
+      "untappdUrl": null,
+      "scores": {
+        "Svein": 2.75,
+        "Brita": 2.25,
+        "Reid": 2.5,
+        "Liv Kjersti": 2.0,
+        "Jo Bjørnar": 2.5,
+        "Rannveig": 2.5,
+        "Stian": 2.0,
+        "Stine": 3.5
+      },
+      "average": 2.5,
+      "comments": []
+    },
+    {
+      "order": 14,
+      "name": "Kinn - Julelys (5,5%)",
+      "brewery": "Kinn",
+      "beer": "Julelys",
+      "abv": 5.5,
+      "source": null,
+      "time": "20:57",
+      "vinmonopoletId": null,
+      "untappdUrl": null,
+      "scores": {
+        "Svein": 3.25,
+        "Brita": 2.75,
+        "Reid": 2.5,
+        "Liv Kjersti": 3.0,
+        "Jo Bjørnar": 3.5,
+        "Rannveig": 3.5,
+        "Stian": 4.25,
+        "Stine": 3.5
+      },
+      "average": 3.2812,
+      "comments": [
+        "Monica MILF; Stian høyrde om ho fyrst i kveld"
+      ]
+    },
+    {
+      "order": 15,
+      "name": "Nøgne Ø - Grønn jul (7%)",
+      "brewery": "Nøgne Ø",
+      "beer": "Grønn jul",
+      "abv": 7.0,
+      "source": null,
+      "time": "21:21",
+      "vinmonopoletId": null,
+      "untappdUrl": null,
+      "scores": {
+        "Svein": 4.25,
+        "Brita": 3.25,
+        "Reid": 4.0,
+        "Liv Kjersti": 4.75,
+        "Jo Bjørnar": 4.25,
+        "Rannveig": 0.5,
+        "Stian": 4.75,
+        "Stine": 2.0
+      },
+      "average": 3.4688,
+      "comments": [
+        "Rannveig; han får han ikkje oppe. Rannveig; kom igjen, skal halle haseg?"
+      ]
+    },
+    {
+      "order": 16,
+      "name": "Kinn - Solsnu (4,7%)",
+      "brewery": "Kinn",
+      "beer": "Solsnu",
+      "abv": 4.7,
+      "source": null,
+      "time": "21:43",
+      "vinmonopoletId": null,
+      "untappdUrl": null,
+      "scores": {
+        "Svein": 3.25,
+        "Brita": 3.25,
+        "Reid": 3.5,
+        "Liv Kjersti": 3.0,
+        "Jo Bjørnar": 3.25,
+        "Rannveig": 3.0,
+        "Stian": 3.75,
+        "Stine": 3.5
+      },
+      "average": 3.3125,
+      "comments": [
+        "Pylso sprakk"
+      ]
+    },
+    {
+      "order": 17,
+      "name": "Hansa bryggeri - Julebrygg (4,7%)",
+      "brewery": "Hansa bryggeri",
+      "beer": "Julebrygg",
+      "abv": 4.7,
+      "source": null,
+      "time": "22:00",
+      "vinmonopoletId": null,
+      "untappdUrl": null,
+      "scores": {
+        "Svein": 3.0,
+        "Brita": 2.25,
+        "Reid": 2.75,
+        "Liv Kjersti": 3.25,
+        "Jo Bjørnar": 3.25,
+        "Rannveig": 2.25,
+        "Stian": 3.5,
+        "Stine": 3.0
+      },
+      "average": 2.9062,
+      "comments": [
+        "Har Stian hipster?"
+      ]
+    },
+    {
+      "order": 18,
+      "name": "Kinn - Julefred (6,5%)",
+      "brewery": "Kinn",
+      "beer": "Julefred",
+      "abv": 6.5,
+      "source": null,
+      "time": "22:17",
+      "vinmonopoletId": null,
+      "untappdUrl": null,
+      "scores": {
+        "Svein": 3.5,
+        "Brita": 3.75,
+        "Reid": 3.5,
+        "Liv Kjersti": 4.25,
+        "Jo Bjørnar": 4.0,
+        "Rannveig": 1.75,
+        "Stian": 4.0,
+        "Stine": 4.25
+      },
+      "average": 3.625,
+      "comments": [
+        "Morsmjølkvafler"
+      ]
+    },
+    {
+      "order": 19,
+      "name": "Mack - God jul (4,7%)",
+      "brewery": "Mack",
+      "beer": "God jul",
+      "abv": 4.7,
+      "source": null,
+      "time": "22:38",
+      "vinmonopoletId": null,
+      "untappdUrl": null,
+      "scores": {
+        "Svein": 2.75,
+        "Brita": 2.75,
+        "Reid": 2.75,
+        "Liv Kjersti": 3.0,
+        "Jo Bjørnar": 2.5,
+        "Rannveig": 2.75,
+        "Stian": 3.25,
+        "Stine": 3.75
+      },
+      "average": 2.9375,
+      "comments": [
+        "Dildo eller drone til jul?"
+      ]
+    },
+    {
+      "order": 20,
+      "name": "Kinn - Julebukk (9,5%)",
+      "brewery": "Kinn",
+      "beer": "Julebukk",
+      "abv": 9.5,
+      "source": null,
+      "time": "22:50",
+      "vinmonopoletId": null,
+      "untappdUrl": null,
+      "scores": {
+        "Svein": 4.0,
+        "Brita": 3.75,
+        "Reid": 3.75,
+        "Liv Kjersti": 4.0,
+        "Jo Bjørnar": 4.0,
+        "Rannveig": 1.5,
+        "Stian": 4.75,
+        "Stine": 3.5
+      },
+      "average": 3.6562,
+      "comments": [
+        "Stian fekk endoskopi av Boing-kluben"
+      ]
+    }
+  ],
+  "notes": [
+    "Skulesystemet suge, kl 00:01"
+  ]
+}

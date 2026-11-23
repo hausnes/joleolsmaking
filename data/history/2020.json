@@ -1,0 +1,369 @@
+{
+  "year": 2020,
+  "participants": [
+    "Jo Bjørnar",
+    "Jostein",
+    "Knut",
+    "Knut Marius",
+    "Reid",
+    "Stian",
+    "Svein",
+    "Eivind",
+    "Jarle"
+  ],
+  "categories": {
+    "toilet": {
+      "label": "Dobesøk",
+      "counts": {
+        "Jo Bjørnar": 3.0,
+        "Jostein": 1.0,
+        "Knut": 2.0,
+        "Knut Marius": 2.0,
+        "Reid": 6.0,
+        "Stian": 2.0,
+        "Svein": 1.0,
+        "Eivind": 2.0,
+        "Jarle": 2.0
+      }
+    },
+    "spill": {
+      "label": "Søling",
+      "counts": {
+        "Jo Bjørnar": 3.0,
+        "Jostein": 0.0,
+        "Knut": 0.0,
+        "Knut Marius": 0.0,
+        "Reid": 0.0,
+        "Stian": 0.0,
+        "Svein": 0.0,
+        "Eivind": 0.0,
+        "Jarle": 0.0
+      }
+    },
+    "fart": {
+      "label": "Fising/hikking/gupling",
+      "counts": {
+        "Jo Bjørnar": 3.0,
+        "Jostein": 0.0,
+        "Knut": 1.0,
+        "Knut Marius": 0.0,
+        "Reid": 2.0,
+        "Stian": 4.0,
+        "Svein": 0.0,
+        "Eivind": 0.0,
+        "Jarle": 0.0
+      }
+    },
+    "idiocy": {
+      "label": "Generell idioti",
+      "counts": {
+        "Jo Bjørnar": 3.0,
+        "Jostein": 0.0,
+        "Knut": 8.0,
+        "Knut Marius": 1.0,
+        "Reid": 0.0,
+        "Stian": 0.0,
+        "Svein": 0.0,
+        "Eivind": 0.0,
+        "Jarle": 0.0
+      }
+    },
+    "offence": {
+      "label": "Krenking",
+      "counts": {
+        "Jo Bjørnar": 3.0,
+        "Jostein": 2.0,
+        "Knut": 1.0,
+        "Knut Marius": 3.0,
+        "Reid": 1.0,
+        "Stian": 6.0,
+        "Svein": 1.0,
+        "Eivind": 2.0,
+        "Jarle": 0.0
+      }
+    }
+  },
+  "beers": [
+    {
+      "order": 1,
+      "name": "Voss Bryggeri - Jolabrygg (6,5%)",
+      "brewery": "Voss Bryggeri",
+      "beer": "Jolabrygg",
+      "abv": 6.5,
+      "source": "pol",
+      "time": "19:00",
+      "vinmonopoletId": "10483702",
+      "untappdUrl": "https://untappd.com/b/voss-bryggeri-jolabrygg/1805727",
+      "scores": {
+        "Jo Bjørnar": 4.0,
+        "Jostein": 3.5,
+        "Knut": 4.0,
+        "Knut Marius": 4.0,
+        "Reid": 3.5,
+        "Stian": 3.75,
+        "Svein": 3.5,
+        "Eivind": null,
+        "Jarle": 3.75
+      },
+      "average": 3.75,
+      "comments": [
+        "God, litt heimabrygg, litt lite joleøl? Godt, men ikkje typisk jol. - Stian har gifta seg til pengar"
+      ]
+    },
+    {
+      "order": 2,
+      "name": "7 Fjell - 7 Sorter Christmas Ale (6,5%)",
+      "brewery": "7 Fjell",
+      "beer": "7 Sorter Christmas Ale",
+      "abv": 6.5,
+      "source": "pol",
+      "time": "19:35",
+      "vinmonopoletId": "1829302",
+      "untappdUrl": "https://untappd.com/b/7-fjell-bryggeri-7-sorter-christmas-ale/847201",
+      "scores": {
+        "Jo Bjørnar": 3.5,
+        "Jostein": 3.5,
+        "Knut": 3.25,
+        "Knut Marius": 3.75,
+        "Reid": 3.75,
+        "Stian": 3.0,
+        "Svein": 3.5,
+        "Eivind": null,
+        "Jarle": null
+      },
+      "average": 3.4643,
+      "comments": [
+        "Rimming.  Anis rimer på anus? Vinmonopolet på Stord ville ikkje levere denne ."
+      ]
+    },
+    {
+      "order": 3,
+      "name": "Mack - Julebokk (9%)",
+      "brewery": "Mack",
+      "beer": "Julebokk",
+      "abv": 9.0,
+      "source": "pol",
+      "time": "20:00",
+      "vinmonopoletId": "10485702",
+      "untappdUrl": "https://untappd.com/b/macks-olbryggeri-julebokk/2899207",
+      "scores": {
+        "Jo Bjørnar": 4.25,
+        "Jostein": 4.0,
+        "Knut": 4.0,
+        "Knut Marius": 4.25,
+        "Reid": 4.25,
+        "Stian": 3.75,
+        "Svein": 3.75,
+        "Eivind": null,
+        "Jarle": 4.25
+      },
+      "average": 4.0625,
+      "comments": [
+        "Her er det berre å spruta ned skjermen."
+      ]
+    },
+    {
+      "order": 4,
+      "name": "Mack - Juleøl (4,5%)",
+      "brewery": "Mack",
+      "beer": "Juleøl",
+      "abv": 4.5,
+      "source": null,
+      "time": "20:22",
+      "vinmonopoletId": null,
+      "untappdUrl": "https://untappd.com/b/macks-olbryggeri-mack-juleol-4-5/489423",
+      "scores": {
+        "Jo Bjørnar": 3.0,
+        "Jostein": 3.0,
+        "Knut": 3.0,
+        "Knut Marius": 3.25,
+        "Reid": null,
+        "Stian": 3.0,
+        "Svein": null,
+        "Eivind": null,
+        "Jarle": 3.0
+      },
+      "average": 3.0417,
+      "comments": []
+    },
+    {
+      "order": 5,
+      "name": "Klokk & Co - Juleklokk (8%)",
+      "brewery": "Klokk & Co",
+      "beer": "Juleklokk",
+      "abv": 8.0,
+      "source": "pol",
+      "time": "20:43",
+      "vinmonopoletId": "10485302",
+      "untappdUrl": "https://untappd.com/b/klokk-and-co-juleklokk-8/2910994",
+      "scores": {
+        "Jo Bjørnar": 4.25,
+        "Jostein": 4.25,
+        "Knut": 4.25,
+        "Knut Marius": 4.5,
+        "Reid": 4.5,
+        "Stian": 3.5,
+        "Svein": 4.5,
+        "Eivind": null,
+        "Jarle": null
+      },
+      "average": 4.25,
+      "comments": [
+        "Aldersproblem; Magen blir det lengste når ein legg seg på rygg. Det er god lyddemping i munnen til Stine"
+      ]
+    },
+    {
+      "order": 6,
+      "name": "Nøgne Ø - Julefri (0%)",
+      "brewery": "Nøgne Ø",
+      "beer": "Julefri",
+      "abv": 0.0,
+      "source": "pol",
+      "time": "21:07",
+      "vinmonopoletId": "11185602",
+      "untappdUrl": "https://untappd.com/b/nogne-o-julefri/3372089",
+      "scores": {
+        "Jo Bjørnar": 3.5,
+        "Jostein": 2.5,
+        "Knut": 3.25,
+        "Knut Marius": 3.5,
+        "Reid": 3.25,
+        "Stian": 4.0,
+        "Svein": 4.0,
+        "Eivind": null,
+        "Jarle": null
+      },
+      "average": 3.4286,
+      "comments": [
+        "Pepperkake uten alkohol!"
+      ]
+    },
+    {
+      "order": 7,
+      "name": "Nøgne Ø - God Jul (8,5%)",
+      "brewery": "Nøgne Ø",
+      "beer": "God Jul",
+      "abv": 8.5,
+      "source": "pol",
+      "time": "21:23",
+      "vinmonopoletId": "4679102",
+      "untappdUrl": "https://untappd.com/b/nogne-o-god-jul-2020/4001931",
+      "scores": {
+        "Jo Bjørnar": 4.75,
+        "Jostein": 3.75,
+        "Knut": 3.25,
+        "Knut Marius": 3.5,
+        "Reid": 4.25,
+        "Stian": 3.5,
+        "Svein": 4.0,
+        "Eivind": null,
+        "Jarle": 3.5
+      },
+      "average": 3.8125,
+      "comments": [
+        "Likna litt på Yliren til Jarle"
+      ]
+    },
+    {
+      "order": 8,
+      "name": "Fjordfolk - Juleale (6,2%)",
+      "brewery": "Fjordfolk",
+      "beer": "Juleale",
+      "abv": 6.2,
+      "source": "pol",
+      "time": "21:55",
+      "vinmonopoletId": "10589202",
+      "untappdUrl": "https://untappd.com/b/fjordfolk-mikrobryggeri-juleale/2932661",
+      "scores": {
+        "Jo Bjørnar": 4.25,
+        "Jostein": 4.0,
+        "Knut": 4.25,
+        "Knut Marius": 4.0,
+        "Reid": null,
+        "Stian": 4.25,
+        "Svein": null,
+        "Eivind": null,
+        "Jarle": null
+      },
+      "average": 4.15,
+      "comments": [
+        "Flott boks!"
+      ]
+    },
+    {
+      "order": 9,
+      "name": "7 Fjell - Scrooge Christmas Bonus IPA (6,5%)",
+      "brewery": "7 Fjell",
+      "beer": "Scrooge Christmas Bonus IPA",
+      "abv": 6.5,
+      "source": "pol",
+      "time": "22:09",
+      "vinmonopoletId": "12276602",
+      "untappdUrl": "https://untappd.com/b/7-fjell-bryggeri-scrooge-christmas-bonus-ipa/4005512",
+      "scores": {
+        "Jo Bjørnar": 4.0,
+        "Jostein": null,
+        "Knut": 4.25,
+        "Knut Marius": null,
+        "Reid": 4.5,
+        "Stian": 4.5,
+        "Svein": 4.25,
+        "Eivind": null,
+        "Jarle": 4.5
+      },
+      "average": 4.3333,
+      "comments": [
+        "Asparges"
+      ]
+    },
+    {
+      "order": 10,
+      "name": "Ægir - Julenatt Appelsin Porter (10%)",
+      "brewery": "Ægir",
+      "beer": "Julenatt Appelsin Porter",
+      "abv": 10.0,
+      "source": "pol",
+      "time": "22:35",
+      "vinmonopoletId": "12277402",
+      "untappdUrl": "https://untappd.com/b/aegir-bryggeri-julenatt/4037679",
+      "scores": {
+        "Jo Bjørnar": 3.5,
+        "Jostein": null,
+        "Knut": null,
+        "Knut Marius": null,
+        "Reid": null,
+        "Stian": null,
+        "Svein": 3.0,
+        "Eivind": null,
+        "Jarle": 3.75
+      },
+      "average": 3.4167,
+      "comments": []
+    },
+    {
+      "order": 11,
+      "name": "Hansa julebrygg (4,7%)",
+      "brewery": null,
+      "beer": null,
+      "abv": 4.7,
+      "source": null,
+      "time": "22:45",
+      "vinmonopoletId": null,
+      "untappdUrl": "https://untappd.com/b/hansa-borg-bryggerier-hansa-julebrygg-4-7/97997",
+      "scores": {
+        "Jo Bjørnar": 3.75,
+        "Jostein": 3.5,
+        "Knut": null,
+        "Knut Marius": 3.5,
+        "Reid": null,
+        "Stian": 3.5,
+        "Svein": null,
+        "Eivind": null,
+        "Jarle": null
+      },
+      "average": 3.5625,
+      "comments": []
+    }
+  ],
+  "notes": []
+}

@@ -1,0 +1,33 @@
+{
+  "id": "21085302",
+  "name": "Haandbryggeriet Fatlagret Julebukk",
+  "producer": "Haandbryggeriet",
+  "country": "Norge",
+  "district": "Buskerud",
+  "style": "Spesial",
+  "abv": 10,
+  "volumeCl": 44,
+  "price": 106.9,
+  "litrePrice": 238.41,
+  "color": "Mørk gyllen.",
+  "smell": "Malt, akevittkrydder og eikefat.",
+  "taste": "Krydder og maltsmak.",
+  "method": "Undergjæret, lagret 6-8 md. på eikefat.",
+  "ingredients": "Vann, malt (bygg), humle, gjær",
+  "goodFor": [
+    "Storvilt",
+    "Ost",
+    "Dessert"
+  ],
+  "characteristics": {
+    "fylde": 4,
+    "friskhet": 8,
+    "bitterhet": 6
+  },
+  "packaging": "Emballasje med pant",
+  "selection": "Bestillingsutvalget",
+  "url": "https://www.vinmonopolet.no/Land/Norge/Buskerud/Drammen/Haandbryggeriet-Fatlagret-Julebukk/p/21085302",
+  "imageUrl": "https://bilder.vinmonopolet.no/cache/515x515-0/21085302-1.jpg",
+  "image": null,
+  "fetchedAt": "2026-11-23T15:37:26.612Z"
+}
