@@ -194,6 +194,17 @@ input:focus, select:focus { outline: 2px solid var(--accent); outline-offset: 0;
 .count:hover { border-color: var(--accent); }
 .count.has { background: color-mix(in srgb, var(--gold) 25%, var(--panel)); border-color: var(--gold); }
 details.sub { margin-top: 1rem; }
+.videos { margin-top: 1.2rem; padding-top: 0.6rem; border-top: 1px solid var(--line); }
+.videos h3 { margin-top: 0.4rem; }
+.video-now {
+  display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 0.4rem;
+  background: color-mix(in srgb, var(--gold) 18%, var(--panel)); border: 1px solid var(--gold);
+  border-radius: 8px; padding: 0.45rem 0.6rem; margin-bottom: 0.5rem; font-weight: 600; font-size: 0.9rem;
+}
+.video-list { list-style: none; margin: 0 0 0.5rem; padding: 0; display: grid; gap: 0.3rem; }
+.video-list li { display: flex; align-items: center; gap: 0.5rem; font-size: 0.9rem; }
+.video-list li .t { flex: 1; min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.video-list li.playing .t { font-weight: 700; color: var(--accent); }
 .pulse-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0.4rem 0.8rem; margin-top: 0.5rem; }
 .pulse-grid label { display: flex; justify-content: space-between; align-items: center; gap: 0.4rem; font-size: 0.9rem; }
 .pulse-grid input { width: 5rem; }

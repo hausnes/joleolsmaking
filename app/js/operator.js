@@ -1,5 +1,6 @@
 import { createStore, currentYear, beersFromLineup, manualBeer, uid } from "./store.js";
 import { imageUrl, loadPeople } from "./data.js";
+import { loadFavourites, parseVideo, videoKey } from "./video.js";
 import { CATEGORIES, categoryById, beerAverage, counts, fmt, parseScore, awards, syncStatus, clock } from "./stats.js";
 
 const $ = (s, el = document) => el.querySelector(s);
@@ -251,8 +252,33 @@ function renderPeople(s) {
   if (focused) pulse.querySelector(`input[data-person="${CSS.escape(focused)}"]`)?.focus();
 }
 
+let favourites = [];
+function renderVideos(s) {
+  const playing = s.tv.mode === "video" ? s.tv.video : null;
+  $("#video-now").hidden = !playing;
+  if (playing) $("#video-now-title").textContent = `▶ ${playing.title}`;
+  const list = [...favourites.map((v) => ({ ...v, fav: true })), ...(s.videos ?? [])];
+  $("#video-list").innerHTML = list
+    .map(
+      (v, i) => `<li class="${playing && videoKey(playing) === videoKey(v) ? "playing" : ""}" data-i="${i}">
+        <span class="t" title="${esc(v.title)}">${v.fav ? "⭐" : "🎞️"} ${esc(v.title)}</span>
+        <button class="btn small" data-act="play">▶</button>
+        ${v.fav ? "" : `<button class="link danger" data-act="remove" title="Fjern frå lista">✕</button>`}
+      </li>`
+    )
+    .join("");
+  return list;
+}
+
+function playVideo(v) {
+  store.update((s) => {
+    s.tv = { ...s.tv, mode: "video", video: { title: v.title, youtube: v.youtube ?? null, file: v.file ?? null, start: v.start ?? 0 }, seq: (s.tv.seq ?? 0) + 1 };
+  });
+}
+
 function render(s, status) {
   if (!s) return;
+  renderVideos(s);
   renderStatus(status);
   renderTvBar(s);
   renderLineup(s);
@@ -535,6 +561,48 @@ $("#add-participant").addEventListener("submit", (e) => {
   e.target.reset();
 });
 
+// Videoar
+$("#video-list").addEventListener("click", (e) => {
+  const act = e.target.dataset.act;
+  const li = e.target.closest("li");
+  if (!act || !li) return;
+  const list = renderVideos(store.state);
+  const v = list[Number(li.dataset.i)];
+  if (act === "play") playVideo(v);
+  if (act === "remove") store.update((s) => (s.videos = (s.videos ?? []).filter((x) => videoKey(x) !== videoKey(v))));
+});
+$("#video-form").addEventListener("submit", (e) => {
+  e.preventDefault();
+  const raw = $("#video-input").value;
+  const parsed = parseVideo(raw);
+  if (!parsed) return toast("Skjønte ikkje lenkja – lim inn ei YouTube-lenkje eller eit filnamn (t.d. video.mp4)");
+  const known = [...favourites, ...(store.state.videos ?? [])].find((v) => videoKey(v) === videoKey(parsed));
+  const v = known ?? { title: parsed.file ?? `YouTube ${parsed.youtube}`, ...parsed };
+  if (!known) store.update((s) => (s.videos ??= []).push(v)); // hugs videoen resten av kvelden
+  playVideo({ ...v, start: parsed.start ?? v.start });
+  $("#video-input").value = "";
+  if (!known && v.youtube) fetchTitle(v.youtube);
+});
+/** Hent tittelen frå YouTube (krev nett – går det ikkje, blir ID-en ståande). */
+async function fetchTitle(id) {
+  try {
+    const res = await fetch(`https://www.youtube.com/oembed?format=json&url=https://www.youtube.com/watch?v=${id}`);
+    const { title } = await res.json();
+    if (!title) return;
+    store.update((s) => {
+      for (const v of s.videos ?? []) if (v.youtube === id) v.title = title;
+      if (s.tv.video?.youtube === id) s.tv.video = { ...s.tv.video, title };
+    });
+  } catch {
+    /* utan nett – ikkje noko å gjere */
+  }
+}
+
+$("#video-toggle").addEventListener("click", () => {
+  store.update((s) => (s.tv = { ...s.tv, videoCmd: { cmd: "toggle", n: (s.tv.videoCmd?.n ?? 0) + 1 } }));
+});
+$("#video-stop").addEventListener("click", () => setTv({ mode: "dashboard", video: null }));
+
 // ---------- Oppstart ----------
 
 store.subscribe(render);
@@ -546,5 +614,7 @@ try {
   $("#save-status").textContent = `⚠️ Klarte ikkje å laste: ${e.message}. Køyrer serveren? (node server.mjs)`;
   $("#save-status").className = "save-status error";
 }
+favourites = await loadFavourites();
+if (store.state) render(store.state, store.status);
 const { people } = await loadPeople();
 $("#known-people").innerHTML = people.map((p) => `<option value="${esc(p.name)}">`).join("");

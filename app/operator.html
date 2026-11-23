@@ -109,6 +109,23 @@
       <h3>Siste</h3>
       <ul id="incident-log" class="log"></ul>
 
+      <section class="videos">
+        <h3>🎬 Videoar</h3>
+        <div id="video-now" class="video-now" hidden>
+          <span id="video-now-title"></span>
+          <span class="row">
+            <button id="video-toggle" class="btn small" title="Pause / spel">⏯ Pause/spel</button>
+            <button id="video-stop" class="btn small ghost" title="Tilbake til oversikta">⏹ Stopp</button>
+          </span>
+        </div>
+        <ul id="video-list" class="video-list"></ul>
+        <form id="video-form" class="row">
+          <input id="video-input" placeholder="Lim inn YouTube-lenkje eller filnamn …" autocomplete="off">
+          <button class="btn small">▶ Spel</button>
+        </form>
+        <p class="hint">YouTube krev nett (hotspot på denne PC-en). Filer i <code>data/videos/</code> fungerer utan nett.</p>
+      </section>
+
       <details class="sub">
         <summary>❤️ Puls</summary>
         <div id="pulse" class="pulse-grid"></div>

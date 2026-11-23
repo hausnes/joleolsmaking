@@ -12,6 +12,7 @@
  */
 import http from "node:http";
 import { readFile, writeFile, rename, mkdir, copyFile, stat } from "node:fs/promises";
+import { createReadStream } from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 
@@ -35,6 +36,10 @@ const TYPES = {
   ".svg": "image/svg+xml",
   ".mp3": "audio/mpeg",
   ".mp4": "video/mp4",
+  ".m4v": "video/mp4",
+  ".webm": "video/webm",
+  ".mov": "video/quicktime",
+  ".md": "text/plain; charset=utf-8",
   ".ico": "image/x-icon",
 };
 
@@ -141,6 +146,23 @@ async function handleStatic(req, res, url) {
       return res.end();
     }
     const type = TYPES[path.extname(file).toLowerCase()] ?? "application/octet-stream";
+    // Video: støtt «Range», så nettlesaren kan spole utan å laste heile fila
+    if (type.startsWith("video/")) {
+      const m = /bytes=(\d*)-(\d*)/.exec(req.headers.range ?? "");
+      if (m) {
+        const start = m[1] ? Number(m[1]) : 0;
+        const end = m[2] ? Math.min(Number(m[2]), s.size - 1) : s.size - 1;
+        res.writeHead(206, {
+          "Content-Type": type,
+          "Accept-Ranges": "bytes",
+          "Content-Range": `bytes ${start}-${end}/${s.size}`,
+          "Content-Length": end - start + 1,
+        });
+        return createReadStream(file, { start, end }).pipe(res);
+      }
+      res.writeHead(200, { "Content-Type": type, "Accept-Ranges": "bytes", "Content-Length": s.size });
+      return createReadStream(file).pipe(res);
+    }
     res.writeHead(200, { "Content-Type": type, "Cache-Control": "no-cache" });
     res.end(await readFile(file));
   } catch {

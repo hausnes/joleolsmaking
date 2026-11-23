@@ -15,7 +15,11 @@ node server.mjs        # eller: npm start
 4. Hendingar registrerer du med klikk i tabellen, eller med hurtigtastar: `d` dobesøk, `s` søling, `f` fis/hikk, `i` idioti, `k` krenking, og deretter persontalet. Høgreklikk trekkjer frå.
 5. Sitat blir knytte til ølet som er i gang, men du kan velje eit anna øl i lista ved sida av.
 6. **🕰️ Tidslinje** viser alle øla i rekkjefølgja dei vart sjekka inn, med snitt, sitat og hendingar. Ho blar sjølv vidare kvart 12. sekund og passar fint i pausar og på slutten av kvelden.
-7. Til slutt: **🏆 Kåring** og ◀ ▶ for å bla gjennom kåringane.
+7. **🎬 Videoar** (nedst til høgre på registreringssida): ▶ spelar ein favoritt på storskjermen. Du kan òg lime inn ei YouTube-lenkje (`?t=1m5s` startar midt i) eller eit filnamn frå `data/videos/`. ⏯ pausar, og ⏹ går tilbake til oversikta. Når videoen er ferdig, viser storskjermen oversikta att.
+   - YouTube krev at PC-en har nett (hotspot). Lokale filer i `data/videos/` fungerer utan nett. Sjå `data/videos/README.md`.
+   - Favorittane ligg i `data/videos.json`. Videoar du limer inn, blir hugsa resten av kvelden.
+   - Klikk ein gong i storskjermvindauget (t.d. på 🔇) før kvelden startar, elles kan nettlesaren nekte å spele av med lyd.
+8. Til slutt: **🏆 Kåring** og ◀ ▶ for å bla gjennom kåringane.
 
 Alt blir lagra fortløpande i `data/events/<år>.json`, med tryggleikskopiar i `data/events/backups/` kvart minutt. Serveren lyttar berre på `localhost`, og ingenting krev internett. Lagringa toler at nettlesaren blir lukka eller at serveren blir starta på nytt.
 
@@ -37,6 +41,8 @@ data/
   history/<år>.json        Alle smakingar, éi fil per år (importert frå Google-reknearket)
   people.json              Alle deltakarar, med år dei har vore med (og ev. alias)
   lineup/<år>.json         Øla som skal smakast i år (varenummer frå Vinmonopolet)
+  videos.json              Favorittvideoar (YouTube-ID og/eller lokal fil)
+  videos/                  Lokale videofiler (blir ikkje lagde i git)
   products/<varenr>.json   Produktinfo henta frå Vinmonopolet
   products/images/         Produktbilete frå Vinmonopolet
 scripts/

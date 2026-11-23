@@ -4,3 +4,5 @@ __pycache__/
 *.xlsx
 data/events/backups/
 *.tmp
+data/videos/*
+!data/videos/README.md

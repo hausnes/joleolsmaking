@@ -1,5 +1,5 @@
 import { createStore, currentYear } from "./store.js";
-import { loadHistory, loadPeople, findPrevious, imageUrl } from "./data.js";
+import { loadHistory, loadPeople, findPrevious, imageUrl, DATA } from "./data.js";
 import {
   CATEGORIES, categoryById, beerAverage, givenScores, doneBeers, ranking, personStats, counts,
   beerOutliers, trend, awards, allTimePersonAverages, fmt, clock, minutesSincePrevious, tempo, checkedIn,
@@ -454,6 +454,110 @@ function viewTimeline(s) {
   </section>`;
 }
 
+// ---------- Video ----------
+
+let player = null; // { toggle(), destroy() } for videoen som spelar no
+let endedSeq = null; // seq for ein video som er ferdig – då viser me oversikta til sjefen gjer noko anna
+let lastVideoCmd = null;
+let ytApi = null;
+
+function loadYouTubeApi() {
+  if (window.YT?.Player) return Promise.resolve(window.YT);
+  ytApi ??= new Promise((resolve, reject) => {
+    const fail = (why) => {
+      ytApi = null;
+      reject(new Error(why));
+    };
+    const timer = setTimeout(() => fail("timeout"), 8000);
+    window.onYouTubeIframeAPIReady = () => {
+      clearTimeout(timer);
+      resolve(window.YT);
+    };
+    const sc = document.createElement("script");
+    sc.src = "https://www.youtube.com/iframe_api";
+    sc.onerror = () => {
+      clearTimeout(timer);
+      sc.remove();
+      fail("offline");
+    };
+    document.head.append(sc);
+  });
+  return ytApi;
+}
+
+const viewVideo = (s) => `<section class="video-view enter-soft">
+  <div class="video-frame" id="video-frame"></div>
+  <p class="video-title">🎬 ${esc(s.tv.video?.title ?? "")}</p>
+</section>`;
+
+function startVideo(s) {
+  const v = s.tv.video;
+  const seq = s.tv.seq;
+  const frame = $("#video-frame");
+  const stillCurrent = () => store.state?.tv?.seq === seq;
+  const ended = () => {
+    if (!stillCurrent()) return;
+    endedSeq = seq;
+    render(store.state, store.status);
+  };
+  const fail = (msg) => {
+    if (stillCurrent()) frame.innerHTML = `<div class="video-error">📡 ${esc(msg)}</div>`;
+  };
+
+  const youtube = async () => {
+    if (!v.youtube) return fail(`Fann ikkje videofila «${v.file}» i data/videos/.`);
+    try {
+      const YT = await loadYouTubeApi();
+      if (!stillCurrent()) return;
+      const host = document.createElement("div");
+      frame.append(host);
+      const p = new YT.Player(host, {
+        videoId: v.youtube,
+        width: "100%",
+        height: "100%",
+        playerVars: { autoplay: 1, start: v.start || 0, rel: 0, playsinline: 1 },
+        events: {
+          onReady: (e) => e.target.playVideo(),
+          onStateChange: (e) => e.data === YT.PlayerState.ENDED && ended(),
+          onError: () => fail("YouTube ville ikkje spele denne videoen (kan vere sperra for innbygging)."),
+        },
+      });
+      player = {
+        toggle: () => (p.getPlayerState?.() === YT.PlayerState.PLAYING ? p.pauseVideo() : p.playVideo()),
+        destroy: () => p.destroy?.(),
+      };
+    } catch {
+      fail("Ingen kontakt med YouTube. Slå på hotspot på PC-en, eller legg videoen som fil i data/videos/.");
+    }
+  };
+
+  if (v.file) {
+    const el = document.createElement("video");
+    el.src = `${DATA}/videos/${encodeURIComponent(v.file)}`;
+    el.playsInline = true;
+    el.onloadedmetadata = () => {
+      if (v.start) el.currentTime = v.start;
+      el.play().catch(() => fail("Nettlesaren stoppa avspelinga – klikk ein gong i dette vindauget og prøv igjen."));
+    };
+    el.onended = ended;
+    el.onerror = () => {
+      el.remove();
+      youtube(); // fila manglar: prøv YouTube i staden
+    };
+    frame.append(el);
+    player = {
+      toggle: () => (el.paused ? el.play() : el.pause()),
+      destroy: () => {
+        el.pause();
+        el.removeAttribute("src");
+        el.load();
+      },
+    };
+  } else {
+    youtube();
+  }
+}
+
 const viewMessage = (s) => `<section class="message enter-pop"><h1>${esc(s.tv.message)}</h1></section>`;
 
 // ---------- Render ----------
@@ -468,6 +572,7 @@ function render(s, status) {
 
   let mode = s.tv?.mode ?? "dashboard";
   if (mode === "reveal") mode = "beer"; // eldre tilstand frå før avsløringa vart fjerna
+  if (mode === "video" && (!s.tv.video || endedSeq === s.tv.seq)) mode = "dashboard";
   const beer = s.beers.find((b) => b.id === s.tv?.beerId) ?? s.beers.find((b) => b.id === s.currentBeerId);
   const done = beer?.status === "done";
   // Kva som må til for å starte visninga på nytt (med animasjon)
@@ -475,13 +580,29 @@ function render(s, status) {
     mode === "awards" ? `awards|${s.tv.awardIndex}|${s.tv.seq}` :
     mode === "message" ? `message|${s.tv.message}|${s.tv.seq}` :
     mode === "timeline" ? `timeline|${timelinePage(s).page}` :
+    mode === "video" ? `video|${s.tv.seq}` :
     mode === "beer" ? `beer|${beer?.id}|${done ? "result" : "live"}` : "dashboard";
   const fresh = key !== lastKey;
+
+  if (mode === "video" && !fresh) {
+    // Ikkje teikn på nytt (då startar videoen om att) – berre ta imot pause/spel frå sjefen
+    const n = s.tv.videoCmd?.n ?? null;
+    if (n !== lastVideoCmd) {
+      lastVideoCmd = n;
+      player?.toggle();
+    }
+    return;
+  }
+  if (fresh && player) {
+    player.destroy();
+    player = null;
+  }
 
   let html;
   if (mode === "beer" && beer) html = done ? viewResult(s, beer) : viewBeer(s, beer);
   else if (mode === "awards") html = viewAwards(s);
   else if (mode === "timeline") html = viewTimeline(s);
+  else if (mode === "video") html = viewVideo(s);
   else if (mode === "message") html = viewMessage(s);
   else html = viewDashboard(s);
 
@@ -501,6 +622,10 @@ function render(s, status) {
 
   if (fresh && mode === "beer" && done && wasLive) crash(); // siste karakter kom inn
   if (fresh && mode === "awards") fanfare();
+  if (fresh && mode === "video") {
+    lastVideoCmd = s.tv.videoCmd?.n ?? null;
+    startVideo(s);
+  }
 }
 
 /** Nye hendingar og sitat dukkar opp som små varsel, uansett kva som blir vist. */
