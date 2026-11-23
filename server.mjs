@@ -69,7 +69,7 @@ async function saveEvent(year, state) {
   if (now - (lastBackup.get(year) ?? 0) > BACKUP_EVERY_MS) {
     lastBackup.set(year, now);
     const stamp = new Date().toISOString().replace(/[:.]/g, "-").slice(0, 19);
-    await copyFile(file, path.join(BACKUP_DIR, `${year}-${stamp}.json`));
+    await copyFile(file, path.join(BACKUP_DIR, `${year}_${stamp.slice(5)}.json`));
   }
 }
 

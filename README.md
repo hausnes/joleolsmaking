@@ -16,6 +16,14 @@ node server.mjs        # eller: npm start
 
 Alt blir lagra fortløpande i `data/events/<år>.json`, med tryggleikskopiar i `data/events/backups/` kvart minutt. Serveren lyttar berre på `localhost`, og ingenting krev internett. Lagringa toler at nettlesaren blir lukka eller at serveren blir starta på nytt.
 
+### Slette testdata
+
+```sh
+npm run nullstill
+```
+
+Slettar `data/events/`, altså kvelden og alle tryggleikskopiane. Lukk registreringssida og storskjermen først, elles kan den opne registreringssida lagre testkvelden på nytt. Neste gong registreringssida blir opna, lagar ho ein ny og tom kveld frå lineup-fila. Hugs å køyre kommandoen etter den siste testrunden, før den ekte kvelden.
+
 ## Struktur
 
 ```
