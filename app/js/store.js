@@ -82,7 +82,7 @@ export function emptyState(year) {
     currentBeerId: null,
     incidents: [],
     quotes: [],
-    measurements: { pulse: {} },
+    pulse: { rounds: [], guesses: {} },
     tv: { mode: "dashboard", beerId: null, awardIndex: 0, message: "", seq: 0 },
   };
 }

@@ -126,9 +126,19 @@
         <p class="hint">YouTube krev nett (hotspot på denne PC-en). Filer i <code>data/videos/</code> fungerer utan nett.</p>
       </section>
 
-      <details class="sub">
+      <details class="sub" id="pulse-panel">
         <summary>❤️ Puls</summary>
+        <div class="row pulse-rounds">
+          <select id="pulse-round" title="Kva runde du skriv inn for"></select>
+          <button id="pulse-new" class="btn small ghost" type="button">＋ Ny runde</button>
+          <button id="pulse-show" class="btn small" type="button" title="Vis runden på storskjermen">📺 Vis</button>
+        </div>
         <div id="pulse" class="pulse-grid"></div>
+        <details class="sub tips">
+          <summary>🎯 Tipp sluttpulsen</summary>
+          <p class="hint">Før sluttmålinga: kvar person tippar sin eigen sluttpuls. Den som er nærast, vinn kåringa «Pulsprofeten».</p>
+          <div id="pulse-guesses" class="pulse-grid"></div>
+        </details>
       </details>
       <details class="sub">
         <summary>👥 Deltakarar</summary>

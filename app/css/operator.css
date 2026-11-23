@@ -208,6 +208,13 @@ details.sub { margin-top: 1rem; }
 .pulse-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0.4rem 0.8rem; margin-top: 0.5rem; }
 .pulse-grid label { display: flex; justify-content: space-between; align-items: center; gap: 0.4rem; font-size: 0.9rem; }
 .pulse-grid input { width: 5rem; }
+.pulse-rounds { margin-top: 0.5rem; }
+#pulse { grid-template-columns: 1fr; }
+#pulse label { justify-content: flex-start; }
+#pulse label input { margin-left: 0.6rem; }
+.pulse-rounds select { flex: 1; min-width: 0; }
+.pulse-grid .prev { color: var(--muted); font-size: 0.75rem; margin-left: auto; }
+details.tips { margin-top: 0.8rem; }
 .participants li { display: flex; justify-content: space-between; }
 #add-participant { margin-top: 0.5rem; }
 

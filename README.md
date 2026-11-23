@@ -19,7 +19,10 @@ node server.mjs        # eller: npm start
    - YouTube krev at PC-en har nett (hotspot). Lokale filer i `data/videos/` fungerer utan nett. Sjå `data/videos/README.md`.
    - Favorittane ligg i `data/videos.json`. Videoar du limer inn, blir hugsa resten av kvelden.
    - Klikk ein gong i storskjermvindauget (t.d. på 🔇) før kvelden startar, elles kan nettlesaren nekte å spele av med lyd.
-8. Til slutt: **🏆 Kåring** og ◀ ▶ for å bla gjennom kåringane.
+8. **❤️ Puls** (nedst til høgre): trykk **＋ Start-runde** ved starten av kvelden og skriv inn pulsen frå klokkene. Storskjermen viser han live, saman med fjorårets puls. På slutten trykker du **＋ Ny runde** («Slutt»). Då viser storskjermen auken frå start, sortert etter kven som har auka mest. Ekstra rundar undervegs er valfrie.
+   - **🎯 Tipp sluttpulsen**: før sluttmålinga tippar kvar person sin eigen sluttpuls. Den som er nærast, vinn.
+   - Gir kåringane 💓 Hjartebankaren (størst auke i prosent), 🧘 Isbjørnen (minst auke) og 🎯 Pulsprofeten.
+9. Til slutt: **🏆 Kåring** og ◀ ▶ for å bla gjennom kåringane.
 
 Alt blir lagra fortløpande i `data/events/<år>.json`, med tryggleikskopiar i `data/events/backups/` kvart minutt. Serveren lyttar berre på `localhost`, og ingenting krev internett. Lagringa toler at nettlesaren blir lukka eller at serveren blir starta på nytt.
 

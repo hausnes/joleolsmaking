@@ -1,7 +1,7 @@
 import { createStore, currentYear, beersFromLineup, manualBeer, uid } from "./store.js";
 import { imageUrl, loadPeople } from "./data.js";
 import { loadFavourites, parseVideo, videoKey } from "./video.js";
-import { CATEGORIES, categoryById, beerAverage, counts, fmt, parseScore, awards, syncStatus, clock } from "./stats.js";
+import { CATEGORIES, categoryById, beerAverage, counts, fmt, parseScore, awards, syncStatus, clock, pulseRounds } from "./stats.js";
 
 const $ = (s, el = document) => el.querySelector(s);
 const esc = (s) =>
@@ -240,16 +240,42 @@ function renderPeople(s) {
         <button class="link danger" data-act="p-del">✕</button></span></li>`
     )
     .join("");
-  const pulse = $("#pulse");
-  const focused = document.activeElement?.closest?.("#pulse") ? document.activeElement.dataset.person : null;
-  pulse.innerHTML = s.participants
-    .map(
-      (p) => `<label>${esc(p)} <input type="number" min="30" max="220" data-person="${esc(p)}" value="${
-        s.measurements?.pulse?.[p] ?? ""
-      }"></label>`
-    )
+  renderPulse(s);
+}
+
+// ---------- Puls ----------
+let pulseRoundId = null; // runden operatøren skriv inn for no
+function renderPulse(s) {
+  const rounds = pulseRounds(s);
+  if (!rounds.some((r) => r.id === pulseRoundId)) pulseRoundId = rounds[rounds.length - 1]?.id ?? null;
+  const sel = $("#pulse-round");
+  sel.innerHTML = rounds.length
+    ? rounds.map((r) => `<option value="${r.id}">${esc(r.label)} (${clock(r.at)})</option>`).join("")
+    : `<option value="">Ingen rundar enno – start med «Start»</option>`;
+  sel.value = pulseRoundId ?? "";
+  $("#pulse-show").disabled = !pulseRoundId;
+  $("#pulse-new").textContent = rounds.length === 0 ? "＋ Start-runde" : "＋ Ny runde";
+
+  const round = rounds.find((r) => r.id === pulseRoundId);
+  const first = rounds[0];
+  $("#pulse").innerHTML = round
+    ? s.participants
+        .map((p) => {
+          const before = round !== first ? first?.values?.[p] : null;
+          return `<label>${esc(p)} ${before ? `<span class="prev">start ${before}</span>` : ""}<input type="number" min="30" max="220" data-person="${esc(p)}" value="${round.values?.[p] ?? ""}"></label>`;
+        })
+        .join("")
+    : "";
+  $("#pulse-guesses").innerHTML = s.participants
+    .map((p) => `<label>${esc(p)} <input type="number" min="30" max="220" data-person="${esc(p)}" value="${s.pulse?.guesses?.[p] ?? ""}"></label>`)
     .join("");
-  if (focused) pulse.querySelector(`input[data-person="${CSS.escape(focused)}"]`)?.focus();
+}
+
+function ensurePulse(s) {
+  s.pulse ??= { rounds: [], guesses: {} };
+  s.pulse.rounds ??= [];
+  s.pulse.guesses ??= {};
+  return s.pulse;
 }
 
 let favourites = [];
@@ -285,7 +311,7 @@ function render(s, status) {
   renderCurrent(s);
   renderQuotes(s);
   renderIncidents(s);
-  if (!document.activeElement?.closest?.("#pulse, #participants, #add-participant")) renderPeople(s);
+  if (!document.activeElement?.closest?.("#pulse-panel, #participants, #add-participant")) renderPeople(s);
 }
 
 // ---------- Hendingar i UI ----------
@@ -527,17 +553,54 @@ document.addEventListener("keydown", (e) => {
   }
 });
 
-// Puls og deltakarar
-$("#pulse").addEventListener("change", (e) => {
-  const p = e.target.dataset.person;
-  const v = parseInt(e.target.value, 10);
-  store.update((s) => {
-    s.measurements ??= { pulse: {} };
-    s.measurements.pulse ??= {};
-    if (Number.isFinite(v)) s.measurements.pulse[p] = v;
-    else delete s.measurements.pulse[p];
-  });
+// Puls
+$("#pulse-round").addEventListener("change", (e) => {
+  pulseRoundId = e.target.value || null;
+  renderPulse(store.state);
 });
+$("#pulse-new").addEventListener("click", () => {
+  const rounds = pulseRounds(store.state);
+  const suggestion = rounds.length === 0 ? "Start" : rounds.some((r) => r.label === "Slutt") ? `Runde ${rounds.length + 1}` : "Slutt";
+  const label = prompt("Namn på runden (t.d. Start, Slutt eller «Etter Nøgne Ø»):", suggestion)?.trim();
+  if (!label) return;
+  const id = uid("pr");
+  store.update((s) => {
+    ensurePulse(s).rounds.push({ id, label, at: new Date().toISOString(), values: {} });
+    s.tv = { ...s.tv, mode: "pulse", pulseRoundId: id, seq: (s.tv.seq ?? 0) + 1 };
+  });
+  pulseRoundId = id;
+  renderPulse(store.state);
+  setTimeout(() => $("#pulse input")?.focus(), 0);
+});
+$("#pulse-show").addEventListener("click", () => pulseRoundId && setTv({ mode: "pulse", pulseRoundId }));
+function pulseInput(target, write) {
+  const p = target.dataset.person;
+  const v = parseInt(target.value, 10);
+  store.update((s) => write(ensurePulse(s), p, Number.isFinite(v) && v > 20 && v < 250 ? v : null));
+}
+$("#pulse").addEventListener("change", (e) =>
+  pulseInput(e.target, (pulse, p, v) => {
+    const r = pulse.rounds.find((x) => x.id === pulseRoundId);
+    if (!r) return;
+    if (v == null) delete r.values[p];
+    else r.values[p] = v;
+  })
+);
+$("#pulse").addEventListener("keydown", (e) => {
+  if (e.key !== "Enter") return;
+  e.preventDefault();
+  e.target.dispatchEvent(new Event("change", { bubbles: true }));
+  const inputs = [...$("#pulse").querySelectorAll("input")];
+  inputs[inputs.indexOf(e.target) + 1]?.focus();
+});
+$("#pulse-guesses").addEventListener("change", (e) =>
+  pulseInput(e.target, (pulse, p, v) => {
+    if (v == null) delete pulse.guesses[p];
+    else pulse.guesses[p] = v;
+  })
+);
+
+// Deltakarar
 $("#participants").addEventListener("click", (e) => {
   const act = e.target.dataset.act;
   const p = e.target.closest("li")?.dataset.person;

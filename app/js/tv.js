@@ -3,6 +3,7 @@ import { loadHistory, loadPeople, findPrevious, imageUrl, DATA } from "./data.js
 import {
   CATEGORIES, categoryById, beerAverage, givenScores, doneBeers, ranking, personStats, counts,
   beerOutliers, trend, awards, allTimePersonAverages, fmt, clock, minutesSincePrevious, tempo, checkedIn,
+  pulseRounds, pulseChanges, pulseGuesses, latestPulse,
 } from "./stats.js";
 import { toggleSound, crash, ding, boing, fanfare } from "./sound.js";
 
@@ -171,7 +172,7 @@ function viewDashboard(s) {
   const leaders = Object.fromEntries(
     CATEGORIES.map((cat) => [cat.id, Math.max(0, ...Object.values(c[cat.id]))])
   );
-  const pulse = s.measurements?.pulse ?? {};
+  const pulse = latestPulse(s);
   const hasPulse = Object.keys(pulse).length > 0;
 
   const quotes = s.quotes.slice(-3).reverse();
@@ -454,6 +455,86 @@ function viewTimeline(s) {
   </section>`;
 }
 
+// ---------- Puls ----------
+
+/** Farge for puls: roleg grøn (≤ 60) via gull til raud (≥ 130). */
+function pulseColor(bpm) {
+  const t = Math.max(0, Math.min(1, (bpm - 60) / 70));
+  return scoreColor(5 - t * 4.2);
+}
+
+/** Pulsen i fjor (frå historikken), om personen var med. */
+function lastYearPulse(person) {
+  const y = history.find((h) => h.year === year - 1);
+  return y?.categories?.pulse?.counts?.[person] ?? null;
+}
+
+function viewPulse(s) {
+  const rounds = pulseRounds(s);
+  const round = rounds.find((r) => r.id === s.tv.pulseRoundId) ?? rounds[rounds.length - 1];
+  if (!round) return `<section class="message enter"><h1>❤️ Pulsmåling kjem …</h1></section>`;
+  const first = rounds[0];
+  const isFirst = round.id === first.id;
+  const n = s.participants.filter((p) => typeof round.values?.[p] === "number").length;
+
+  const tiles = s.participants
+    .map((p) => {
+      const v = round.values?.[p];
+      if (typeof v !== "number")
+        return `<div class="tile waiting" data-person="${esc(p)}"><span class="tile-score">…</span><span class="tile-name">${esc(p)}</span></div>`;
+      const start = first.values?.[p];
+      const ly = lastYearPulse(p);
+      const sub = !isFirst && typeof start === "number"
+        ? `<span class="tile-sub">${v - start >= 0 ? "▲" : "▼"} ${v - start >= 0 ? "+" : ""}${v - start} (${fmt(((v - start) / start) * 100, 0)} %)</span>`
+        : ly ? `<span class="tile-sub">i fjor ${ly}</span>` : "";
+      return `<div class="tile given" data-person="${esc(p)}" style="--c:${pulseColor(v)}">
+        <span class="tile-score">${v}</span><span class="tile-name">${esc(p)}</span>${sub}</div>`;
+    })
+    .join("");
+
+  // Etter første runde: kven har auka mest – og tippekonkurransen
+  const changes = isFirst ? [] : pulseChanges({ ...s, pulse: { ...s.pulse, rounds: rounds.filter((r) => Date.parse(r.at) <= Date.parse(round.at)) } });
+  const maxPct = Math.max(1, ...changes.map((c) => Math.abs(c.pct)));
+  const isLast = round.id === rounds[rounds.length - 1].id;
+  const guesses = !isFirst && isLast ? pulseGuesses(s) : [];
+
+  return `<section class="pulse-view enter">
+    <header class="pulse-head">
+      <span class="heart">❤️</span>
+      <div><p class="kicker">Pulsmåling · ${clock(round.at)}</p><h1>${esc(round.label)}</h1></div>
+      <p class="pulse-count">${n}/${s.participants.length} målt</p>
+    </header>
+    <div class="tiles pulse-tiles" style="--n:${Math.max(s.participants.length, 4)}">${tiles}</div>
+    ${
+      changes.length || guesses.length
+        ? `<div class="pulse-bottom">
+        ${
+          changes.length
+            ? `<div class="card"><h2>📈 Størst auke sidan «${esc(first.label)}»</h2><ul class="pchange">${changes
+                .map(
+                  (c, i) => `<li style="--i:${i}"><span class="nm">${esc(c.person)}</span>
+                  <span class="bar"><i style="width:${(Math.max(0, c.pct) / maxPct) * 100}%;background:${pulseColor(c.end)}"></i></span>
+                  <b>${c.start} → ${c.end}</b><span class="pct">${c.pct >= 0 ? "+" : ""}${fmt(c.pct, 0)} %</span></li>`
+                )
+                .join("")}</ul></div>`
+            : ""
+        }
+        ${
+          guesses.length
+            ? `<div class="card"><h2>🎯 Tippekonkurransen</h2><ul class="pguess">${guesses
+                .map(
+                  (g, i) => `<li class="${i === 0 ? "win" : ""}"><span class="nm">${i === 0 ? "🏆 " : ""}${esc(g.person)}</span>
+                  <span>tippa ${g.guess}, fekk ${g.actual}</span><b>${g.off === 0 ? "BLINK!" : `± ${g.off}`}</b></li>`
+                )
+                .join("")}</ul></div>`
+            : ""
+        }
+      </div>`
+        : ""
+    }
+  </section>`;
+}
+
 // ---------- Video ----------
 
 let player = null; // { toggle(), destroy() } for videoen som spelar no
@@ -581,6 +662,7 @@ function render(s, status) {
     mode === "message" ? `message|${s.tv.message}|${s.tv.seq}` :
     mode === "timeline" ? `timeline|${timelinePage(s).page}` :
     mode === "video" ? `video|${s.tv.seq}` :
+    mode === "pulse" ? `pulse|${s.tv.pulseRoundId}` :
     mode === "beer" ? `beer|${beer?.id}|${done ? "result" : "live"}` : "dashboard";
   const fresh = key !== lastKey;
 
@@ -603,6 +685,7 @@ function render(s, status) {
   else if (mode === "awards") html = viewAwards(s);
   else if (mode === "timeline") html = viewTimeline(s);
   else if (mode === "video") html = viewVideo(s);
+  else if (mode === "pulse") html = viewPulse(s);
   else if (mode === "message") html = viewMessage(s);
   else html = viewDashboard(s);
 
@@ -614,7 +697,7 @@ function render(s, status) {
 
   const given = new Set();
   for (const t of stage.querySelectorAll(".tile.given")) {
-    const k = `${beer?.id}|${t.dataset.person}`;
+    const k = `${mode === "pulse" ? s.tv.pulseRoundId : beer?.id}|${t.dataset.person}`;
     given.add(k);
     if (!fresh && !lastGiven.has(k)) t.classList.add("new");
   }

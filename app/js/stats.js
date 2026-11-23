@@ -106,6 +106,45 @@ export function tempo(state) {
   return Math.round((checkinMs(list[list.length - 1]) - checkinMs(list[0])) / 60000 / (list.length - 1));
 }
 
+// ---------- Puls ----------
+// state.pulse = { rounds: [{ id, label, at, values: { person: bpm } }], guesses: { person: bpm } }
+
+export const pulseRounds = (state) => [...(state.pulse?.rounds ?? [])].sort((a, b) => Date.parse(a.at) - Date.parse(b.at));
+
+/** Siste målte puls per person (frå den siste runden personen er med i). */
+export function latestPulse(state) {
+  const out = {};
+  for (const r of pulseRounds(state)) for (const [p, v] of Object.entries(r.values ?? {})) out[p] = v;
+  return out;
+}
+
+/** Endring frå første til siste måling for kvar person (krev to rundar), sortert etter størst prosentvis auke. */
+export function pulseChanges(state) {
+  const rounds = pulseRounds(state);
+  if (rounds.length < 2) return [];
+  return state.participants
+    .map((person) => {
+      const vals = rounds.map((r) => r.values?.[person]).filter((v) => typeof v === "number");
+      if (vals.length < 2) return null;
+      const start = vals[0];
+      const end = vals[vals.length - 1];
+      return { person, start, end, diff: end - start, pct: ((end - start) / start) * 100 };
+    })
+    .filter(Boolean)
+    .sort((a, b) => b.pct - a.pct);
+}
+
+/** Tippekonkurransen: kor nær var tipset på sluttpulsen (siste runde)? Nærast først. */
+export function pulseGuesses(state) {
+  const rounds = pulseRounds(state);
+  if (rounds.length < 2) return [];
+  const last = rounds[rounds.length - 1];
+  return Object.entries(state.pulse?.guesses ?? {})
+    .filter(([p, g]) => typeof g === "number" && typeof last.values?.[p] === "number")
+    .map(([person, guess]) => ({ person, guess, actual: last.values[person], off: Math.abs(last.values[person] - guess) }))
+    .sort((a, b) => a.off - b.off);
+}
+
 // ---------- Status ----------
 
 /** Alle deltakarane har anten gitt karakter eller n/a, og minst éin har gitt karakter. */
@@ -146,7 +185,7 @@ export function awards(state) {
       beers: rank.filter((r) => r.average === top).map((r) => r.beer),
     });
     const bottom = rank[rank.length - 1].average;
-    list.push({
+    if (rank.length > 1) list.push({
       icon: "🪣",
       title: "Botnskrapet",
       subtitle: "Kveldens lågaste snitt",
@@ -168,6 +207,8 @@ export function awards(state) {
   }
 
   const add = (icon, title, subtitle, res, valueFmt) => {
+    // Hopp over kåringar der alle er like (t.d. tidleg på kvelden) – då er det ingen vinnar
+    if (res && res.who.length > 1 && res.who.length >= ps.length) return;
     if (res) list.push({ icon, title, subtitle, names: res.who.map((e) => e.person), value: valueFmt(res.value) });
   };
   add("😇", "Snillast", "Høgast personleg snitt", winners(ps, (p) => p.average, { min: false }), (v) => `Snitt ${fmt(v)}`);
@@ -180,6 +221,28 @@ export function awards(state) {
     const res = winners(c, (e) => e.n, { min: false, filter: (e) => e.n > 0 });
     add(icon, title, subtitle, res, (v) => `${v} stk`);
   };
+  const changes = pulseChanges(state);
+  if (changes.length) {
+    const fmtChange = (c) => `${c.start} → ${c.end} slag/min (${c.pct >= 0 ? "+" : ""}${fmt(c.pct, 0)} %)`;
+    const most = winners(changes, (c) => c.pct, { min: false });
+    list.push({ icon: "💓", title: "Hjartebankaren", subtitle: "Størst pulsauke gjennom kvelden", names: most.who.map((c) => c.person), value: most.who.map(fmtChange).join(", ") });
+    if (changes.length > 1) {
+      const calm = winners(changes, (c) => c.pct);
+      list.push({ icon: "🧘", title: "Isbjørnen", subtitle: "Roleg puls uansett kva som skjer", names: calm.who.map((c) => c.person), value: calm.who.map(fmtChange).join(", ") });
+    }
+  }
+  const guesses = pulseGuesses(state);
+  if (guesses.length) {
+    const best = winners(guesses, (g) => g.off);
+    list.push({
+      icon: "🎯",
+      title: "Pulsprofeten",
+      subtitle: "Tippa sluttpulsen sin best",
+      names: best.who.map((g) => g.person),
+      value: best.who.map((g) => `Tippa ${g.guess}, fekk ${g.actual}`).join(", "),
+    });
+  }
+
   countAward("toilet", "🚽", "Blærekampion", "Flest dobesøk");
   countAward("spill", "💦", "Sølekongen", "Flest sølingar");
   countAward("fart", "💨", "Gassverket", "Mest fising, hikking og gupling");
