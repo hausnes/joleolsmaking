@@ -143,10 +143,12 @@
       advent.appendChild(b);
     });
     if (D.lineupNext) {
-      const d = document.createElement("div");
+      const d = document.createElement("a");
       d.className = "door locked";
-      d.innerHTML = `<span class="deco">🔒</span><span class="yr">${D.lineupNext.year}</span>
-        <span class="meta"><b>${D.lineupNext.nBeers}</b> øl står klare<br>Opnar snart …</span>`;
+      d.href = "lineup.html";
+      d.style.textDecoration = "none";
+      d.innerHTML = `<span class="deco">🎁</span><span class="yr">${D.lineupNext.year}</span>
+        <span class="meta"><b>${D.lineupNext.nBeers}</b> øl står klare<br><b>Sjå lineupen →</b></span>`;
       advent.appendChild(d);
     }
     function openYear(year, door) {
@@ -599,7 +601,8 @@
     // ----- Neste år -----
     if (D.lineupNext) {
       $("#next").innerHTML = `<h3>🎄 Kapittel ${D.years.length + 1}: ${D.lineupNext.year}</h3>
-        <p><b>${D.lineupNext.nBeers}</b> øl står klare. Kven tek gullet i år, og kven sølar mest?</p>`;
+        <p><b>${D.lineupNext.nBeers}</b> øl står klare. Kven tek gullet i år, og kven sølar mest?</p>
+        <p style="margin-top:1rem"><a href="lineup.html"><b>🎁 Sjå kva som kjem →</b></a></p>`;
     } else $("#next").remove();
 
     // Innfading

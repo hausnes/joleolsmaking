@@ -6,7 +6,7 @@
  *
  * Sida i docs/ les berre data.json, så ho fungerer sjølv om Pages publiserer frå /docs.
  */
-import { readFile, writeFile, mkdir } from "node:fs/promises";
+import { readFile, writeFile, mkdir, copyFile, rm } from "node:fs/promises";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 
@@ -298,13 +298,100 @@ const quotes = QUOTES.map(([y, order, text, who]) => ({
   beer: order ? beers.find((b) => b.y === y && b.order === order)?.name ?? null : null,
 }));
 
-// ---------- Lineup 2026 (berre talet – ingen spoilarar) ----------
+// ---------- Lineup for neste kveld (eiga side: docs/lineup.html) ----------
+const STOP = new Set(["bryggeri", "brewery", "brewing", "company", "og", "and", "&", "ba"]);
+const tokens = (s) =>
+  new Set(
+    String(s ?? "")
+      .toLowerCase()
+      .replace(/\(.*?\)/g, " ")
+      .replace(/\b(19|20)\d\d\b/g, " ")
+      .replace(/[^\p{L}\p{N}]+/gu, " ")
+      .split(" ")
+      .filter((t) => t && !STOP.has(t) && !/^\d+$/.test(t))
+  );
+const sameSet = (a, b) => a.size > 0 && a.size === b.size && [...a].every((t) => b.has(t));
+
+async function buildLineup(year) {
+  const l = await read(`data/lineup/${year}.json`);
+  const imgDir = path.join(ROOT, "docs", "lineup-img");
+  await rm(imgDir, { recursive: true, force: true });
+  await mkdir(imgDir, { recursive: true });
+  const items = [];
+  for (const entry of l.beers) {
+    let it;
+    if (entry.vinmonopoletId) {
+      const p = await read(`data/products/${entry.vinmonopoletId}.json`);
+      it = {
+        id: p.id,
+        name: p.name,
+        producer: p.producer,
+        country: p.country,
+        district: p.district,
+        style: p.style,
+        abv: p.abv,
+        volumeCl: p.volumeCl,
+        price: p.price,
+        smell: p.smell,
+        taste: p.taste,
+        characteristics: p.characteristics,
+        url: p.url,
+        image: p.image,
+        home: false,
+      };
+    } else {
+      it = {
+        id: entry.name.toLowerCase().replace(/[^a-z0-9æøå]+/g, "-"),
+        name: entry.name,
+        producer: entry.brewery,
+        style: entry.style,
+        abv: entry.abv,
+        description: entry.description,
+        url: entry.untappdUrl ?? null,
+        image: entry.image,
+        home: entry.source === "heimebrygg",
+      };
+    }
+    if (it.image) {
+      it.photo = it.home || it.image.includes(".own."); // eige mobilbilete, ikkje produktbilete på kvit bakgrunn
+      const ext = path.extname(it.image);
+      const file = `${it.id}${ext}`;
+      await copyFile(path.join(ROOT, "data", it.image), path.join(imgDir, file));
+      it.image = `lineup-img/${file}`;
+    }
+    // Har me smakt dette før? Same bryggeri og same ølnamn (utan årstal).
+    const brewery = breweryOf({ name: it.name, brewery: it.producer });
+    const nameTok = tokens(it.name);
+    for (const t of tokens(brewery)) nameTok.delete(t);
+    for (const t of tokens(it.producer)) nameTok.delete(t);
+    const prev = beers.filter((b) => {
+      if (entry.historyNames?.some((h) => b.name && h.toLowerCase().includes((b.name.split(" – ")[1] ?? "").toLowerCase()) && b.brewery === brewery)) return true;
+      if (b.brewery !== brewery) return false;
+      const bt = tokens(b.name.includes(" – ") ? b.name.split(" – ")[1] : b.name);
+      for (const t of tokens(brewery)) bt.delete(t);
+      return sameSet(bt, nameTok);
+    });
+    it.history = prev.map((b) => ({ y: b.y, avg: b.avg, name: b.name }));
+    const fromBrewery = beers.filter((b) => b.brewery === brewery);
+    it.brewery = brewery;
+    it.breweryRecord = fromBrewery.length ? { n: fromBrewery.length, avg: r3(mean(fromBrewery.map((b) => b.avg))) } : null;
+    items.push(it);
+  }
+  return { year: l.year, participants: l.participants, beers: items };
+}
+
+await mkdir(path.join(ROOT, "docs"), { recursive: true });
 let lineupNext = null;
+const nextYear = years.at(-1) + 1;
 try {
-  const l = await read(`data/lineup/${years.at(-1) + 1}.json`);
-  lineupNext = { year: l.year, nBeers: l.beers.length, nPeople: l.participants.length };
-} catch {
-  /* inga lineup */
+  const lineup = await buildLineup(nextYear);
+  await writeFile(path.join(ROOT, "docs", "lineup.json"), JSON.stringify(lineup));
+  lineupNext = { year: lineup.year, nBeers: lineup.beers.length, nPeople: lineup.participants.length };
+  console.log(`docs/lineup.json: ${lineup.beers.length} øl, ${lineup.beers.filter((b) => b.history.length).length} smakt før`);
+  for (const b of lineup.beers.filter((b) => b.history.length))
+    console.log(`  ${b.name} ← ${b.history.map((h) => `${h.y} ${h.name} (${h.avg})`).join("; ")}`);
+} catch (e) {
+  if (e.code !== "ENOENT") throw e;
 }
 
 const out = {
@@ -319,7 +406,6 @@ const out = {
   quotes,
   lineupNext,
 };
-await mkdir(path.join(ROOT, "docs"), { recursive: true });
 await writeFile(path.join(ROOT, "docs", "data.json"), JSON.stringify(out));
 console.log(
   `docs/data.json: ${yearRows.length} år, ${beers.length} øl, ${recurring.length} gjengangarar, ${breweries.length} bryggeri`

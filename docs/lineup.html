@@ -1,0 +1,233 @@
+<!doctype html>
+<html lang="nn">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Lineupen 2026</title>
+  <meta name="description" content="Øla som skal smakast på joleølsmakinga i år.">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎁</text></svg>">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,700;0,9..144,900;1,9..144,500;1,9..144,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .hero { padding-bottom: 1.5rem; }
+    .hero h1 { font-size: clamp(2.8rem, 10vw, 7rem); }
+    .stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(130px, 1fr)); gap: 0.7rem; max-width: 60rem; margin: 0 auto; }
+    .stat { background: var(--card); border: 1px solid var(--line); border-radius: var(--radius); padding: 0.9rem 0.5rem; text-align: center; }
+    .stat b { display: block; font: 900 clamp(1.6rem, 4.5vw, 2.3rem)/1.1 Fraunces, serif; color: var(--gold); }
+    .stat span { font-size: 0.82rem; color: var(--muted); }
+
+    .track { position: relative; height: 120px; margin: 0.5rem 0.5rem 0; }
+    .track .bar { position: absolute; left: 0; right: 0; top: 70px; height: 10px; border-radius: 99px;
+      background: linear-gradient(90deg, #8fe0b0, #f2c14e 45%, #d9433b); }
+    .track .dot { position: absolute; top: 0; transform: translateX(-50%); display: flex; flex-direction: column; align-items: center; cursor: pointer; }
+    .track .dot img { width: 30px; height: 56px; object-fit: contain; border-radius: 4px; background: #f3ecdc; filter: drop-shadow(0 3px 6px rgba(0,0,0,.6)); transition: transform .2s; }
+    .track .dot:hover img, .track .dot.hl img { transform: translateY(-6px) scale(1.25); }
+    .track .dot i { width: 2px; height: 12px; background: rgba(255,255,255,.4); }
+    .ticks { display: flex; justify-content: space-between; color: var(--faint); font-size: 0.8rem; margin: 0.4rem 0.5rem 0; }
+
+    .cards { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 290px), 1fr)); gap: 1rem; }
+    .beer { display: flex; flex-direction: column; padding: 0; overflow: hidden; transition: transform .25s, border-color .25s; }
+    .beer:hover { transform: translateY(-4px); border-color: var(--gold); }
+    .beer .pic { position: relative; height: 260px; overflow: hidden; display: flex; align-items: center; justify-content: center;
+      background: radial-gradient(circle at 50% 45%, #ffffff, #efe6d2 70%); }
+    .beer .pic img { height: 230px; width: 100%; object-fit: contain; mix-blend-mode: multiply; }
+    .beer .pic img.photo { position: absolute; inset: 0; height: 100%; object-fit: cover; mix-blend-mode: normal; }
+    .beer .pic::after { content: ""; position: absolute; left: 0; right: 0; bottom: 0; height: 40px; pointer-events: none;
+      background: linear-gradient(transparent, rgba(0,0,0,.25)); }
+    .beer .abv { position: absolute; top: 0.7rem; right: 0.7rem; font: 900 1.1rem Fraunces, serif; color: #2a1d05;
+      background: var(--gold); border-radius: 99px; padding: 0.15rem 0.6rem; }
+    .beer .num { position: absolute; top: 0.7rem; left: 0.7rem; font: 700 0.8rem Inter; color: var(--muted);
+      background: rgba(0,0,0,.45); border-radius: 99px; padding: 0.15rem 0.55rem; }
+    .beer .body { padding: 1rem 1.1rem 1.1rem; display: flex; flex-direction: column; gap: 0.45rem; flex: 1; }
+    .beer h3 { font-size: 1.3rem; }
+    .beer .who { color: var(--muted); font-size: 0.85rem; }
+    .tags { display: flex; flex-wrap: wrap; gap: 0.3rem; }
+    .tag { font-size: 0.75rem; font-weight: 600; border-radius: 99px; padding: 0.12rem 0.55rem; background: rgba(255,255,255,.08); }
+    .tag.style { background: rgba(143,224,176,.15); color: var(--mint); }
+    .tag.home { background: rgba(242,193,78,.2); color: var(--gold2); }
+    .tag.new { background: rgba(138,182,255,.18); color: #b9d2ff; }
+    .tag.again { background: rgba(255,107,94,.18); color: #ffb3ab; }
+    .meters { display: grid; grid-template-columns: auto 1fr; gap: 0.2rem 0.6rem; align-items: center; font-size: 0.75rem; color: var(--muted); }
+    .meter { height: 6px; border-radius: 99px; background: rgba(255,255,255,.08); overflow: hidden; }
+    .meter > i { display: block; height: 100%; border-radius: inherit; background: linear-gradient(90deg, var(--gold), var(--red2)); }
+    .desc { font-size: 0.88rem; color: var(--ink); opacity: .85; margin: 0; }
+    .hist { font-size: 0.82rem; color: var(--muted); border-top: 1px solid var(--grid); padding-top: 0.5rem; margin-top: auto; }
+    .hist b { color: var(--gold); }
+    .beer a.more { font-size: 0.8rem; color: var(--faint); }
+    .secret { text-align: center; color: var(--muted); font-style: italic; margin: 1rem auto 0; max-width: 40rem; }
+    .back { display: inline-block; margin-top: 1rem; }
+  </style>
+</head>
+<body>
+  <canvas id="snow" aria-hidden="true"></canvas>
+  <div class="lights" aria-hidden="true"></div>
+
+  <header class="hero">
+    <p class="kicker" id="kicker">Joleølsmakinga</p>
+    <h1>Kva kjem til helga?</h1>
+    <p class="lede" id="lede"></p>
+    <div class="stats" id="stats"></div>
+  </header>
+
+  <main>
+    <section style="padding-top:2rem">
+      <div class="sec-head">
+        <h2>Frå lett til tung</h2>
+        <p>Alle øla etter alkoholprosent. Hald over (eller trykk på) ei flaske for å finne ho att lenger ned.</p>
+      </div>
+      <div class="card">
+        <div class="track" id="track"><div class="bar"></div></div>
+        <div class="ticks" id="ticks"></div>
+      </div>
+    </section>
+
+    <section style="padding-top:3rem">
+      <div class="sec-head">
+        <h2>Øla</h2>
+        <p>Sortert etter styrke. Rekkjefølgja på sjølve kvelden er framleis hemmeleg. 🤫</p>
+      </div>
+      <div class="chips" id="chips"></div>
+      <div class="cards" id="cards"></div>
+      <p class="secret">Kva for eitt tek gullet? Kva for eitt hamnar i bøtta? Det avgjer de til helga. 🎄</p>
+    </section>
+  </main>
+
+  <footer>
+    <a class="back" href="./">← Sjå statistikken frå alle tidlegare år</a>
+  </footer>
+
+  <script>
+  (() => {
+    "use strict";
+    const $ = (s) => document.querySelector(s);
+    const esc = (s) => String(s ?? "").replace(/[&<>"]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" })[c]);
+    const nf = (x, d = 1) => x == null ? "–" : x.toLocaleString("nn-NO", { minimumFractionDigits: d, maximumFractionDigits: d });
+
+    // Snø
+    (() => {
+      if (matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+      const c = $("#snow"), ctx = c.getContext("2d");
+      let W, H, F;
+      const size = () => {
+        W = c.width = innerWidth * devicePixelRatio; H = c.height = innerHeight * devicePixelRatio;
+        F = Array.from({ length: Math.min(120, innerWidth / 10 | 0) }, () => ({ x: Math.random() * W, y: Math.random() * H, r: (Math.random() * 2 + .6) * devicePixelRatio, s: Math.random() * .6 + .25, d: Math.random() * 6 }));
+      };
+      size(); addEventListener("resize", size);
+      (function t(ms) {
+        ctx.clearRect(0, 0, W, H); ctx.fillStyle = "rgba(255,255,255,.75)";
+        for (const f of F) { f.y += f.s * devicePixelRatio; f.x += Math.sin(ms / 1600 + f.d) * .35; if (f.y > H) { f.y = -5; f.x = Math.random() * W; } ctx.beginPath(); ctx.arc(f.x, f.y, f.r, 0, 7); ctx.fill(); }
+        requestAnimationFrame(t);
+      })(0);
+    })();
+
+    fetch("lineup.json").then((r) => r.json()).then(render).catch((e) => {
+      $("#cards").innerHTML = `<p class="note">Klarte ikkje å laste lineupen (${esc(e.message)}).</p>`;
+    });
+
+    function render(L) {
+      const beers = [...L.beers].sort((a, b) => a.abv - b.abv || a.name.localeCompare(b.name));
+      const abvs = beers.map((b) => b.abv);
+      const strongest = beers.at(-1), lightest = beers[0];
+      const breweries = new Set(beers.map((b) => b.brewery || b.producer));
+      const countries = new Set(beers.map((b) => b.country).filter(Boolean));
+      const again = beers.filter((b) => b.history.length);
+      const home = beers.filter((b) => b.home);
+      document.title = `Lineupen ${L.year}`;
+      $("#kicker").textContent = `Joleølsmakinga ${L.year} · kapittel ${L.year - 2012}`;
+      $("#lede").innerHTML = `${beers.length} juleøl, ${L.participants.length} smakarar og éin lang kveld.
+        Frå ${esc(lightest.name)} på ${nf(lightest.abv)} % til ${esc(strongest.name)} på heile ${nf(strongest.abv)} %.`;
+
+      const avgAbv = abvs.reduce((a, b) => a + b, 0) / abvs.length;
+      const ml = beers.reduce((a, b) => a + (b.volumeCl ?? 0), 0);
+      $("#stats").innerHTML = [
+        [beers.length, "øl"],
+        [breweries.size, "bryggeri"],
+        [`${nf(avgAbv)} %`, "snittstyrke"],
+        [`${nf(strongest.abv)} %`, "sterkast"],
+        [home.length, "heimabrygg"],
+        [again.length, "har vore med før"],
+        [countries.size, "land"],
+        [L.participants.length, "smakarar"],
+      ].map(([n, l]) => `<div class="stat"><b>${n}</b><span>${l}</span></div>`).join("");
+
+      // ABV-spor
+      const lo = Math.floor(Math.min(...abvs)), hi = Math.ceil(Math.max(...abvs));
+      const pos = (v) => ((v - lo) / (hi - lo)) * 100;
+      const track = $("#track");
+      const seen = {};
+      beers.forEach((b) => {
+        const k = Math.round(b.abv * 2);
+        const stack = (seen[k] = (seen[k] ?? -1) + 1);
+        const d = document.createElement("a");
+        d.className = "dot";
+        d.href = `#b-${b.id}`;
+        d.title = `${b.name} · ${nf(b.abv)} %`;
+        d.style.left = `calc(${pos(b.abv)}% + ${stack * 14 - 0}px)`;
+        d.style.zIndex = 10 - stack;
+        d.innerHTML = `${b.image ? `<img src="${b.image}" alt="">` : "🍺"}<i></i>`;
+        const card = () => document.getElementById(`b-${b.id}`);
+        d.onmouseenter = () => card()?.style.setProperty("border-color", "var(--gold)");
+        d.onmouseleave = () => card()?.style.removeProperty("border-color");
+        track.appendChild(d);
+      });
+      const step = hi - lo > 8 ? 2 : 1;
+      let ticks = "";
+      for (let v = lo; v <= hi; v += step) ticks += `<span>${v} %</span>`;
+      $("#ticks").innerHTML = ticks;
+
+      // Filter på stil
+      const styleOf = (b) => b.home ? "Heimabrygg" : (b.style ?? "Anna");
+      const styles = [...new Set(beers.map(styleOf))].sort();
+      let filter = null;
+      const chips = $("#chips");
+      const mk = (label, val) => {
+        const c = document.createElement("button");
+        c.className = "chip" + (val === filter ? " on" : "");
+        c.textContent = label;
+        c.onclick = () => { filter = val; chips.querySelectorAll(".chip").forEach((x) => x.classList.toggle("on", x === c)); draw(); };
+        chips.appendChild(c);
+      };
+      mk(`Alle (${beers.length})`, null);
+      styles.forEach((s) => mk(`${s} (${beers.filter((b) => styleOf(b) === s).length})`, s));
+
+      const meter = (label, v) => v == null ? "" : `<span>${label}</span><span class="meter"><i style="width:${(v / 12) * 100}%"></i></span>`;
+      function draw() {
+        $("#cards").innerHTML = beers.filter((b) => !filter || styleOf(b) === filter).map((b) => {
+          const ch = b.characteristics ?? {};
+          const tags = [
+            `<span class="tag style">${esc(b.style ?? "")}</span>`,
+            b.home ? `<span class="tag home">🏡 Heimabrygg</span>` : "",
+            b.history.length ? `<span class="tag again">🔁 Smakt før</span>` : "",
+            !b.home && !b.breweryRecord ? `<span class="tag new">✨ Nytt bryggeri for oss</span>` : "",
+          ].join("");
+          const hist = b.history.length
+            ? `🔁 Sist: ${b.history.map((h) => `${h.y} fekk <b>${nf(h.avg, 2)}</b>`).join(", ")}. Får det betre karakter i år?`
+            : b.breweryRecord
+              ? `🍻 ${esc(b.brewery)} har snitt <b>${nf(b.breweryRecord.avg, 2)}</b> hos oss (${b.breweryRecord.n} øl).`
+              : `✨ Første gong me smakar noko frå ${esc(b.producer ?? "dette bryggeriet")}.`;
+          const desc = b.description ?? [b.smell, b.taste].filter(Boolean).join(" ");
+          const where = [b.producer, b.country].filter(Boolean).join(" · ");
+          const photo = b.photo;
+          return `<article class="card beer" id="b-${b.id}">
+            <div class="pic">${b.image ? `<img src="${b.image}" alt="${esc(b.name)}" loading="lazy"${photo ? ' class="photo"' : ""}>` : "🍺"}
+              <span class="abv">${nf(b.abv)} %</span>${b.volumeCl ? `<span class="num">${b.volumeCl} cl</span>` : ""}</div>
+            <div class="body">
+              <h3>${esc(b.name)}</h3>
+              <div class="who">${esc(where)}</div>
+              <div class="tags">${tags}</div>
+              ${ch.fylde != null ? `<div class="meters">${meter("Fylde", ch.fylde)}${meter("Friskheit", ch.friskhet)}${meter("Bitterheit", ch.bitterhet)}</div>` : ""}
+              ${desc ? `<p class="desc">${esc(desc)}</p>` : ""}
+              <div class="hist">${hist}</div>
+              ${b.url ? `<a class="more" href="${esc(b.url)}" target="_blank" rel="noopener">${b.url.includes("untappd") ? "Sjå på Untappd ↗" : "Sjå på Vinmonopolet ↗"}</a>` : ""}
+            </div>
+          </article>`;
+        }).join("");
+      }
+      draw();
+    }
+  })();
+  </script>
+</body>
+</html>
