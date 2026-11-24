@@ -1,0 +1,33 @@
+{
+  "id": "11297102",
+  "name": "Ringnes Julebokk",
+  "producer": "Ringnes",
+  "country": "Norge",
+  "district": "Akershus",
+  "style": "Mørk lager",
+  "abv": 9,
+  "volumeCl": 33,
+  "price": 51.9,
+  "litrePrice": 157.27,
+  "color": "Dyp gyllenbrun.",
+  "smell": "Sval, litt krydret aroma av mørk malt, karamell og kaffe, hint av tørket frukt, urt og nøtt.,",
+  "taste": "Sødmefull, røstet malt, tørket frukt, litt kaffe, sjokolade, humle og svale urter.",
+  "method": "Undergjæret bryggemetode.",
+  "ingredients": "Vann, malt (bygg), humle, gjær",
+  "goodFor": [
+    "Storfe",
+    "Lam og sau",
+    "Svin"
+  ],
+  "characteristics": {
+    "fylde": 9,
+    "friskhet": 3,
+    "bitterhet": 5
+  },
+  "packaging": "Glass",
+  "selection": "Bestillingsutvalget",
+  "url": "https://www.vinmonopolet.no/Land/Norge/Akershus/Nittedal/Ringnes-Julebokk/p/11297102",
+  "imageUrl": "https://bilder.vinmonopolet.no/cache/515x515-0/11297102-1.jpg",
+  "image": "products/images/11297102.jpg",
+  "fetchedAt": "2026-11-24T15:06:22.679Z"
+}

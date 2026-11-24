@@ -1,0 +1,32 @@
+{
+  "id": "21180302",
+  "name": "Amundsen Krampus Imperial Stout",
+  "producer": "Amundsen Bryggeri",
+  "country": "Norge",
+  "district": "Oslo",
+  "style": "Porter & stout",
+  "abv": 11.5,
+  "volumeCl": 44,
+  "price": 129.9,
+  "litrePrice": 290.68,
+  "color": "Sort.",
+  "smell": "Aroma av kaffe, karamell, sjokolade og røstet malt.",
+  "taste": "Fyldig og søtlig, kremet, lang ettersmak med hint av krydder.",
+  "method": "Overgjæret produksjonsmetode.",
+  "ingredients": "Vann, maltet bygg, havre, humle, kakao nibs, gjær, aroma",
+  "goodFor": [
+    "Aperitiff",
+    "Dessert"
+  ],
+  "characteristics": {
+    "fylde": 10,
+    "friskhet": 2,
+    "bitterhet": 2
+  },
+  "packaging": "Emballasje med pant",
+  "selection": "Bestillingsutvalget",
+  "url": "https://www.vinmonopolet.no/Land/Norge/Oslo/Amundsen-Krampus-Imperial-Stout/p/21180302",
+  "imageUrl": "https://bilder.vinmonopolet.no/cache/515x515-0/21180302-1.jpg",
+  "image": "products/images/21180302.jpg",
+  "fetchedAt": "2026-11-24T15:06:15.835Z"
+}

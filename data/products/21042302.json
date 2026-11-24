@@ -1,0 +1,33 @@
+{
+  "id": "21042302",
+  "name": "Ølsmia Juletre",
+  "producer": "Ølsmia",
+  "country": "Norge",
+  "district": "Oslo",
+  "style": "Saison farmhouse ale",
+  "abv": 6.5,
+  "volumeCl": 33,
+  "price": 90,
+  "litrePrice": 272.73,
+  "color": "Mørk kobber.",
+  "smell": "Gran, røyk, urter.",
+  "taste": "Gran, røyk, urter, frukt, malt.",
+  "method": "Malt fra Trøndelag, korn fra Rogaland, gjærkultur fra Hardanger, granskudd fra Lillomarka.",
+  "ingredients": "Vann, malt (bygg), havre, humle, granskudd, gjær",
+  "goodFor": [
+    "Aperitiff",
+    "Småvilt",
+    "Storvilt"
+  ],
+  "characteristics": {
+    "fylde": 5,
+    "friskhet": 5,
+    "bitterhet": 5
+  },
+  "packaging": "Metall",
+  "selection": "Bestillingsutvalget",
+  "url": "https://www.vinmonopolet.no/Land/Norge/Oslo/%C3%98lsmia-Juletre/p/21042302",
+  "imageUrl": "https://bilder.vinmonopolet.no/cache/515x515-0/21042302-1.jpg",
+  "image": "products/images/21042302.jpg",
+  "fetchedAt": "2026-11-24T15:06:18.726Z"
+}

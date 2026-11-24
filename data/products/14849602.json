@@ -1,0 +1,33 @@
+{
+  "id": "14849602",
+  "name": "Salikatt Juleglød 2026",
+  "producer": "Salikatt Bryggeri",
+  "country": "Norge",
+  "district": "Rogaland",
+  "style": "Klosterstil",
+  "abv": 10,
+  "volumeCl": 44,
+  "price": 129.9,
+  "litrePrice": 290.68,
+  "color": "Dyp brun mot sort.",
+  "smell": "Aroma av mørk malt, rosin, knekk og sjokolade.",
+  "taste": "Malt, rosin, knekk og sjokolade.",
+  "method": null,
+  "ingredients": "Vann, malt (bygg), hvete, humle, gjær",
+  "goodFor": [
+    "Aperitiff",
+    "Lam og sau",
+    "Ost"
+  ],
+  "characteristics": {
+    "fylde": 9,
+    "friskhet": 6,
+    "bitterhet": 5
+  },
+  "packaging": "Emballasje med pant",
+  "selection": "Tilleggsutvalget",
+  "url": "https://www.vinmonopolet.no/Land/Norge/Rogaland/Stavanger/Salikatt-Julegl%C3%B8d-2026/p/14849602",
+  "imageUrl": "https://bilder.vinmonopolet.no/cache/515x515-0/14849602-1.jpg",
+  "image": "products/images/14849602.jpg",
+  "fetchedAt": "2026-11-24T15:06:20.976Z"
+}

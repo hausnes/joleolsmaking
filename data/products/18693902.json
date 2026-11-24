@@ -1,0 +1,31 @@
+{
+  "id": "18693902",
+  "name": "Amundsen Night Sleigher Double IPA",
+  "producer": "Amundsen Bryggeri",
+  "country": "Norge",
+  "district": "Oslo",
+  "style": "India pale ale",
+  "abv": 7.5,
+  "volumeCl": 44,
+  "price": 110.3,
+  "litrePrice": 246.14,
+  "color": "Gyllen, uklar.",
+  "smell": "Frisk og fruktig aroma av blomster og sitrus.",
+  "taste": "Rik og fyldig, lang ettersmak. Toner av situs, furu og grapefrukt.",
+  "method": "Overgjæret produksjonsmetode.",
+  "ingredients": "Vann, malt (bygg, hvete), humle, gjær",
+  "goodFor": [
+    "Aperitiff"
+  ],
+  "characteristics": {
+    "fylde": 4,
+    "friskhet": 7,
+    "bitterhet": 4
+  },
+  "packaging": "Emballasje med pant",
+  "selection": "Bestillingsutvalget",
+  "url": "https://www.vinmonopolet.no/Land/Norge/Oslo/Amundsen-Night-Sleigher-Double-IPA/p/18693902",
+  "imageUrl": "https://bilder.vinmonopolet.no/cache/515x515-0/18693902-1.jpg",
+  "image": "products/images/18693902.jpg",
+  "fetchedAt": "2026-11-24T15:06:18.147Z"
+}

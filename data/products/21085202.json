@@ -1,0 +1,33 @@
+{
+  "id": "21085202",
+  "name": "Haandbryggeriet Premium Julebayer",
+  "producer": "Haandbryggeriet",
+  "country": "Norge",
+  "district": "Buskerud",
+  "style": "Spesial",
+  "abv": 5.5,
+  "volumeCl": 44,
+  "price": 74.9,
+  "litrePrice": 165.68,
+  "color": "Mørk gyllen mot svart.",
+  "smell": "Aroma av korn, karamell og brød.",
+  "taste": "Avstemt bitterhet.",
+  "method": "Undergjæret.",
+  "ingredients": "Vann, malt (bygg), humle, gjær",
+  "goodFor": [
+    "Lyst kjøtt",
+    "Lam og sau",
+    "Storvilt"
+  ],
+  "characteristics": {
+    "fylde": 6,
+    "friskhet": 6,
+    "bitterhet": 6
+  },
+  "packaging": "Emballasje med pant",
+  "selection": "Bestillingsutvalget",
+  "url": "https://www.vinmonopolet.no/Land/Norge/Buskerud/Drammen/Haandbryggeriet-Premium-Julebayer/p/21085202",
+  "imageUrl": "https://bilder.vinmonopolet.no/cache/515x515-0/21085202-1.jpg",
+  "image": null,
+  "fetchedAt": "2026-11-24T15:06:17.576Z"
+}

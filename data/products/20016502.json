@@ -1,0 +1,31 @@
+{
+  "id": "20016502",
+  "name": "Jåttå Riskrem",
+  "producer": "Jåttå Gårdsbryggeri",
+  "country": "Norge",
+  "district": "Rogaland",
+  "style": "Surøl",
+  "abv": 6,
+  "volumeCl": 33,
+  "price": 81.9,
+  "litrePrice": 242.12,
+  "color": "Dyp rød, uklar.",
+  "smell": "Aroma av bringebær, vanilje og jordbær.",
+  "taste": "Lett syrlig bringebær, sødme fra jordbær og vanilje.",
+  "method": null,
+  "ingredients": "Vann, malt (bygg), bringebær, hvete, havre, laktose, jordbær, gjær, humle, vanilje, sulfitt",
+  "goodFor": [
+    "Aperitiff"
+  ],
+  "characteristics": {
+    "fylde": 6,
+    "friskhet": 8,
+    "bitterhet": 1
+  },
+  "packaging": "Emballasje med pant",
+  "selection": "Tilleggsutvalget",
+  "url": "https://www.vinmonopolet.no/Land/Norge/Rogaland/Stavanger/J%C3%A5tt%C3%A5-Riskrem/p/20016502",
+  "imageUrl": "https://bilder.vinmonopolet.no/cache/515x515-0/20016502-1.jpg",
+  "image": null,
+  "fetchedAt": "2026-11-24T15:06:19.301Z"
+}

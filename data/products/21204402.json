@@ -1,0 +1,33 @@
+{
+  "id": "21204402",
+  "name": "Raa Brewing Company Habanero Julestout",
+  "producer": "Raa Brewing Company",
+  "country": "Norge",
+  "district": "Østfold",
+  "style": "Porter & stout",
+  "abv": 10,
+  "volumeCl": 44,
+  "price": 113.9,
+  "litrePrice": 254.32,
+  "color": "Sort.",
+  "smell": "Aroma av chili, lønnesirup, ristet kokos og mørk sirup.",
+  "taste": "Sødmefull smak av mørk kandissirup, lønnesirup og chili.",
+  "method": "Overgjæret bryggeteknikk.",
+  "ingredients": "Vann, malt, humle, gjær",
+  "goodFor": [
+    "Aperitiff",
+    "Storfe",
+    "Ost"
+  ],
+  "characteristics": {
+    "fylde": 9,
+    "friskhet": 3,
+    "bitterhet": 5
+  },
+  "packaging": "Emballasje med pant",
+  "selection": "Bestillingsutvalget",
+  "url": "https://www.vinmonopolet.no/Land/Norge/%C3%98stfold/R%C3%A5de/Raa-Brewing-Company-Habanero-Julestout/p/21204402",
+  "imageUrl": "https://bilder.vinmonopolet.no/cache/515x515-0/21204402-1.jpg",
+  "image": "products/images/21204402.jpg",
+  "fetchedAt": "2026-11-24T15:06:16.437Z"
+}

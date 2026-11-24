@@ -1,0 +1,33 @@
+{
+  "id": "18673802",
+  "name": "Monkey Brew Wild Hunt Christmas Red Lager",
+  "producer": "Monkey Brew AS",
+  "country": "Norge",
+  "district": "Trøndelag",
+  "style": "Red/amber",
+  "abv": 5.1,
+  "volumeCl": 44,
+  "price": 81.9,
+  "litrePrice": 181.59,
+  "color": "Kobber.",
+  "smell": "Aroma av brød, søt kjeks, karamell, lett floral, julegran.",
+  "taste": "Karamell, brød, lett fruktig og blomster, tørr avslutning.",
+  "method": null,
+  "ingredients": "Vann, malt (bygg), humle, gjær",
+  "goodFor": [
+    "Storfe",
+    "Lam og sau",
+    "Svin"
+  ],
+  "characteristics": {
+    "fylde": 7,
+    "friskhet": 7,
+    "bitterhet": 7
+  },
+  "packaging": "Emballasje med pant",
+  "selection": "Tilleggsutvalget",
+  "url": "https://www.vinmonopolet.no/Land/Norge/Tr%C3%B8ndelag/Trondheim/Monkey-Brew-Wild-Hunt-Christmas-Red-Lager/p/18673802",
+  "imageUrl": "https://bilder.vinmonopolet.no/cache/515x515-0/18673802-1.jpg",
+  "image": "products/images/18673802.jpg",
+  "fetchedAt": "2026-11-24T15:06:17.007Z"
+}

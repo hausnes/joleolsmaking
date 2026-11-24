@@ -1,0 +1,33 @@
+{
+  "id": "18666902",
+  "name": "7 Fjell Lys i Luken Julesaison",
+  "producer": "7 Fjell Bryggeri",
+  "country": "Norge",
+  "district": "Vestland",
+  "style": "Saison farmhouse ale",
+  "abv": 6.5,
+  "volumeCl": 33,
+  "price": 61.9,
+  "litrePrice": 187.58,
+  "color": "Lys gyllen, uklar.",
+  "smell": "Aroma av krydder, sitrus og koriander, jordtoner.",
+  "taste": "Pepper, sitrusskall, koriander, tørr avslutning.",
+  "method": "Overgjæringsteknikk.",
+  "ingredients": "Vann, malt (bygg), hvete, humle, gjær",
+  "goodFor": [
+    "Aperitiff",
+    "Skalldyr",
+    "Lyst kjøtt"
+  ],
+  "characteristics": {
+    "fylde": 4,
+    "friskhet": 7,
+    "bitterhet": 3
+  },
+  "packaging": "Glass",
+  "selection": "Tilleggsutvalget",
+  "url": "https://www.vinmonopolet.no/Land/Norge/Vestland/Bergen/7-Fjell-Lys-i-Luken-Julesaison/p/18666902",
+  "imageUrl": "https://bilder.vinmonopolet.no/cache/515x515-0/18666902-1.jpg",
+  "image": "products/images/18666902.jpg",
+  "fetchedAt": "2026-11-24T15:06:21.554Z"
+}

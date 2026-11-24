@@ -1,0 +1,33 @@
+{
+  "id": "19899802",
+  "name": "Røros Bryggeri Wheat Christmas",
+  "producer": "Røros Bryggeri",
+  "country": "Norge",
+  "district": "Trøndelag",
+  "style": "Hveteøl",
+  "abv": 6.2,
+  "volumeCl": 33,
+  "price": 83.8,
+  "litrePrice": 247.88,
+  "color": "Lys gyllen, lett uklar.",
+  "smell": "Fruktig aroma av hvetebakst, julekake og banan.",
+  "taste": "Kremet med balansert maltsødme.",
+  "method": "Overgjæret metode.",
+  "ingredients": "Vann, malt (bygg, hvete), humle, gjær",
+  "goodFor": [
+    "Aperitiff",
+    "Lyst kjøtt",
+    "Ost"
+  ],
+  "characteristics": {
+    "fylde": 6,
+    "friskhet": 8,
+    "bitterhet": 3
+  },
+  "packaging": "Emballasje med pant",
+  "selection": "Tilleggsutvalget",
+  "url": "https://www.vinmonopolet.no/Land/Norge/Tr%C3%B8ndelag/R%C3%B8ros/R%C3%B8ros-Bryggeri-Wheat-Christmas/p/19899802",
+  "imageUrl": "https://bilder.vinmonopolet.no/cache/515x515-0/19899802-1.jpg",
+  "image": null,
+  "fetchedAt": "2026-11-24T15:06:34.534Z"
+}

@@ -1,0 +1,33 @@
+{
+  "id": "16434701",
+  "name": "Damm Cerveza de Navidad 2024",
+  "producer": "Damm",
+  "country": "Spania",
+  "district": null,
+  "style": "Lys lager",
+  "abv": 6.5,
+  "volumeCl": 66,
+  "price": 97.9,
+  "litrePrice": 148.33,
+  "color": "Ravgul.",
+  "smell": "Maltaroma med toner av humle og gjær.",
+  "taste": "Maltpreget. Fyldig.",
+  "method": "Undergjæret produksjonsteknikk.",
+  "ingredients": "Vann, malt (bygg), ris, humle, gjær",
+  "goodFor": [
+    "Aperitiff",
+    "Lam og sau",
+    "Storvilt"
+  ],
+  "characteristics": {
+    "fylde": 8,
+    "friskhet": 7,
+    "bitterhet": 3
+  },
+  "packaging": "Glass",
+  "selection": "Bestillingsutvalget",
+  "url": "https://www.vinmonopolet.no/Land/Spania/Damm-Cerveza-de-Navidad-2024/p/16434701",
+  "imageUrl": "https://bilder.vinmonopolet.no/cache/515x515-0/16434701-1.jpg",
+  "image": "products/images/16434701.jpg",
+  "fetchedAt": "2026-11-24T15:06:20.386Z"
+}

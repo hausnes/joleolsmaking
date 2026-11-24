@@ -1,0 +1,32 @@
+{
+  "id": "21204502",
+  "name": "Rygr Yuleblòt Quadruple Christmas BA",
+  "producer": "RYGR Brygghus",
+  "country": "Norge",
+  "district": "Rogaland",
+  "style": "Klosterstil",
+  "abv": 10.8,
+  "volumeCl": 33,
+  "price": 156.9,
+  "litrePrice": 469.39,
+  "color": "Mørk brun.",
+  "smell": "Karamell, tørket frukt, malt.",
+  "taste": "Karamell, tørket frukt, malt.",
+  "method": null,
+  "ingredients": "Vann, malt (bygg, havre) humle, gjær",
+  "goodFor": [
+    "Aperitiff",
+    "Ost"
+  ],
+  "characteristics": {
+    "fylde": 10,
+    "friskhet": 7,
+    "bitterhet": 3
+  },
+  "packaging": "Emballasje med pant",
+  "selection": "Tilleggsutvalget",
+  "url": "https://www.vinmonopolet.no/Land/Norge/Rogaland/Klepp/Rygr-Yulebl%C3%B2t-Quadruple-Christmas-BA/p/21204502",
+  "imageUrl": "https://bilder.vinmonopolet.no/cache/515x515-0/21204502-1.jpg",
+  "image": null,
+  "fetchedAt": "2026-11-24T15:06:22.097Z"
+}
