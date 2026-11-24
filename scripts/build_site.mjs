@@ -355,7 +355,7 @@ async function buildLineup(year) {
     if (it.image) {
       it.photo = it.home || it.image.includes(".own."); // eige mobilbilete, ikkje produktbilete på kvit bakgrunn
       const ext = path.extname(it.image);
-      const file = `${it.id}${ext}`;
+      const file = `${it.id.replace(/æ/g, "ae").replace(/ø/g, "o").replace(/å/g, "a")}${ext}`; // ASCII-filnamn for GitHub Pages
       await copyFile(path.join(ROOT, "data", it.image), path.join(imgDir, file));
       it.image = `lineup-img/${file}`;
     }

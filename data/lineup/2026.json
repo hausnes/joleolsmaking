@@ -90,6 +90,15 @@
       "image": "products/images/hausnesbrogg-smarips.jpg",
       "untappdUrl": "https://untappd.com/b/hausnesbrogg-smarips/7656923",
       "description": "10 liter som ikkje fekk plass under Jolastøl-brygginga, og fekk sine tilmålte 2 timar aleine i storkjelen på kjøkkenet. Eksperimenteringsoffiseren heiv i rips- og solbærsaft og honning. Amarillo, Cascade og Tettnanger. Umiddelbar reaksjon frå bryggarane: «Uff, og urk.»"
+    },
+    {
+      "name": "Arvid Kvaløy Red Amber Ale",
+      "brewery": "Arvid Kvaløy",
+      "style": "Red Amber Ale / heimabrygg",
+      "abv": 6.5,
+      "source": "heimebrygg",
+      "image": "products/images/arvid-kvaloy-red-amber-ale.jpg",
+      "description": "Reid sin kompis har brygga ein overraskelse, og me får alle ta del i dette store spaningsmomentet!"
     }
   ]
 }
