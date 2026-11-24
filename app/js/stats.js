@@ -91,6 +91,17 @@ export const clock = (iso) =>
 /** Øl som er sjekka inn, i rekkjefølgja dei vart sjekka inn. */
 export const checkedIn = (state) => state.beers.filter((b) => b.startedAt).sort((a, b) => checkinMs(a) - checkinMs(b));
 
+/**
+ * Kva nummer ølet har i smakerekkjefølgja (1 = første øl som vart sjekka inn).
+ * Rekkjefølgja blir bestemd på kvelden, så plassen i lista seier ingenting.
+ * Øl som ikkje er sjekka inn enno, får nummeret det ville fått som neste.
+ */
+export const tastingNumber = (state, beer) => {
+  const list = checkedIn(state);
+  const i = list.indexOf(beer);
+  return i >= 0 ? i + 1 : list.length + 1;
+};
+
 /** Minutt sidan førre øl vart sjekka inn (null for det første). */
 export function minutesSincePrevious(state, beer) {
   const list = checkedIn(state);

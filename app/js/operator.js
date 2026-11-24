@@ -1,7 +1,7 @@
 import { createStore, currentYear, beersFromLineup, manualBeer, uid } from "./store.js";
 import { imageUrl, loadPeople } from "./data.js";
 import { loadFavourites, parseVideo, videoKey } from "./video.js";
-import { CATEGORIES, categoryById, beerAverage, counts, fmt, parseScore, awards, syncStatus, clock, pulseRounds } from "./stats.js";
+import { CATEGORIES, categoryById, beerAverage, counts, fmt, parseScore, awards, syncStatus, clock, pulseRounds, tastingNumber } from "./stats.js";
 
 const $ = (s, el = document) => el.querySelector(s);
 const esc = (s) =>
@@ -131,7 +131,7 @@ function renderCurrent(s) {
   $("#current-img").hidden = !img;
   $("#current-name").textContent = cur.name;
   $("#current-meta").textContent = [
-    `Øl ${s.beers.indexOf(cur) + 1} av ${s.beers.length}`,
+    `Øl ${tastingNumber(s, cur)} av ${s.beers.length}`,
     cur.style,
     cur.abv != null ? `${fmt(cur.abv, 1)} %` : null,
   ]

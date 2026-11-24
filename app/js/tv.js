@@ -2,7 +2,7 @@ import { createStore, currentYear } from "./store.js";
 import { loadHistory, loadPeople, findPrevious, imageUrl, DATA } from "./data.js";
 import {
   CATEGORIES, categoryById, beerAverage, givenScores, doneBeers, ranking, personStats, counts,
-  beerOutliers, trend, awards, allTimePersonAverages, fmt, clock, minutesSincePrevious, tempo, checkedIn,
+  beerOutliers, trend, awards, allTimePersonAverages, fmt, clock, minutesSincePrevious, tempo, checkedIn, tastingNumber,
   pulseRounds, pulseChanges, pulseGuesses, latestPulse,
 } from "./stats.js";
 import { toggleSound, crash, ding, boing, fanfare } from "./sound.js";
@@ -323,7 +323,7 @@ function scoreTiles(s, beer) {
 }
 
 function viewBeer(s, beer) {
-  const idx = s.beers.indexOf(beer) + 1;
+  const idx = tastingNumber(s, beer);
   const ch = beer.characteristics ?? {};
   const desc = [
     ["Farge", beer.color],
@@ -387,7 +387,7 @@ function viewResult(s, beer) {
     <header class="reveal-head">
       ${bottle(beer, "small")}
       <div>
-        <p class="kicker">Øl ${s.beers.indexOf(beer) + 1} av ${s.beers.length}${beer.startedAt ? ` · sjekka inn ${clock(beer.startedAt)}` : ""}</p>
+        <p class="kicker">Øl ${tastingNumber(s, beer)} av ${s.beers.length}${beer.startedAt ? ` · sjekka inn ${clock(beer.startedAt)}` : ""}</p>
         <h1>${esc(beer.name)}</h1>
       </div>
     </header>
