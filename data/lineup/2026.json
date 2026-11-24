@@ -99,6 +99,19 @@
       "source": "heimebrygg",
       "image": "products/images/arvid-kvaloy-red-amber-ale.jpg",
       "description": "Reid sin kompis har brygga ein overraskelse, og me får alle ta del i dette store spaningsmomentet!"
+    },
+    {
+      "name": "Hausnesbrogg Og Eg - Eg Kjem Frå Kinsarvik (2026)",
+      "brewery": "Hausnesbrogg",
+      "style": "Kornøl / heimabrygg",
+      "abv": 7,
+      "source": "heimebrygg",
+      "image": "products/images/hausnesbrogg-og-eg-eg-kjem-fra-kinsarvik-2026.jpg",
+      "untappdUrl": "https://untappd.com/b/hausnesbrogg-og-eg-eg-kjem-fra-kinsarvik-2026/7695991",
+      "description": "Svein og Jo Bjørnar brygga med Vestnorsk Kulturakademi, ein mørk november-dag i 2026. Eit mørkt joleøl, med Cascade-humle.",
+      "historyNames": [
+        "Hausnesbrogg og Mjøstølen bryggeri - Og eg - eg kjem frå Kinsarvik (8,6%)"
+      ]
     }
   ]
 }
