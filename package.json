@@ -6,6 +6,7 @@
   "scripts": {
     "start": "node server.mjs",
     "hent-ol": "node scripts/vinmonopolet.mjs lineup",
+    "side": "node scripts/build_site.mjs",
     "nullstill": "node -e \"require('fs').rmSync('data/events',{recursive:true,force:true});console.log('Testdata sletta – data/events er borte')\""
   },
   "engines": {

@@ -54,6 +54,14 @@ scripts/
   vinmonopolet.mjs         Hentar produktinfo og bilete frå Vinmonopolet
 ```
 
+## Oppsummeringssida (GitHub Pages)
+
+```sh
+npm run side          # lagar docs/data.json frå data/history
+```
+
+Sida ligg i `docs/` (statisk HTML/CSS/JS utan avhengigheiter). Pages kan publisere anten frå `/docs` eller frå rota. `index.html` i rota sender vidare til `docs/`. Køyr `npm run side` på nytt etter at eit nytt år er lagt til i `data/history/`. Sitata på sida er handplukka i `scripts/build_site.mjs`, sidan rådataa inneheld mykje som ikkje passar på ei offentleg side.
+
 ## Importere historikken på nytt
 
 ```sh

@@ -1,0 +1,222 @@
+<!doctype html>
+<html lang="nn">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Joleølsmakinga 2013–2025</title>
+  <meta name="description" content="Tretten år med juleøl: statistikk, rekordar og fun facts frå den årlege joleølsmakinga.">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🍺</text></svg>">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,700;0,9..144,900;1,9..144,500;1,9..144,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <canvas id="snow" aria-hidden="true"></canvas>
+  <div class="lights" aria-hidden="true"></div>
+
+  <nav class="topnav">
+    <a href="#top" class="brand">🍺 Joleøl</a>
+    <div class="links">
+      <a href="#kveldar">Kveldane</a>
+      <a href="#hall">Hall of Fame</a>
+      <a href="#gjengangarar">Gjengangarar</a>
+      <a href="#dommarar">Dommarane</a>
+      <a href="#kaos">Kaos</a>
+      <a href="#sitat">Sitat</a>
+    </div>
+  </nav>
+
+  <header class="hero" id="top">
+    <p class="kicker">Sidan 2013 · éin kveld i året · altfor mange glas</p>
+    <h1>Joleøl&shy;smakinga</h1>
+    <p class="lede">Tretten jol med humle, krydder, nellik, pepperkaker og ein og annan katastrofe.
+      Her er alt me har drukke, kva me meinte om det, og kven som sølte mest.</p>
+    <div class="counters" id="counters"></div>
+    <div class="scroll-hint">Rull ned for statistikk og julestemning ↓</div>
+  </header>
+
+  <main>
+    <section id="kveldar">
+      <div class="sec-head">
+        <span class="sec-num">01</span>
+        <h2>Julekalenderen</h2>
+        <p>Éi luke for kvar kveld. Opne ei luke for å sjå kven som var med, kva som vann og kva som enda i bøtta.</p>
+      </div>
+      <div class="advent" id="advent"></div>
+      <div class="year-detail card" id="yearDetail" hidden></div>
+    </section>
+
+    <section id="utvikling">
+      <div class="sec-head">
+        <span class="sec-num">02</span>
+        <h2>Har juleølet blitt betre?</h2>
+        <p>Snittkarakteren per kveld (linja) og kor mange øl som vart smakte (søylene).</p>
+      </div>
+      <div class="card chart" id="chartYears"></div>
+      <p class="note" id="yearsNote"></p>
+    </section>
+
+    <section id="hall">
+      <div class="sec-head">
+        <span class="sec-num">03</span>
+        <h2>Hall of Fame</h2>
+        <p>Dei beste juleøla gjennom tidene, målt med snittkarakter frå alle rundt bordet.</p>
+      </div>
+      <div class="podium" id="podium"></div>
+      <div class="grid2">
+        <div class="card">
+          <h3>🏆 Plass 4–13</h3>
+          <ol class="ranklist" id="top10"></ol>
+        </div>
+        <div class="card bucket">
+          <h3>🪣 Botnen</h3>
+          <p class="small">Dei fem øla som gjorde mest vondt.</p>
+          <ol class="ranklist" id="bottom5"></ol>
+        </div>
+      </div>
+    </section>
+
+    <section id="gjengangarar">
+      <div class="sec-head">
+        <span class="sec-num">04</span>
+        <h2>Gjengangarane</h2>
+        <p>Øl som har vore med tre gonger eller fleire. Vel kva du vil sjå. Er det same ølet, eller er det me som har endra oss?</p>
+      </div>
+      <div class="chips" id="recurringChips"></div>
+      <div class="card chart" id="chartRecurring"></div>
+    </section>
+
+    <section id="bryggeri">
+      <div class="sec-head">
+        <span class="sec-num">05</span>
+        <h2>Bryggeriligaen</h2>
+        <p>Bryggeri med minst fire øl på bordet. Storleiken på boblene viser kor mange øl dei har hatt med.</p>
+      </div>
+      <div class="card chart" id="chartBreweries"></div>
+    </section>
+
+    <section id="promille">
+      <div class="sec-head">
+        <span class="sec-num">06</span>
+        <h2>Prosent og poeng</h2>
+        <p>Blir ølet betre jo sterkare det er? Kvar prikk er eitt øl. Gull = heimabrygg.</p>
+      </div>
+      <div class="card chart" id="chartAbv"></div>
+      <p class="note" id="abvNote"></p>
+    </section>
+
+    <section id="rekkjefolgje">
+      <div class="sec-head">
+        <span class="sec-num">07</span>
+        <h2>Blir det betre utover kvelden?</h2>
+        <p>Snittkarakter etter kva nummer ølet hadde i rekkjefølgja. Ølbriller er ein kjend vitskapleg effekt.</p>
+      </div>
+      <div class="card chart" id="chartOrder"></div>
+      <p class="note" id="orderNote"></p>
+    </section>
+
+    <section id="karakterar">
+      <div class="sec-head">
+        <span class="sec-num">08</span>
+        <h2>Alle karakterane</h2>
+        <p>Fordelinga av kvar einaste karakter som er gitt. Skalaen går frå 1 til 5 (stort sett).</p>
+      </div>
+      <div class="card chart" id="chartHist"></div>
+      <div class="grid2">
+        <div class="card"><h3>🔥 Mest splitta</h3><p class="small">Øla med størst usemje rundt bordet.</p><ol class="ranklist" id="polar"></ol></div>
+        <div class="card"><h3>🤝 Mest samstemt</h3><p class="small">Her var alle (nesten) einige.</p><ol class="ranklist" id="consensus"></ol></div>
+      </div>
+    </section>
+
+    <section id="dommarar">
+      <div class="sec-head">
+        <span class="sec-num">09</span>
+        <h2>Dommarpanelet</h2>
+        <p>27 smakarar har vore med. Nokre har vore med kvart år, andre berre éin gong. Fargen viser kor snill kvar person var det året: raud = streng, grøn = gavmild.</p>
+      </div>
+      <div class="card chart" id="attendance"></div>
+      <div class="grid2">
+        <div class="card">
+          <h3>😇 Snill eller 😈 streng?</h3>
+          <p class="small">Kor mykje kvar person gir i snitt, samanlikna med resten av bordet på same øl. Minst 40 karakterar.</p>
+          <div id="chartBias"></div>
+        </div>
+        <div class="card">
+          <h3>🧭 Smakskompasset</h3>
+          <p class="small">Kor godt karakterane dine følgjer resten av bordet (korrelasjon). Høgt = du smakar som flokken. Lågt = sjølvstendig smaksløk.</p>
+          <div id="chartCorr"></div>
+        </div>
+      </div>
+      <div class="card person" id="personCard">
+        <div class="person-head">
+          <h3>🎅 Smakarprofil</h3>
+          <select id="personSelect" aria-label="Vel smakar"></select>
+        </div>
+        <div id="personBody"></div>
+      </div>
+    </section>
+
+    <section id="heimabrygg">
+      <div class="sec-head">
+        <span class="sec-num">10</span>
+        <h2>Heimabrygg mot resten av verda</h2>
+        <p>Hausnesbrogg, Mjøstølen og andre heimebryggarar mot polet og butikken.</p>
+      </div>
+      <div class="grid2">
+        <div class="card chart" id="chartHome"></div>
+        <div class="card"><h3>🏡 Beste heimabrygg</h3><ol class="ranklist" id="homeTop"></ol></div>
+      </div>
+    </section>
+
+    <section id="kaos">
+      <div class="sec-head">
+        <span class="sec-num">11</span>
+        <h2>Kaoskontoen</h2>
+        <p>Dobesøk, søling, fising og generell idioti, ført med vitskapleg presisjon sidan 2015.</p>
+      </div>
+      <div class="records" id="records"></div>
+      <div class="chips" id="kaosChips"></div>
+      <div class="card chart" id="chartKaos"></div>
+    </section>
+
+    <section id="klokka">
+      <div class="sec-head">
+        <span class="sec-num">12</span>
+        <h2>Når går me heim?</h2>
+        <p>Frå første til siste øl, kveld for kveld.</p>
+      </div>
+      <div class="card chart" id="chartClock"></div>
+    </section>
+
+    <section id="sitat">
+      <div class="sec-head">
+        <span class="sec-num">13</span>
+        <h2>Sitatveggen</h2>
+        <p>Eit lite (og nøye sensurert) utval frå smakenotata.</p>
+      </div>
+      <div class="quotes" id="quotes"></div>
+    </section>
+
+    <section id="facts">
+      <div class="sec-head">
+        <span class="sec-num">14</span>
+        <h2>Rist i julenissen</h2>
+        <p>Trykk for ein tilfeldig fun fact.</p>
+      </div>
+      <div class="factbox card">
+        <button id="factBtn" class="santa" aria-label="Vis ein ny fun fact">🎅</button>
+        <p id="factText">Trykk på nissen.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer id="footer">
+    <div class="next" id="next"></div>
+    <p class="small">Data frå smakeskjemaa 2013–2025. Sida vart laga <span id="gen"></span>. Skål og god jol! 🎄</p>
+  </footer>
+
+  <div id="tip" role="tooltip"></div>
+  <script src="app.js"></script>
+</body>
+</html>
