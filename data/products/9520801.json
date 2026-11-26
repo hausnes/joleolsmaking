@@ -1,0 +1,33 @@
+{
+  "id": "9520801",
+  "name": "Kinn Julefred",
+  "producer": "Kinn Bryggeri AS",
+  "country": "Norge",
+  "district": "Vestland",
+  "style": "Scotch ale",
+  "abv": 6.5,
+  "volumeCl": 75,
+  "price": 122.9,
+  "litrePrice": 163.87,
+  "color": "Dyp rødbrun.",
+  "smell": "Svalt aroma med preg av karamell, kaffe og tørket frukt.",
+  "taste": "Balansert, hint av sødme og sitrus.",
+  "method": "Åpen gjæring, flaskemodning.",
+  "ingredients": "Vann, malt (bygg), humle, gjær",
+  "goodFor": [
+    "Aperitiff",
+    "Storfe",
+    "Lam og sau"
+  ],
+  "characteristics": {
+    "fylde": 8,
+    "friskhet": 7,
+    "bitterhet": 7
+  },
+  "packaging": "Glass",
+  "selection": "Bestillingsutvalget",
+  "url": "https://www.vinmonopolet.no/Land/Norge/Vestland/Kinn-Julefred/p/9520801",
+  "imageUrl": "https://bilder.vinmonopolet.no/cache/515x515-0/9520801-1.jpg",
+  "image": "products/images/9520801.jpg",
+  "fetchedAt": "2026-11-26T11:25:25.585Z"
+}
