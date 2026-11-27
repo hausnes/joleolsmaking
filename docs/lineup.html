@@ -220,7 +220,7 @@
               ${ch.fylde != null ? `<div class="meters">${meter("Fylde", ch.fylde)}${meter("Friskheit", ch.friskhet)}${meter("Bitterheit", ch.bitterhet)}</div>` : ""}
               ${desc ? `<p class="desc">${esc(desc)}</p>` : ""}
               <div class="hist">${hist}</div>
-              ${b.url ? `<a class="more" href="${esc(b.url)}" target="_blank" rel="noopener">${b.url.includes("untappd") ? "Sjå på Untappd ↗" : "Sjå på Vinmonopolet ↗"}</a>` : ""}
+              ${b.url ? `<a class="more" href="${esc(b.url)}" target="_blank" rel="noopener">${b.url.includes("untappd") ? "Sjå på Untappd ↗" : b.url.includes("vinmonopolet") ? "Sjå på Vinmonopolet ↗" : "Sjå hos produsenten ↗"}</a>` : ""}
             </div>
           </article>`;
         }).join("");

@@ -115,6 +115,32 @@
       "historyNames": [
         "Hausnesbrogg og Mjøstølen bryggeri - Og eg - eg kjem frå Kinsarvik (8,6%)"
       ]
+    },
+    {
+      "name": "Hansa Juleøl",
+      "brewery": "Hansa Borg Bryggerier",
+      "style": "Juleøl (mørk lager)",
+      "abv": 4.7,
+      "source": "butikk",
+      "image": "products/images/hansa-juleol.jpg",
+      "url": "https://www.hansaborg.no/produkter/ol/hansa/",
+      "description": "Eit mørkt og fyldig øl med balansert bitterheit. Karamell- og bayermalt gir aromatisk sødme. Sødme 5, fruktigheit 4, bitterheit 5 (Hansa sin skala). Passar til pinnekjøtt og juleribbe. Serverast ved 4–7 °C.",
+      "historyNames": [
+        "Hansa - Juleøl (4,7%)",
+        "Hansa bryggeri - Juleøl (4,7%)",
+        "Hansa - Juleøl (4,5%)",
+        "Hansa Juleøl"
+      ]
+    },
+    {
+      "name": "Schous Juleøl",
+      "brewery": "Ringnes",
+      "style": "Juleøl",
+      "abv": 4.5,
+      "source": "butikk",
+      "image": "products/images/schous-juleol.png",
+      "url": "https://ringnes.no/produkter/schous/schous-juleoel/",
+      "description": "Ein moderne juleøl med litt lettare kropp og tydeleg smak av rista malt. Brygga med Saaz-humle, som i dei historiske oppskriftene til Schous. Smak og aroma av gjærfruktigheit og humle. Passar til all julemat."
     }
   ]
 }

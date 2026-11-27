@@ -347,7 +347,7 @@ async function buildLineup(year) {
         style: entry.style,
         abv: entry.abv,
         description: entry.description,
-        url: entry.untappdUrl ?? null,
+        url: entry.untappdUrl ?? entry.url ?? null,
         image: entry.image,
         home: entry.source === "heimebrygg",
       };
@@ -365,7 +365,8 @@ async function buildLineup(year) {
     for (const t of tokens(brewery)) nameTok.delete(t);
     for (const t of tokens(it.producer)) nameTok.delete(t);
     const prev = beers.filter((b) => {
-      if (entry.historyNames?.some((h) => b.name && h.toLowerCase().includes((b.name.split(" – ")[1] ?? "").toLowerCase()) && b.brewery === brewery)) return true;
+      const part = b.name?.split(" – ")[1]?.toLowerCase(); // tom del ville ha treft alle øl frå bryggeriet
+      if (part && entry.historyNames?.some((h) => h.toLowerCase().includes(part) && b.brewery === brewery)) return true;
       if (b.brewery !== brewery) return false;
       const bt = tokens(b.name.includes(" – ") ? b.name.split(" – ")[1] : b.name);
       for (const t of tokens(brewery)) bt.delete(t);
